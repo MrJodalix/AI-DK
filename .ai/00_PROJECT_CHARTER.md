@@ -4,7 +4,7 @@ Version: 1.0.0
 
 ## Ziel
 
-Dieses Dokument ist die **übergeordnete Norm** für KI-gestützte Softwareentwicklung mit AI-DK.
+Dieses Dokument ist die **übergeordnete Norm** des **AI Engineering Standards** AI-DK.
 
 Das Ergebnis soll Software sein, die langfristig wartbar, verständlich, erweiterbar und nach Jahren noch nachvollziehbar bleibt.
 

@@ -172,45 +172,43 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK (AI Development Kit) ist ein AI Engineering Standard: versioniertes Framework aus Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. **Core 1.0.x** ist freigegeben; Profiles und Extensions sind geplant.
+AI-DK ist der Name des **AI Engineering Standards**: versioniertes Framework aus Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. **Core 1.0.x** ist freigegeben; nächste Ausbaustufen: 1.1 (YAML), 1.2 (Test-Automation), 2.0 (Flutter-Profile).
 
 ### Aktueller Fokus
 
-Framework **1.0.2** (Qualitätsrelease). Keine neuen Feature-Docs. Nächste optionale Schritte: Tag `v1.0.2`, danach Freigabe **1.1**-Implementierung oder Backlog-Themen.
+Framework **1.0.3** (Positioning + Roadmap).  
+Als Nächstes: **1.1** maschinenlesbare Regeln.
 
 ### Wichtige Entscheidungen
 
+- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard** (nicht als bloßer „Development Kit“ vermarkten)
 - Drei Ebenen: Core · Profiles · Extensions
+- Roadmap: **1.1** YAML → **1.2** Test-Automation → **2.0** Flutter-Profile
 - Markdown ist bis 1.1 kanonisch; YAML erst ab 1.1 als Ableitung
-- Profiles erst ab 2.0; keine Tech-Stacks im Core
+- Profiles: Flutter zuerst (2.0); keine Tech-Stacks im Core
 - Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve
-- Framework-Qualität: S1–S6 bestanden
-- AI-DK aktuell **1.0.2**; Tags `v1.0.0` / `v1.0.1` vorhanden
-- Kanonischer Repository-Name: **AI-DK** (`https://github.com/MrJodalix/AI-DK`)
-- Spätere Ergänzungen (Governance, ADR, Glossar, QUALITY, RFC): nur Backlog, nicht Core 1.0.2
+- AI-DK aktuell **1.0.3**; Tags `v1.0.0`–`v1.0.2` vorhanden
 
 ### Bekannte Risiken / Schulden
 
-- `01` reserviert, noch ohne Dokument (bewusst)
-- Längere Docs (SCENARIOS, CODING_STANDARDS, STATE) akzeptiert — siehe Backlog/QUALITY später
-- 1.1 noch nicht implementiert (nur Plan)
-- Profiles / Extensions / Governance-Docs noch nicht umgesetzt
+- `01` reserviert, noch ohne Dokument
+- 1.1 / 1.2 / 2.0 noch nicht implementiert (nur Pläne/Backlog)
+- Governance/ADR/Glossar nur im Backlog
 
 ### Nächste Schritte
 
-1. Optional: Commit + Tag **`v1.0.2`** + Push
-2. Freigabe **1.1 implementieren** (YAML-Pilot)
-3. Später Backlog-Themen nach Freigabe (Governance, ADR, …)
+1. ~~Commit Positioning (1.0.3)~~  
+2. **1.1 implementieren** (Schema + YAML)  
+3. Danach **1.2** Test-Automation  
+4. Danach **2.0** Flutter-Profile
 
 ### Verweise
 
-- `README.md` — Produktarchitektur, Index, Begriffskurztafel
-- `CHANGELOG.md` — Versionshistorie
-- `TODO.md` — offene Nacharbeiten
-- `.ai/plans/1.1_MACHINE_READABLE_RULES.md` — Plan 1.1
-- `.ai/plans/BACKLOG_AFTER_1.0.md` — spätere Ideen
-- `.ai/tests/RESULTS.md` — S1–S6
-- Git-Tags `v1.0.0`, `v1.0.1`
+- `README.md` — Branding und Roadmap
+- `.ai/plans/1.1_MACHINE_READABLE_RULES.md`
+- `.ai/plans/1.2_TEST_AUTOMATION.md`
+- `.ai/plans/BACKLOG_AFTER_1.0.md`
+- `CHANGELOG.md` · `TODO.md`
 
 ---
 

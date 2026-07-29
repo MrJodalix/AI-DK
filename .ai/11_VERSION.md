@@ -120,12 +120,12 @@ Die KI darf nicht:
 
 | Version | Bedeutung |
 |---------|-----------|
-| `0.1.x` | Sprint 1 – Core Foundation |
-| `0.2.x` | Sprint 2 – Projektorganisation |
-| `0.3.x` | Sprint 3 – Betrieb |
-| `1.0.0` | Sprint 4 – konsolidierter, freigegebener Core (**aktuell**) |
+| `1.0.x` | Stabiler Core (**aktuell**) |
 | `1.1.x` | Maschinenlesbare Regeln (YAML), Markdown kanonisch |
-| `2.x` | Profiles und weitere Erweiterungen |
+| `1.2.x` | Framework-Tests automatisieren |
+| `1.x+` | Governance, ADRs, Glossar, QUALITY (Backlog) |
+| `2.0` | Erstes Profile: Flutter |
+| `2.x+` | Weitere Profiles, Extensions, RFCs |
 
 ---
 

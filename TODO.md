@@ -2,19 +2,15 @@
 
 Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 
-## 1.0.x
+## Erledigt kürzlich
 
-- [x] Git + Tags `v1.0.0` / `v1.0.1`
-- [x] S1–S6 + S6-Nachzug
-- [x] Plan 1.1
-- [x] Qualitätsrelease **1.0.2** (Konsistenz, Begriffe, Backlog-Doku)
-- [x] Commit + Tag **`v1.0.2`** + Push
-- [ ] Optional: `01`-Dokument (Overview/Quickstart)
-- [ ] Optional: Live-Smoke S1/S3
+- [x] 1.0.2 Qualität · 1.0.3 Positioning/Roadmap (in Arbeit: Tag/Push)
+- [x] Pläne 1.1 / 1.2 · Backlog
 
-## Geplant (eigene Freigabe)
+## Geplante Versionen (Reihenfolge)
 
-- [ ] **1.1 implementieren** — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)
+- [ ] **1.1** Maschinenlesbare Regeln — Implementierung
+- [ ] **1.2** Framework-Tests automatisieren — [Plan](.ai/plans/1.2_TEST_AUTOMATION.md)
+- [ ] **2.0** Flutter-Profile
 - [ ] Governance / ADR / Glossar / QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md)
-- [ ] **2.0** Profiles · RFCs bei Bedarf
-- [ ] Extensions
+- [ ] Optional: `01`-Dokument (Overview/Quickstart)

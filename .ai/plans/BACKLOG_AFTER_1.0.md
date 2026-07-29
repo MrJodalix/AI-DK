@@ -58,19 +58,18 @@ Nicht Software-Produktmetriken — Meta-Qualität des Regelwerks.
 
 ---
 
-## Ab Version 2.x
+## Ab Version 2.0
 
-### 5. RFCs / Proposals
+### Profiles
+
+- **2.0:** erstes Profile **Flutter** (`profiles/flutter/`)
+- Danach weitere Technologien nach Freigabe
+
+### RFCs / Proposals
 
 Geplant: `rfcs/` (o. ä.)
 
-Vor größeren Änderungen (z. B. maschinenlesbare Regeln, Profiles) ein Proposal:
-
-- `rfcs/0001-machine-readable-rules.md`
-
-Analog zu bekannten Proposal-Prozessen; AI-DK-spezifisch ausarbeiten, wenn 2.0 ansteht.
-
-Bereits vorgesehen in der Produktroadmap: **Profiles (2.0)**, **Extensions**.
+Vor größeren Änderungen ein Proposal, z. B. `rfcs/0001-machine-readable-rules.md` (falls noch nicht über 1.1 erledigt).
 
 ---
 

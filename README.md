@@ -1,27 +1,30 @@
 # AI-DK
 
-**AI Development Kit** — AI Engineering Standard für KI-gestützte Softwareentwicklung.
+**AI-DK – The AI Engineering Standard**
 
-Regelwerk aus Prinzipien, Workflows und Dokumentation. Modellunabhängig · Core technologieunabhängig · versioniert · langfristig wartbar.
+Standards, Prozesse und Qualitätsregeln für KI-gestützte Softwareentwicklung.  
+Modellunabhängig · Core technologieunabhängig · versioniert · langfristig wartbar.
+
+> AI-DK ist der **Name**. Das Produkt ist ein **AI Engineering Standard** — kein bloßer Prompt-Werkzeugkasten.
 
 ## Aktueller Stand
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **1.0.2** |
-| Status | Stabiler Core (Qualitätsrelease) |
+| Framework-Version | **1.0.3** |
+| Status | Stabiler Core + Positioning |
 | Repository | https://github.com/MrJodalix/AI-DK |
-| Nächste geplante Version | **1.1** ([Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
+| Nächste Version | **1.1** — maschinenlesbare Regeln ([Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
 
-Changelog: [CHANGELOG.md](CHANGELOG.md) · Projektstand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md) · Späteres Backlog: [`.ai/plans/BACKLOG_AFTER_1.0.md`](.ai/plans/BACKLOG_AFTER_1.0.md)
+Changelog: [CHANGELOG.md](CHANGELOG.md) · Stand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md) · Pläne: [`.ai/plans/`](.ai/plans/)
 
 ## Produktarchitektur
 
 ```text
-AI-DK
+AI-DK  (AI Engineering Standard)
 │
 ├── Core          universelle Regeln für jedes Projekt   ← 1.0.x
-├── Profiles      technologieabhängige Vertiefungen      ← geplant ab 2.0
+├── Profiles      technologieabhängige Vertiefungen      ← ab 2.0 (Flutter zuerst)
 └── Extensions    Anbindung an konkrete KI-Werkzeuge     ← geplant
 ```
 
@@ -31,9 +34,9 @@ Universelle Regeln unter [`.ai/`](.ai/). Gelten für jedes Projekt. Keine Stack-
 
 Profile und Extensions dürfen den Core **verfeinern**, ihm aber **nicht widersprechen**.
 
-### Ebene 2 – Profiles (geplant, ab 2.0)
+### Ebene 2 – Profiles (ab 2.0)
 
-Austauschbare technologieabhängige Regeln, z. B. `profiles/flutter/`, `profiles/python/`, `profiles/dotnet/`, `profiles/react/`, `profiles/rust/`.
+Erstes geplantes Profile: **Flutter**. Weitere (Python, .NET, React, Rust, …) folgen.
 
 ### Ebene 3 – Extensions (geplant)
 
@@ -59,60 +62,46 @@ Dünne Adapter auf Werkzeuge wie Cursor, Claude Code, Gemini CLI, GitHub Copilot
 
 | Pfad | Zweck |
 |------|--------|
-| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | Testszenarien zur Prüfung von AI-DK (S1–S6) |
-| [tests/RESULTS](.ai/tests/RESULTS.md) | Ergebnisprotokoll Desk-Review S1–S6 |
+| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | Testszenarien S1–S6 |
+| [tests/RESULTS](.ai/tests/RESULTS.md) | Desk-Review-Protokoll |
 
 ### Nummerierung
 
-- Präfix `NN_` = Reihenfolge und Themengruppe.
 - **`01` ist reserviert** (z. B. Overview/Quickstart) — absichtlich leer in 1.0.x.
-- Core 1.0.x: `00`, `02`–`11` (Lücke `01` ist kein Fehler).
-- Framework-Tests: `.ai/tests/` · Pläne: `.ai/plans/` (kein Core-Nummernkreis).
+- Core: `00`, `02`–`11` · Tests: `.ai/tests/` · Pläne: `.ai/plans/`
 
 ## Verwendung
 
-1. Core-Dokumente aus `.ai/` in das Zielprojekt übernehmen oder verlinken.
-2. KI auf Charter, AI Behavior und Project State verpflichten; übrige Core-Docs mitführen.
-3. Project State projektspezifisch füllen und aktuell halten.
-4. Qualität des Frameworks bei Bedarf mit S1–S6 prüfen.
-5. Später optional Profile und Extension ergänzen.
-6. Änderungen an AI-DK versionieren (`11_VERSION.md`, `CHANGELOG.md`).
+1. Core aus `.ai/` übernehmen oder verlinken.
+2. KI auf Charter, AI Behavior und Project State verpflichten.
+3. Project State aktuell halten.
+4. Qualität mit S1–S6 prüfen.
+5. Später Profile / Extension ergänzen.
+6. Änderungen versionieren (`11_VERSION.md`, `CHANGELOG.md`).
 
 ## Dokumentationsprinzip
 
 Ziel · Geltungsbereich · Grundprinzipien · Verbindliche Regeln · Empfehlungen · KI-Verhalten · Checkliste · Beispiele · Ausnahmen · Version
 
-`08_PROJECT_STATE.md` ergänzt um **Aktueller Projektstand**.
-
 ### Begriffe (kurz)
 
-| Begriff | Bedeutung in AI-DK |
-|---------|-------------------|
-| **Verbindliche Regeln** | Muss-Verhalten; Verstöße sind Fail |
-| **Empfehlungen** | Soll-Verhalten; Abweichung möglich, idealerweise begründet |
-| **Core** | Universelle Norm unter `.ai/00`–`11` |
+| Begriff | Bedeutung |
+|---------|-----------|
+| **AI-DK** | Name |
+| **AI Engineering Standard** | Produktkategorie / Untertitel |
+| **Verbindliche Regeln** | Muss-Verhalten |
+| **Empfehlungen** | Soll-Verhalten |
+| **Core** | Universelle Norm `.ai/00`–`11` |
 | **Profile** | Technologievertiefung (ab 2.0) |
 | **Extension** | Tool-Adapter (geplant) |
-
-Ausführliches Glossar: Backlog (noch nicht angelegt).
-
-### Kernzuständigkeiten (keine Duplikate)
-
-| Dokument | Kanonisch für |
-|----------|----------------|
-| `00_PROJECT_CHARTER` | Prinzipien, Entscheidungskriterien, Unsicherheit |
-| `02_DEVELOPMENT_WORKFLOW` | Phasen, Zerlegung, Abschlussbericht |
-| `05_AI_BEHAVIOR` | Priorität, Konflikte, Kontextpflicht, Handlungsgrenzen, Code Review |
-| Spezialdocs `03`–`04`, `06`–`11` | ihr jeweiliges Fachthema |
-| `.ai/tests/SCENARIOS` | Qualitätsprüfung des Frameworks |
 
 ## Roadmap
 
 | Version | Fokus |
 |---------|--------|
-| **0.1.0 – 1.0.1** | Core aufbauen, S6-Nachzug |
-| **1.0.2** | Qualitätsrelease (Konsistenz, Links, Begriffe) — aktuell |
-| **1.1** | Maschinenlesbare Regeln — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md) |
+| **1.0.x** | Stabiler Core (aktuell **1.0.3**) |
+| **1.1** | Maschinenlesbare Regeln (YAML) — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md) |
+| **1.2** | Framework-Tests automatisieren — [Plan](.ai/plans/1.2_TEST_AUTOMATION.md) |
 | **1.x+** | Governance, ADRs, Glossar, QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
-| **2.0** | Profiles · RFCs bei größeren Änderungen |
-| **2.x+** | Extensions, weitere Profile |
+| **2.0** | Erstes Profile: **Flutter** |
+| **2.x+** | Weitere Profiles · Extensions · RFCs |
