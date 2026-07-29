@@ -27,8 +27,8 @@ Erstes stabiles Core-Release (Sprint 4 abgeschlossen).
 
 - `01` weiterhin reserviert (Overview/Quickstart)
 - Profiles (2.0), YAML-Regeln (1.1), Extensions noch nicht umgesetzt
-- Kein Git-Tag in diesem Workspace, solange kein Repository initialisiert ist
 - S1–S6 als Prüfkatalog vorhanden, formales Durchspiel-Protokoll optional nachziehbar
+- Release lokal als Git-Tag `v1.0.0` auf Branch `main` gekennzeichnet (kein Remote-Push)
 
 ## 0.3.0
 
