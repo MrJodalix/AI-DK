@@ -279,8 +279,9 @@ Vor einem AI-DK-Release (ab 1.0.0):
 - [x] Schwere Fails behoben oder als bekannte Einschränkung dokumentiert
 - [ ] Neue Core-Regeln: betroffene Szenarien ergänzt oder angepasst
 - [x] Keine Szenario-Texte mit Stack-Zwängen im Core
+- [ ] Vor Release: `python3 .ai/tests/check_core.py` → PASS (ab 1.2)
 
-Ergebnisse: `.ai/tests/RESULTS.md` (Stand 2026-07-29).
+Ergebnisse: `.ai/tests/RESULTS.md` (Stand 2026-07-29) · Auto-Report: `.ai/tests/reports/latest.txt`.
 
 ---
 

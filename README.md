@@ -11,10 +11,10 @@ Modellunabhängig · Core technologieunabhängig · versioniert · langfristig w
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **1.1.0** |
-| Status | Core + maschinenlesbare Regeln |
+| Framework-Version | **1.2.0** |
+| Status | Core + rules + automatische Framework-Checks |
 | Repository | https://github.com/MrJodalix/AI-DK |
-| Nächste Version | **1.2** — Test-Automation ([Plan](.ai/plans/1.2_TEST_AUTOMATION.md)) |
+| Nächste Version | **2.0** — Flutter-Profile |
 
 Changelog: [CHANGELOG.md](CHANGELOG.md) · Stand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md)
 
@@ -25,6 +25,7 @@ AI-DK  (AI Engineering Standard)
 │
 ├── Core          Markdown-Norm `.ai/00`–`11`           ← kanonisch
 ├── rules/        YAML-Ableitung                         ← 1.1
+├── tests/        Szenarien + check_core.py              ← 1.2
 ├── Profiles      technologieabhängige Vertiefungen      ← ab 2.0 (Flutter zuerst)
 └── Extensions    Anbindung an konkrete KI-Werkzeuge     ← geplant
 ```
@@ -65,16 +66,22 @@ AI-DK  (AI Engineering Standard)
 
 | Pfad | Zweck |
 |------|--------|
-| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | S1–S6 |
+| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | S1–S6 Verhaltensszenarien |
 | [tests/RESULTS](.ai/tests/RESULTS.md) | Desk-Review |
+| [tests/check_core.py](.ai/tests/check_core.py) | Automatische Struktur-/Link-/YAML-Prüfung |
+| [tests/reports/](.ai/tests/reports/) | Laufberichte |
+
+```bash
+python3 .ai/tests/check_core.py
+```
 
 ## Roadmap
 
 | Version | Fokus |
 |---------|--------|
 | **1.0.x** | Stabiler Core |
-| **1.1.0** | Maschinenlesbare Regeln — **aktuell** |
-| **1.2** | Framework-Tests automatisieren — [Plan](.ai/plans/1.2_TEST_AUTOMATION.md) |
+| **1.1.0** | Maschinenlesbare Regeln |
+| **1.2.0** | Framework-Tests automatisieren — **aktuell** |
 | **1.x+** | Governance, ADRs, Glossar — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
 | **2.0** | Flutter-Profile |
 | **2.x+** | Weitere Profiles · Extensions · RFCs |
@@ -85,3 +92,4 @@ AI-DK  (AI Engineering Standard)
 2. Optional `.ai/rules/` für Agenten/Tools mitführen.
 3. Charter, AI Behavior, Project State beachten.
 4. Bei Core-Änderungen YAML synchron halten.
+5. Vor Releases: `python3 .ai/tests/check_core.py` (PASS).

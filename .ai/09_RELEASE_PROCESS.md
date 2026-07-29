@@ -156,6 +156,7 @@ Die KI muss:
 - [ ] Release-Inhalt und Zielkennung geklärt
 - [ ] Blocker bekannt und adressiert
 - [ ] Tests/Checks ausgeführt oder Status dokumentiert
+- [ ] AI-DK-Core: `python3 .ai/tests/check_core.py` → PASS (ab 1.2)
 - [ ] Changelog aktualisiert (inkl. Breaking Changes)
 - [ ] Nutzerrelevante Docs aktualisiert
 - [ ] Keine Secrets im Stand

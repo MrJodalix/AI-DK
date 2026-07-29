@@ -172,42 +172,40 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards**: Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. Core inkl. `.ai/rules/` (1.1); als Nächstes 1.2 (Test-Automation), 2.0 (Flutter-Profile).
+AI-DK ist der Name des **AI Engineering Standards**. Core inkl. `.ai/rules/` (1.1) und automatischem Check `check_core.py` (1.2). Als Nächstes: **2.0** Flutter-Profile.
 
 ### Aktueller Fokus
 
-Framework **1.1.0** — maschinenlesbare Regeln unter `.ai/rules/` (Markdown kanonisch).  
-Als Nächstes: **1.2** Test-Automation.
+Framework **1.2.0**. Automatische Framework-Checks lauffähig.  
+Als Nächstes: **2.0** Flutter-Profile (nach Freigabe).
 
 ### Wichtige Entscheidungen
 
 - Name: **AI-DK** · Produktkategorie: **AI Engineering Standard**
-- Drei Ebenen: Core · Profiles · Extensions
-- Roadmap: **1.1** YAML (erledigt) → **1.2** Test-Automation → **2.0** Flutter-Profile
-- Markdown kanonisch; YAML abgeleitet; Sync-Pflicht bei Core-Änderungen
-- Profiles: Flutter zuerst (2.0); keine Tech-Stacks im Core
-- Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve
-- AI-DK aktuell **1.1.0**
+- Roadmap: 1.1 YAML → **1.2** Test-Automation (erledigt) → **2.0** Flutter
+- Markdown kanonisch; YAML abgeleitet; Sync-Pflicht
+- Vor AI-DK-Releases: `python3 .ai/tests/check_core.py` PASS
+- AI-DK aktuell **1.2.0**
 
 ### Bekannte Risiken / Schulden
 
 - `01` reserviert
-- YAML ist kompakte Stichprobe, kein 1:1 jedes Markdown-Absatzes
-- 1.2 / 2.0 / Governance-Backlog offen
+- YAML ist Stichprobe; Auto-Check deckt Struktur/Links/YAML-Schema, nicht S1–S6-Verhalten
+- 2.0 / Governance-Backlog offen
 
 ### Nächste Schritte
 
-1. **1.2** Test-Automation
-2. **2.0** Flutter-Profile
-3. Optional: Backlog (Governance, ADR, …)
+1. **2.0** Flutter-Profile
+2. Optional: Backlog (Governance, ADR, …)
+3. Optional: GitHub Actions für `check_core.py`
 
 ### Verweise
 
+- `.ai/tests/check_core.py`
+- `.ai/tests/reports/latest.txt`
 - `.ai/rules/README.md`
-- `README.md`
-- `.ai/plans/1.2_TEST_AUTOMATION.md`
 - `.ai/plans/BACKLOG_AFTER_1.0.md`
-- `CHANGELOG.md` · `TODO.md`
+- `CHANGELOG.md` · `TODO.md` · `README.md`
 
 ---
 

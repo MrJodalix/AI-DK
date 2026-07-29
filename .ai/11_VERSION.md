@@ -121,8 +121,8 @@ Die KI darf nicht:
 | Version | Bedeutung |
 |---------|-----------|
 | `1.0.x` | Stabiler Core |
-| `1.1.x` | Maschinenlesbare Regeln (YAML), Markdown kanonisch (**aktuell**) |
-| `1.2.x` | Framework-Tests automatisieren |
+| `1.1.x` | Maschinenlesbare Regeln (YAML), Markdown kanonisch |
+| `1.2.x` | Framework-Tests automatisieren (**aktuell**) |
 | `1.x+` | Governance, ADRs, Glossar, QUALITY (Backlog) |
 | `2.0` | Erstes Profile: Flutter |
 | `2.x+` | Weitere Profiles, Extensions, RFCs |

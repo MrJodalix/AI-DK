@@ -4,12 +4,11 @@ Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 
 ## Erledigt
 
-- [x] 1.0.x Core, Positioning, Qualität
-- [x] **1.1.0** Maschinenlesbare Regeln (`.ai/rules/`)
+- [x] 1.0.x · 1.1.0 rules · **1.2.0** check_core
 
-## Geplant (Reihenfolge)
+## Geplant
 
-- [ ] **1.2** Framework-Tests automatisieren — [Plan](.ai/plans/1.2_TEST_AUTOMATION.md)
-- [ ] **2.0** Flutter-Profile
+- [ ] **2.0** Flutter-Profile (`profiles/flutter/`)
 - [ ] Governance / ADR / Glossar / QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md)
 - [ ] Optional: `01`-Dokument
+- [ ] Optional: CI-Workflow für `check_core.py` (GitHub Actions)

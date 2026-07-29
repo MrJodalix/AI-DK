@@ -1,0 +1,7 @@
+AI-DK check_core report — 2026-07-29
+Root: /mnt/games/Ki Regeln
+
+Errors: 0
+Warnings: 0
+
+RESULT: PASS
