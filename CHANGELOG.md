@@ -4,6 +4,22 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.2.0 – 2026-07-29
+
+Backlog-Meta: Governance, ADR, Glossar, Quality, RFC.
+
+### Hinzugefügt
+
+- `docs/GOVERNANCE.md`, `docs/GLOSSARY.md`, `docs/QUALITY.md`
+- `docs/adr/` — ADR 0001–0005
+- `rfcs/` — Prozess, Template, RFC 0001 (Accepted / 1.1)
+- Plan [`.ai/plans/2.2_BACKLOG_META.md`](.ai/plans/2.2_BACKLOG_META.md)
+
+### Geändert
+
+- `check_core.py` prüft Meta-Docs und ADRs
+- Backlog als weitgehend umgesetzt markiert
+
 ## 2.1.0 – 2026-07-29
 
 Bootstrap und Spezifikations-Framing.

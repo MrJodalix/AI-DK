@@ -37,6 +37,11 @@ Die KI arbeitet nach diesen Regeln, bis sie ausdrücklich geändert werden.
 | Maschinenlesbare Ableitung | `.ai/rules/` (ab 1.1; Markdown bleibt kanonisch) |
 | Flutter-Profile (2.0) | `profiles/flutter/` (Stack/Architektur/Coding/Testing) |
 | Profile-System | `profiles/README.md` |
+| Governance (Framework) | `docs/GOVERNANCE.md` |
+| Glossar | `docs/GLOSSARY.md` |
+| Meta-Qualität | `docs/QUALITY.md` |
+| ADRs | `docs/adr/` |
+| RFCs | `rfcs/` |
 
 Spezialdokumente verfeinern diese Norm, widersprechen ihr aber nicht.
 

@@ -125,8 +125,9 @@ Die KI darf nicht:
 | `1.2.x` | Framework-Tests automatisieren |
 | `1.x+` | Governance, ADRs, Glossar, QUALITY (Backlog) |
 | `2.0.x` | Erstes Profile: Flutter |
-| `2.1.x` | Bootstrap + Spezifikations-Framing (**aktuell**) |
-| `2.x+` | Weitere Profiles, Extensions, RFCs |
+| `2.1.x` | Bootstrap + Spezifikations-Framing |
+| `2.2.x` | Governance · ADR · Glossar · Quality · RFC (**aktuell**) |
+| `2.x+` | Weitere Profiles, Extensions |
 
 ---
 

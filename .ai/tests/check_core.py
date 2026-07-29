@@ -95,7 +95,7 @@ FLUTTER_STRUCTURED = [
     "TESTING.md",
 ]
 
-# Backtick refs that look like AI-DK paths / core / profile filenames
+# Backtick refs that look like AI-DK paths / core / profile / docs filenames
 REF_RE = re.compile(
     r"`("
     r"(?:\.ai/)?"
@@ -107,8 +107,18 @@ REF_RE = re.compile(
     r"|profiles/[A-Za-z0-9_./-]+"
     r")"
     r"|profiles/[A-Za-z0-9_./-]+"
+    r"|docs/[A-Za-z0-9_./-]+"
+    r"|rfcs/[A-Za-z0-9_./-]+"
     r")`"
 )
+
+META_DOCS = [
+    "docs/GOVERNANCE.md",
+    "docs/GLOSSARY.md",
+    "docs/QUALITY.md",
+    "docs/adr/README.md",
+    "rfcs/README.md",
+]
 
 
 class Checker:
@@ -146,7 +156,7 @@ class Checker:
     def _resolve_ref(self, ref: str) -> Path:
         if ref.startswith(".ai/"):
             return ROOT / ref
-        if ref.startswith("profiles/"):
+        if ref.startswith("profiles/") or ref.startswith("docs/") or ref.startswith("rfcs/"):
             return ROOT / ref
         if ref.startswith("rules/") or ref.startswith("tests/") or ref.startswith("plans/"):
             return AI / ref
@@ -158,8 +168,11 @@ class Checker:
             + list((AI / "tests").glob("*.md"))
             + list((AI / "plans").glob("*.md"))
             + list(PROFILES.rglob("*.md"))
+            + list((ROOT / "docs").rglob("*.md"))
+            + list((ROOT / "rfcs").glob("*.md"))
         )
         md_files.append(RULES / "README.md")
+        md_files.append(ROOT / "README.md")
         for path in md_files:
             if not path.is_file():
                 continue
@@ -170,14 +183,40 @@ class Checker:
                 if ref.endswith("/"):
                     dir_target = Path(str(target).rstrip("/"))
                     if not dir_target.is_dir():
+                        try:
+                            rel = dir_target.relative_to(ROOT)
+                        except ValueError:
+                            rel = dir_target
                         self.err(
-                            f"{path.relative_to(ROOT)}: broken dir ref `{ref}` → {dir_target.relative_to(ROOT)}"
+                            f"{path.relative_to(ROOT)}: broken dir ref `{ref}` → {rel}"
                         )
                     continue
                 if not target.exists():
+                    try:
+                        rel = target.relative_to(ROOT)
+                    except ValueError:
+                        rel = target
                     self.err(
-                        f"{path.relative_to(ROOT)}: broken ref `{ref}` → {target.relative_to(ROOT)}"
+                        f"{path.relative_to(ROOT)}: broken ref `{ref}` → {rel}"
                     )
+
+    def check_meta_docs(self) -> None:
+        for rel in META_DOCS:
+            path = ROOT / rel
+            if not path.is_file():
+                self.err(f"META missing file: {rel}")
+        for name in (
+            "0001-core-layout.md",
+            "0002-numbering.md",
+            "0003-document-structure.md",
+            "0004-markdown-canonical.md",
+            "0005-specification-bootstrap.md",
+        ):
+            path = ROOT / "docs" / "adr" / name
+            if not path.is_file():
+                self.err(f"ADR missing file: docs/adr/{name}")
+        if not (ROOT / "rfcs" / "0000-template.md").is_file():
+            self.err("META missing file: rfcs/0000-template.md")
 
     def check_yaml_rules(self) -> None:
         if yaml is None:
@@ -306,6 +345,7 @@ class Checker:
         self.check_markdown_refs()
         self.check_yaml_rules()
         self.check_flutter_profile()
+        self.check_meta_docs()
         self.check_readme_points_to_rules()
 
         lines = [

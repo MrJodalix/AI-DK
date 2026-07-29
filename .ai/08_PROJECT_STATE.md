@@ -172,44 +172,43 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation). Core inkl. Bootstrap (`01`), rules, Checks und Flutter-Profile.
+AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation). Core inkl. Bootstrap, rules, Checks, Flutter-Profile sowie Meta-Docs (Governance, ADR, Glossar, Quality, RFC).
 
 ### Aktueller Fokus
 
-Framework **2.1.0**. Agenten-Einstieg über `01_BOOTSTRAP.md`.  
-Als Nächstes: weitere Profiles oder Backlog — nach Freigabe.
+Framework **2.2.0**. Backlog-Meta umgesetzt.  
+Als Nächstes: weitere Profiles oder Extensions — nach Freigabe.
 
 ### Wichtige Entscheidungen
 
 - Name: **AI-DK** · Produktkategorie: **AI Engineering Standard** (Spezifikation)
 - Bootstrap (`01`) = verbindlicher Sitzungsstart für KI-Agenten
-- Roadmap: 1.1 → 1.2 → 2.0 Flutter → **2.1 Bootstrap**
+- Meta: `docs/` + `rfcs/` (2.2); Entscheidungen in ADRs
 - Markdown kanonisch; YAML abgeleitet; Sync-Pflicht
 - Core vs. Profile: Core gewinnt bei Prinzipien; Profile bei Stack-Details
 - Flutter-Stack: Riverpod · Drift · Freezed · go_router · Material 3
 - Vor AI-DK-Releases: `python3 .ai/tests/check_core.py` PASS
-- AI-DK aktuell **2.1.0**
+- AI-DK aktuell **2.2.0**
 
 ### Bekannte Risiken / Schulden
 
-- YAML ist Stichprobe; Auto-Check deckt Struktur/Links/YAML-Schema, nicht S1–S6-Verhalten
-- Weitere Profiles / Governance-Backlog offen
+- YAML/Checks ersetzen keine S1–S6-Verhaltensprüfung
+- Weitere Profiles / Extensions offen
 
 ### Nächste Schritte
 
 1. Weitere Profiles (nach Freigabe)
-2. Optional: Backlog (Governance, ADR, …)
+2. Optional: Extensions
 3. Optional: GitHub Actions für `check_core.py`
 
 ### Verweise
 
 - `.ai/01_BOOTSTRAP.md`
+- `docs/GOVERNANCE.md` · `docs/GLOSSARY.md` · `docs/QUALITY.md` · `docs/adr/`
+- `rfcs/`
 - `profiles/flutter/`
 - `.ai/tests/check_core.py`
-- `.ai/tests/reports/latest.txt`
-- `.ai/rules/README.md`
-- `.ai/plans/2.1_BOOTSTRAP.md`
-- `.ai/plans/BACKLOG_AFTER_1.0.md`
+- `.ai/plans/2.2_BACKLOG_META.md`
 - `CHANGELOG.md` · `TODO.md` · `README.md`
 
 ---
