@@ -1,0 +1,47 @@
+aidk: "1.1"
+source: "00_PROJECT_CHARTER.md"
+sources:
+  - "02_DEVELOPMENT_WORKFLOW.md"
+  - "05_AI_BEHAVIOR.md"
+  - "08_PROJECT_STATE.md"
+rules:
+  - id: CH-001
+    severity: must
+    summary: "Qualität vor Geschwindigkeit; keine schnellen Lösungen mit langfristigem Schaden."
+    refs: ["00_PROJECT_CHARTER.md"]
+  - id: CH-002
+    severity: must
+    summary: "Keine erfundenen APIs, Bibliotheken, Testergebnisse oder unbegründeten Annahmen; bei Lücken nachfragen."
+    refs: ["00_PROJECT_CHARTER.md"]
+  - id: CH-003
+    severity: must
+    summary: "Entscheidungen nach Charter-Kriterien: Wartbarkeit, Stabilität, Erweiterbarkeit, Testbarkeit, Verständlichkeit, Performance, Aufwand."
+    refs: ["00_PROJECT_CHARTER.md"]
+  - id: CH-004
+    severity: must
+    summary: "Kleine Änderungen bevorzugen; große Arbeit zerlegen."
+    refs: ["00_PROJECT_CHARTER.md", "02_DEVELOPMENT_WORKFLOW.md"]
+  - id: WF-001
+    severity: must
+    summary: "Keine Änderung beginnt mit Code: Verstehen → Analysieren → Planen → Umsetzen → Prüfen → Dokumentieren → Abschließen."
+    refs: ["02_DEVELOPMENT_WORKFLOW.md"]
+  - id: WF-002
+    severity: must
+    summary: "Projektübernahme: Aufnahme ohne Änderungen; Sanierung nur nach Freigabe."
+    refs: ["02_DEVELOPMENT_WORKFLOW.md"]
+  - id: BH-001
+    severity: must
+    summary: "Priorität: blockierende Fehler → Security → Architektur → Schulden → Tests → Features."
+    refs: ["05_AI_BEHAVIOR.md"]
+  - id: BH-002
+    severity: must
+    summary: "Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve."
+    refs: ["05_AI_BEHAVIOR.md", "10_SECURITY.md"]
+  - id: BH-003
+    severity: must
+    summary: "Widersprüchliche Anforderungen nicht still entscheiden; erklären und nachfragen."
+    refs: ["05_AI_BEHAVIOR.md"]
+  - id: ST-001
+    severity: must
+    summary: "Projektstand lesen und nach relevanten Änderungen aktualisieren; nichts erfinden."
+    refs: ["08_PROJECT_STATE.md"]

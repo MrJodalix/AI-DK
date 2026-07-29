@@ -1,0 +1,35 @@
+aidk: "1.1"
+source: "04_TESTING.md"
+rules:
+  - id: TS-001
+    severity: must
+    summary: "Qualität vor Abdeckung; Testabdeckung ist kein Selbstzweck."
+    refs: ["04_TESTING.md"]
+  - id: TS-002
+    severity: must
+    summary: "Jede nutzbare Funktion hat mindestens einen automatisierten Test."
+    refs: ["04_TESTING.md"]
+  - id: TS-003
+    severity: must
+    summary: "Bugfixes erhalten einen Regressionstest; behobene Fehler nicht ohne Test lassen."
+    refs: ["04_TESTING.md"]
+  - id: TS-004
+    severity: must
+    summary: "Neue Features dürfen bestehende Tests nicht brechen."
+    refs: ["04_TESTING.md"]
+  - id: TS-005
+    severity: must
+    summary: "Kein Commit mit bekannten fehlschlagenden Tests."
+    refs: ["04_TESTING.md", "06_GIT_WORKFLOW.md"]
+  - id: TS-006
+    severity: must
+    summary: "Testergebnisse nur behaupten, wenn ausgeführt oder ehrlich als nicht ausführbar dokumentiert."
+    refs: ["04_TESTING.md", "05_AI_BEHAVIOR.md"]
+  - id: TS-007
+    severity: must
+    summary: "Testdaten reproduzierbar, klein, verständlich; keine Zufallsdaten als alleinige Grundlage."
+    refs: ["04_TESTING.md"]
+  - id: TS-008
+    severity: should
+    summary: "Mocking sparsam; bevorzugt echte Domänenobjekte; Mocks vor allem für I/O und Externe."
+    refs: ["04_TESTING.md"]

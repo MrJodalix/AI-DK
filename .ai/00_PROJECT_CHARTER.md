@@ -32,6 +32,7 @@ Die KI arbeitet nach diesen Regeln, bis sie ausdrücklich geändert werden.
 | Security | `10_SECURITY.md` |
 | Versionierung | `11_VERSION.md` |
 | Framework-Tests (Meta) | `.ai/tests/SCENARIOS.md` |
+| Maschinenlesbare Ableitung | `.ai/rules/` (ab 1.1; Markdown bleibt kanonisch) |
 
 Spezialdokumente verfeinern diese Norm, widersprechen ihr aber nicht.
 

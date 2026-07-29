@@ -1,0 +1,35 @@
+aidk: "1.1"
+source: "03_CODING_STANDARDS.md"
+rules:
+  - id: CS-001
+    severity: must
+    summary: "Lesbarkeit vor Kürze; klare Namen, kleine Funktionen."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-002
+    severity: must
+    summary: "Einfachste ausreichende Lösung; keine unnötigen Abstraktionen oder vorzeitige Optimierung."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-003
+    severity: must
+    summary: "Single Responsibility: eine klare Verantwortung pro Modul/Funktion."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-004
+    severity: must
+    summary: "Nur notwendige Bereiche ändern; keine unnötigen Komplett-Neuschreibungen."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-005
+    severity: must
+    summary: "Fehler nicht stillschweigend ignorieren; keine leeren Fangblöcke ohne Begründung."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-006
+    severity: must
+    summary: "Keine Secrets in Code; neue Abhängigkeiten nur mit begründetem Nutzen."
+    refs: ["03_CODING_STANDARDS.md", "10_SECURITY.md"]
+  - id: CS-007
+    severity: should
+    summary: "Explizite Datenflüsse und flache Aufrufketten bevorzugen."
+    refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-008
+    severity: should
+    summary: "Wiederkehrende Logik erst extrahieren, wenn Wiederverwendung oder Klarheit es rechtfertigen."
+    refs: ["03_CODING_STANDARDS.md"]

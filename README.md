@@ -11,36 +11,25 @@ Modellunabhängig · Core technologieunabhängig · versioniert · langfristig w
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **1.0.3** |
-| Status | Stabiler Core + Positioning |
+| Framework-Version | **1.1.0** |
+| Status | Core + maschinenlesbare Regeln |
 | Repository | https://github.com/MrJodalix/AI-DK |
-| Nächste Version | **1.1** — maschinenlesbare Regeln ([Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
+| Nächste Version | **1.2** — Test-Automation ([Plan](.ai/plans/1.2_TEST_AUTOMATION.md)) |
 
-Changelog: [CHANGELOG.md](CHANGELOG.md) · Stand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md) · Pläne: [`.ai/plans/`](.ai/plans/)
+Changelog: [CHANGELOG.md](CHANGELOG.md) · Stand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md)
 
 ## Produktarchitektur
 
 ```text
 AI-DK  (AI Engineering Standard)
 │
-├── Core          universelle Regeln für jedes Projekt   ← 1.0.x
+├── Core          Markdown-Norm `.ai/00`–`11`           ← kanonisch
+├── rules/        YAML-Ableitung                         ← 1.1
 ├── Profiles      technologieabhängige Vertiefungen      ← ab 2.0 (Flutter zuerst)
 └── Extensions    Anbindung an konkrete KI-Werkzeuge     ← geplant
 ```
 
-### Ebene 1 – Core
-
-Universelle Regeln unter [`.ai/`](.ai/). Gelten für jedes Projekt. Keine Stack-, Framework- oder Vendor-Zwänge.
-
-Profile und Extensions dürfen den Core **verfeinern**, ihm aber **nicht widersprechen**.
-
-### Ebene 2 – Profiles (ab 2.0)
-
-Erstes geplantes Profile: **Flutter**. Weitere (Python, .NET, React, Rust, …) folgen.
-
-### Ebene 3 – Extensions (geplant)
-
-Dünne Adapter auf Werkzeuge wie Cursor, Claude Code, Gemini CLI, GitHub Copilot, Windsurf. Extensions definieren keine eigenen Grundregeln.
+**Konfliktregel:** Markdown gewinnt. YAML ist abgeleitet. Details: [`.ai/rules/README.md`](.ai/rules/README.md).
 
 ## Dokumentenindex (Core)
 
@@ -48,60 +37,51 @@ Dünne Adapter auf Werkzeuge wie Cursor, Claude Code, Gemini CLI, GitHub Copilot
 |-----|----------|--------|
 | `00` | [PROJECT_CHARTER](.ai/00_PROJECT_CHARTER.md) | Grundprinzipien und Entscheidungsgrundlagen |
 | `02` | [DEVELOPMENT_WORKFLOW](.ai/02_DEVELOPMENT_WORKFLOW.md) | Verbindlicher Entwicklungsablauf |
-| `03` | [CODING_STANDARDS](.ai/03_CODING_STANDARDS.md) | Regeln für Codequalität und Struktur |
-| `04` | [TESTING](.ai/04_TESTING.md) | Teststrategie und Testpflichten |
-| `05` | [AI_BEHAVIOR](.ai/05_AI_BEHAVIOR.md) | Verhaltensregeln für die KI |
-| `06` | [GIT_WORKFLOW](.ai/06_GIT_WORKFLOW.md) | Versionskontrolle und Commit-Disziplin |
-| `07` | [DOCUMENTATION](.ai/07_DOCUMENTATION.md) | Projektdokumentation und Aktualisierungspflichten |
-| `08` | [PROJECT_STATE](.ai/08_PROJECT_STATE.md) | Aktueller Arbeitsstand (lebendig) |
-| `09` | [RELEASE_PROCESS](.ai/09_RELEASE_PROCESS.md) | Release-Vorbereitung und Freigabe |
-| `10` | [SECURITY](.ai/10_SECURITY.md) | Sicherheits-Mindestregeln |
-| `11` | [VERSION](.ai/11_VERSION.md) | Versionsvergabe und Semantik |
+| `03` | [CODING_STANDARDS](.ai/03_CODING_STANDARDS.md) | Codequalität |
+| `04` | [TESTING](.ai/04_TESTING.md) | Teststrategie |
+| `05` | [AI_BEHAVIOR](.ai/05_AI_BEHAVIOR.md) | KI-Verhalten |
+| `06` | [GIT_WORKFLOW](.ai/06_GIT_WORKFLOW.md) | Git |
+| `07` | [DOCUMENTATION](.ai/07_DOCUMENTATION.md) | Projektdokumentation |
+| `08` | [PROJECT_STATE](.ai/08_PROJECT_STATE.md) | Lebendiger Stand |
+| `09` | [RELEASE_PROCESS](.ai/09_RELEASE_PROCESS.md) | Releases |
+| `10` | [SECURITY](.ai/10_SECURITY.md) | Security |
+| `11` | [VERSION](.ai/11_VERSION.md) | Versionierung |
+
+### Maschinenlesbare Regeln (1.1)
+
+| Datei | Quelle |
+|-------|--------|
+| [rules/README.md](.ai/rules/README.md) | Schema & Sync |
+| [coding.yml](.ai/rules/coding.yml) | `03` |
+| [testing.yml](.ai/rules/testing.yml) | `04` |
+| [git.yml](.ai/rules/git.yml) | `06` |
+| [architecture.yml](.ai/rules/architecture.yml) | `00`/`02`/`05`/`08` |
+| [documentation.yml](.ai/rules/documentation.yml) | `07` |
+| [security.yml](.ai/rules/security.yml) | `10` |
+| [release.yml](.ai/rules/release.yml) | `09` |
+| [version.yml](.ai/rules/version.yml) | `11` |
 
 ### Framework-Qualität
 
 | Pfad | Zweck |
 |------|--------|
-| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | Testszenarien S1–S6 |
-| [tests/RESULTS](.ai/tests/RESULTS.md) | Desk-Review-Protokoll |
-
-### Nummerierung
-
-- **`01` ist reserviert** (z. B. Overview/Quickstart) — absichtlich leer in 1.0.x.
-- Core: `00`, `02`–`11` · Tests: `.ai/tests/` · Pläne: `.ai/plans/`
-
-## Verwendung
-
-1. Core aus `.ai/` übernehmen oder verlinken.
-2. KI auf Charter, AI Behavior und Project State verpflichten.
-3. Project State aktuell halten.
-4. Qualität mit S1–S6 prüfen.
-5. Später Profile / Extension ergänzen.
-6. Änderungen versionieren (`11_VERSION.md`, `CHANGELOG.md`).
-
-## Dokumentationsprinzip
-
-Ziel · Geltungsbereich · Grundprinzipien · Verbindliche Regeln · Empfehlungen · KI-Verhalten · Checkliste · Beispiele · Ausnahmen · Version
-
-### Begriffe (kurz)
-
-| Begriff | Bedeutung |
-|---------|-----------|
-| **AI-DK** | Name |
-| **AI Engineering Standard** | Produktkategorie / Untertitel |
-| **Verbindliche Regeln** | Muss-Verhalten |
-| **Empfehlungen** | Soll-Verhalten |
-| **Core** | Universelle Norm `.ai/00`–`11` |
-| **Profile** | Technologievertiefung (ab 2.0) |
-| **Extension** | Tool-Adapter (geplant) |
+| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | S1–S6 |
+| [tests/RESULTS](.ai/tests/RESULTS.md) | Desk-Review |
 
 ## Roadmap
 
 | Version | Fokus |
 |---------|--------|
-| **1.0.x** | Stabiler Core (aktuell **1.0.3**) |
-| **1.1** | Maschinenlesbare Regeln (YAML) — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md) |
+| **1.0.x** | Stabiler Core |
+| **1.1.0** | Maschinenlesbare Regeln — **aktuell** |
 | **1.2** | Framework-Tests automatisieren — [Plan](.ai/plans/1.2_TEST_AUTOMATION.md) |
-| **1.x+** | Governance, ADRs, Glossar, QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
-| **2.0** | Erstes Profile: **Flutter** |
+| **1.x+** | Governance, ADRs, Glossar — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
+| **2.0** | Flutter-Profile |
 | **2.x+** | Weitere Profiles · Extensions · RFCs |
+
+## Verwendung
+
+1. Core-Markdown aus `.ai/` übernehmen (kanonisch).
+2. Optional `.ai/rules/` für Agenten/Tools mitführen.
+3. Charter, AI Behavior, Project State beachten.
+4. Bei Core-Änderungen YAML synchron halten.

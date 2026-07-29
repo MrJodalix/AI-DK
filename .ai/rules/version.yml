@@ -1,0 +1,23 @@
+aidk: "1.1"
+source: "11_VERSION.md"
+rules:
+  - id: VER-001
+    severity: must
+    summary: "Semantik MAJOR.MINOR.PATCH sofern keine andere Projektkonvention gilt."
+    refs: ["11_VERSION.md"]
+  - id: VER-002
+    severity: must
+    summary: "Breaking Changes als MAJOR (nach 1.0) kennzeichnen und im Changelog ausweisen."
+    refs: ["11_VERSION.md", "09_RELEASE_PROCESS.md"]
+  - id: VER-003
+    severity: must
+    summary: "Keine erfundenen oder widersprüchlichen Versionsstände."
+    refs: ["11_VERSION.md"]
+  - id: VER-004
+    severity: must
+    summary: "KI setzt keine eigenmächtigen MAJOR-Sprünge oder unbelegten Release-Tags."
+    refs: ["11_VERSION.md"]
+  - id: VER-005
+    severity: should
+    summary: "README, Projektstand und Changelog bei Versionswechseln mitführen."
+    refs: ["11_VERSION.md"]

@@ -1,0 +1,23 @@
+aidk: "1.1"
+source: "09_RELEASE_PROCESS.md"
+rules:
+  - id: REL-001
+    severity: must
+    summary: "Release ist eine bewusste Entscheidung mit Freigabekriterien."
+    refs: ["09_RELEASE_PROCESS.md"]
+  - id: REL-002
+    severity: must
+    summary: "KI veröffentlicht nicht eigenmächtig (Tags/Publish/Deploy nur auf Anweisung)."
+    refs: ["09_RELEASE_PROCESS.md"]
+  - id: REL-003
+    severity: must
+    summary: "Changelog und Breaking Changes klar; keine unbelegten Release-Behauptungen."
+    refs: ["09_RELEASE_PROCESS.md"]
+  - id: REL-004
+    severity: must
+    summary: "Keine bekannten Secrets im Release-Stand."
+    refs: ["09_RELEASE_PROCESS.md", "10_SECURITY.md"]
+  - id: REL-005
+    severity: should
+    summary: "Nach Release Projektstand aktualisieren."
+    refs: ["09_RELEASE_PROCESS.md", "08_PROJECT_STATE.md"]

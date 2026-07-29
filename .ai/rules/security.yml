@@ -1,0 +1,27 @@
+aidk: "1.1"
+source: "10_SECURITY.md"
+rules:
+  - id: SEC-001
+    severity: must
+    summary: "Keine Secrets in Code, Commits, Logs, Docs oder unnötigen Prompts."
+    refs: ["10_SECURITY.md"]
+  - id: SEC-002
+    severity: must
+    summary: "Keine Scheinsicherheit; keine unbelegten Sicherheitszusagen."
+    refs: ["10_SECURITY.md"]
+  - id: SEC-003
+    severity: must
+    summary: "Eingaben außerhalb der Vertrauensgrenze nicht blind vertrauen."
+    refs: ["10_SECURITY.md"]
+  - id: SEC-004
+    severity: must
+    summary: "Bestehende Schutzmaßnahmen nicht ohne Ersatz entfernen."
+    refs: ["10_SECURITY.md"]
+  - id: SEC-005
+    severity: must
+    summary: "Security vor Tempo; bei Leak rotieren und freigegeben bereinigen."
+    refs: ["10_SECURITY.md"]
+  - id: SEC-006
+    severity: should
+    summary: "Neue Abhängigkeiten nur mit Nutzen- und Risikoabschätzung."
+    refs: ["10_SECURITY.md"]

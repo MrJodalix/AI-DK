@@ -1,0 +1,27 @@
+aidk: "1.1"
+source: "06_GIT_WORKFLOW.md"
+rules:
+  - id: GIT-001
+    severity: must
+    summary: "Atomare Commits; eine logische Änderung pro Commit."
+    refs: ["06_GIT_WORKFLOW.md"]
+  - id: GIT-002
+    severity: must
+    summary: "Keine Secrets in Commits."
+    refs: ["06_GIT_WORKFLOW.md", "10_SECURITY.md"]
+  - id: GIT-003
+    severity: must
+    summary: "Force-Push auf gemeinsame Hauptbranches verboten."
+    refs: ["06_GIT_WORKFLOW.md"]
+  - id: GIT-004
+    severity: must
+    summary: "Keine erfundenen Git-Zustände (Commit/Push/Merge nur wenn belegt)."
+    refs: ["06_GIT_WORKFLOW.md"]
+  - id: GIT-005
+    severity: must
+    summary: "Destruktive Git-Aktionen und Historien-Rewrite nur mit ausdrücklicher Erlaubnis."
+    refs: ["06_GIT_WORKFLOW.md"]
+  - id: GIT-006
+    severity: should
+    summary: "Feature-/Fix-Branches und klare Commit-Nachrichten (Warum vor Was)."
+    refs: ["06_GIT_WORKFLOW.md"]

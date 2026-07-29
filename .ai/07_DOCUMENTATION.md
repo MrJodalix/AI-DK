@@ -89,6 +89,8 @@ Nach jeder abgeschlossenen Aufgabe prüfen und bei Relevanz aktualisieren:
 3. Architektur- oder Fachdokumentation — nur wenn Struktur, Schnittstellen oder Entscheidungen betroffen sind
 4. Projektstand-Dokument — gemäß `08_PROJECT_STATE.md`
 
+**AI-DK-Core zusätzlich:** Nach inhaltlicher Änderung an `.ai/0x_*.md` die zugehörige Datei unter `.ai/rules/` prüfen und anpassen (Markdown bleibt kanonisch; siehe `.ai/rules/README.md`).
+
 Keine Schein-Updates: unveränderte Dokumente nicht „der Vollständigkeit halber“ umformulieren.
 
 ### Was wohin gehört

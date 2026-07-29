@@ -172,40 +172,39 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards**: versioniertes Framework aus Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. **Core 1.0.x** ist freigegeben; nächste Ausbaustufen: 1.1 (YAML), 1.2 (Test-Automation), 2.0 (Flutter-Profile).
+AI-DK ist der Name des **AI Engineering Standards**: Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. Core inkl. `.ai/rules/` (1.1); als Nächstes 1.2 (Test-Automation), 2.0 (Flutter-Profile).
 
 ### Aktueller Fokus
 
-Framework **1.0.3** (Positioning + Roadmap).  
-Als Nächstes: **1.1** maschinenlesbare Regeln.
+Framework **1.1.0** — maschinenlesbare Regeln unter `.ai/rules/` (Markdown kanonisch).  
+Als Nächstes: **1.2** Test-Automation.
 
 ### Wichtige Entscheidungen
 
-- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard** (nicht als bloßer „Development Kit“ vermarkten)
+- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard**
 - Drei Ebenen: Core · Profiles · Extensions
-- Roadmap: **1.1** YAML → **1.2** Test-Automation → **2.0** Flutter-Profile
-- Markdown ist bis 1.1 kanonisch; YAML erst ab 1.1 als Ableitung
+- Roadmap: **1.1** YAML (erledigt) → **1.2** Test-Automation → **2.0** Flutter-Profile
+- Markdown kanonisch; YAML abgeleitet; Sync-Pflicht bei Core-Änderungen
 - Profiles: Flutter zuerst (2.0); keine Tech-Stacks im Core
 - Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve
-- AI-DK aktuell **1.0.3**; Tags `v1.0.0`–`v1.0.2` vorhanden
+- AI-DK aktuell **1.1.0**
 
 ### Bekannte Risiken / Schulden
 
-- `01` reserviert, noch ohne Dokument
-- 1.1 / 1.2 / 2.0 noch nicht implementiert (nur Pläne/Backlog)
-- Governance/ADR/Glossar nur im Backlog
+- `01` reserviert
+- YAML ist kompakte Stichprobe, kein 1:1 jedes Markdown-Absatzes
+- 1.2 / 2.0 / Governance-Backlog offen
 
 ### Nächste Schritte
 
-1. ~~Commit Positioning (1.0.3)~~  
-2. **1.1 implementieren** (Schema + YAML)  
-3. Danach **1.2** Test-Automation  
-4. Danach **2.0** Flutter-Profile
+1. **1.2** Test-Automation
+2. **2.0** Flutter-Profile
+3. Optional: Backlog (Governance, ADR, …)
 
 ### Verweise
 
-- `README.md` — Branding und Roadmap
-- `.ai/plans/1.1_MACHINE_READABLE_RULES.md`
+- `.ai/rules/README.md`
+- `README.md`
 - `.ai/plans/1.2_TEST_AUTOMATION.md`
 - `.ai/plans/BACKLOG_AFTER_1.0.md`
 - `CHANGELOG.md` · `TODO.md`

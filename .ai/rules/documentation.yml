@@ -1,0 +1,23 @@
+aidk: "1.1"
+source: "07_DOCUMENTATION.md"
+rules:
+  - id: DOC-001
+    severity: must
+    summary: "Dokumentation ist Teil der Lieferung; notwendige Docs nach Aufgaben aktualisieren."
+    refs: ["07_DOCUMENTATION.md"]
+  - id: DOC-002
+    severity: must
+    summary: "Ein Thema, ein kanonisches Dokument; Querverweise statt Duplikate."
+    refs: ["07_DOCUMENTATION.md"]
+  - id: DOC-003
+    severity: must
+    summary: "Keine Secrets in Dokumentation; Unbekanntes als offen kennzeichnen, nicht erfinden."
+    refs: ["07_DOCUMENTATION.md", "10_SECURITY.md"]
+  - id: DOC-004
+    severity: must
+    summary: "Nach Markdown-Core-Änderungen zugehörige .ai/rules/*.yml prüfen (Sync)."
+    refs: ["07_DOCUMENTATION.md", "rules/README.md"]
+  - id: DOC-005
+    severity: should
+    summary: "Bestehende Projekt-Dokumentstruktur respektieren; keine parallele Doc-Landschaft."
+    refs: ["07_DOCUMENTATION.md"]
