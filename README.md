@@ -59,6 +59,7 @@ Dünne Adapter auf Werkzeuge wie Cursor, Claude Code, Gemini CLI, GitHub Copilot
 | Pfad | Zweck |
 |------|--------|
 | [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | Testszenarien zur Prüfung von AI-DK (S1–S6) |
+| [tests/RESULTS](.ai/tests/RESULTS.md) | Ergebnisprotokoll Desk-Review S1–S6 |
 
 ### Nummerierung
 

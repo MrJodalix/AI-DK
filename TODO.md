@@ -5,7 +5,8 @@ Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 ## Nach 1.0.0
 
 - [x] Git-Repository initialisieren und Tag `v1.0.0` setzen (nach Freigabe)
-- [ ] S1–S6 formal durchspielen und kurzes Ergebnisprotokoll ablegen
+- [x] S1–S6 formal durchspielen und kurzes Ergebnisprotokoll ablegen
+- [ ] Optional: S6-Lücke schließen (Review-Schwereordnung in AI Behavior) — eigene Freigabe
 - [ ] Optional: `01`-Dokument (Overview/Quickstart)
 
 ## Geplant (eigene Freigabe)

@@ -275,10 +275,12 @@ Wenn die KI AI-DK selbst testet oder verbessert:
 
 Vor einem AI-DK-Release (ab 1.0.0):
 
-- [ ] S1–S6 mindestens einmal gegen den aktuellen Core bewertet
-- [ ] Schwere Fails behoben oder als bekannte Einschränkung dokumentiert
+- [x] S1–S6 mindestens einmal gegen den aktuellen Core bewertet
+- [x] Schwere Fails behoben oder als bekannte Einschränkung dokumentiert
 - [ ] Neue Core-Regeln: betroffene Szenarien ergänzt oder angepasst
-- [ ] Keine Szenario-Texte mit Stack-Zwängen im Core
+- [x] Keine Szenario-Texte mit Stack-Zwängen im Core
+
+Ergebnisse: `.ai/tests/RESULTS.md` (Stand 2026-07-29).
 
 ---
 

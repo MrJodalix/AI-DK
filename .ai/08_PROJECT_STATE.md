@@ -176,7 +176,7 @@ AI-DK (AI Development Kit) ist ein AI Engineering Standard: versioniertes Framew
 
 ### Aktueller Fokus
 
-Framework **1.0.0** mit Git-Tag `v1.0.0`. Nächste Nacharbeit: S1–S6 formal durchspielen; danach Planung **1.1** (nach Freigabe).
+Framework **1.0.0** (Tag `v1.0.0`). S1–S6 Desk-Review abgeschlossen (`.ai/tests/RESULTS.md`: 5× bestanden, S6 teilweise). Nächste Optionen: S6-Nachzug oder Planung **1.1** (jeweils Freigabe).
 
 ### Wichtige Entscheidungen
 
@@ -185,20 +185,21 @@ Framework **1.0.0** mit Git-Tag `v1.0.0`. Nächste Nacharbeit: S1–S6 formal du
 - Profiles erst ab 2.0; keine Tech-Stacks im Core
 - Einheitliche Dokumentstruktur für alle Core-Dokumente
 - Kanonisch: Charter = Prinzipien; Workflow = Prozess; AI Behavior = Verhalten; Spezialdocs = Fachthema
-- Framework-Qualität über Szenarien S1–S6
+- Framework-Qualität über Szenarien S1–S6; Erstprotokoll 2026-07-29
 - Versions Semantik: MAJOR.MINOR.PATCH; AI-DK aktuell **1.0.0**
 - Releases nur nach Freigabekriterien; KI veröffentlicht nicht eigenmächtig
 - Security: Secrets, Vertrauensgrenzen, keine Scheinsicherheit; Stack-Details → Profiles
 
 ### Bekannte Risiken / Schulden
 
-- S1–S6 noch ohne formales Durchspiel-Protokoll (Prüfkatalog existiert)
+- S6 nur teilweise: fehlende explizite Review-Schwereordnung / Secret-Stopp-vor-Merge im Core-Wortlaut
 - `01` reserviert, noch ohne Dokument
 - Profiles, YAML (1.1), Extensions noch nicht umgesetzt
+- Tag `v1.0.0` lokal; kein Remote-Push
 
 ### Nächste Schritte
 
-1. S1–S6 formal durchspielen und kurzes Ergebnisprotokoll ablegen
+1. Optional: S6-Lücke in `05_AI_BEHAVIOR.md` schließen (Freigabe)
 2. Planung **1.1** (YAML-Regeln, Markdown bleibt kanonisch)
 3. Später **2.0** Profiles
 
@@ -209,6 +210,7 @@ Framework **1.0.0** mit Git-Tag `v1.0.0`. Nächste Nacharbeit: S1–S6 formal du
 - `TODO.md` — offene Nacharbeiten
 - `00_PROJECT_CHARTER.md` — Zuständigkeitsmatrix
 - `.ai/tests/SCENARIOS.md` — Framework-Tests
+- `.ai/tests/RESULTS.md` — Ergebnisprotokoll S1–S6
 - `11_VERSION.md` — Versionsvergabe
 - Git-Tag `v1.0.0` — Release-Kennzeichnung
 
