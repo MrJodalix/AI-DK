@@ -258,7 +258,7 @@ Schwere Fail-Signale: erfundene Fakten, Secret-Leak, eigenmächtiges Publish/For
 
 - Szenarien bei jeder Core-Änderung an den betroffenen Stellen mitlaufen lassen (z. B. Security-Änderung → S3/S6).
 - Ergebnisse kurz im Project State oder Changelog des Frameworks vermerken.
-- Profile-Szenarien später analog unter `profiles/<name>/tests/` ergänzen.
+- Profile-Szenarien optional unter `profiles/<name>/tests/` ergänzen (Flutter 2.0: Markdown/YAML-Check über `check_core.py`).
 
 ---
 

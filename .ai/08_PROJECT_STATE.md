@@ -172,38 +172,42 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards**. Core inkl. `.ai/rules/` (1.1) und automatischem Check `check_core.py` (1.2). Als Nächstes: **2.0** Flutter-Profile.
+AI-DK ist der Name des **AI Engineering Standards**. Core, `.ai/rules/` (1.1), `check_core.py` (1.2) und erstes Profile **Flutter** (2.0).
 
 ### Aktueller Fokus
 
-Framework **1.2.0**. Automatische Framework-Checks lauffähig.  
-Als Nächstes: **2.0** Flutter-Profile (nach Freigabe).
+Framework **2.0.0**. Flutter-Profile unter `profiles/flutter/` aktiv.  
+Als Nächstes: weitere Profiles oder Backlog — nach Freigabe.
 
 ### Wichtige Entscheidungen
 
 - Name: **AI-DK** · Produktkategorie: **AI Engineering Standard**
-- Roadmap: 1.1 YAML → **1.2** Test-Automation (erledigt) → **2.0** Flutter
+- Roadmap: 1.1 YAML → 1.2 Checks → **2.0 Flutter** (erledigt)
 - Markdown kanonisch; YAML abgeleitet; Sync-Pflicht
+- Core vs. Profile: Core gewinnt bei Prinzipien; Profile bei Stack-Details
+- Flutter-Stack: Riverpod · Drift · Freezed · go_router · Material 3
 - Vor AI-DK-Releases: `python3 .ai/tests/check_core.py` PASS
-- AI-DK aktuell **1.2.0**
+- AI-DK aktuell **2.0.0**
 
 ### Bekannte Risiken / Schulden
 
 - `01` reserviert
 - YAML ist Stichprobe; Auto-Check deckt Struktur/Links/YAML-Schema, nicht S1–S6-Verhalten
-- 2.0 / Governance-Backlog offen
+- Weitere Profiles / Governance-Backlog offen
 
 ### Nächste Schritte
 
-1. **2.0** Flutter-Profile
+1. Weitere Profiles (nach Freigabe)
 2. Optional: Backlog (Governance, ADR, …)
 3. Optional: GitHub Actions für `check_core.py`
 
 ### Verweise
 
+- `profiles/flutter/`
 - `.ai/tests/check_core.py`
 - `.ai/tests/reports/latest.txt`
 - `.ai/rules/README.md`
+- `.ai/plans/2.0_FLUTTER_PROFILE.md`
 - `.ai/plans/BACKLOG_AFTER_1.0.md`
 - `CHANGELOG.md` · `TODO.md` · `README.md`
 

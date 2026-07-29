@@ -4,6 +4,26 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.0.0 – 2026-07-29
+
+Erstes Profile: **Flutter**.
+
+### Hinzugefügt
+
+- `profiles/README.md` — Profile-System und Konfliktregel Core vs. Profile
+- `profiles/flutter/` — README, STACK, ARCHITECTURE, CODING, TESTING
+- `profiles/flutter/rules/flutter.yml` — YAML-Ableitung (`aidk: "2.0"`)
+- Plan [`.ai/plans/2.0_FLUTTER_PROFILE.md`](.ai/plans/2.0_FLUTTER_PROFILE.md)
+
+### Kanonischer Flutter-Stack
+
+Riverpod · Drift · Freezed · go_router · Material 3
+
+### Geändert
+
+- `check_core.py` prüft Flutter-Profile-Dateien, Strukturüberschriften und Profile-YAML
+- README / STATE / Roadmap auf **2.0.0**
+
 ## 1.2.0 – 2026-07-29
 
 ### Hinzugefügt

@@ -62,7 +62,7 @@ Nicht Software-Produktmetriken — Meta-Qualität des Regelwerks.
 
 ### Profiles
 
-- **2.0:** erstes Profile **Flutter** (`profiles/flutter/`)
+- **2.0:** erstes Profile **Flutter** (`profiles/flutter/`) — **umgesetzt**
 - Danach weitere Technologien nach Freigabe
 
 ### RFCs / Proposals

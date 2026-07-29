@@ -1,0 +1,64 @@
+aidk: "2.0"
+profile: flutter
+source: "profiles/flutter/STACK.md"
+sources:
+  - "profiles/flutter/ARCHITECTURE.md"
+  - "profiles/flutter/CODING.md"
+  - "profiles/flutter/TESTING.md"
+rules:
+  - id: FL-ST-001
+    severity: must
+    summary: "State Management Default ist Riverpod; kein paralleles zweites State-System ohne dokumentierte Ausnahme."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-002
+    severity: must
+    summary: "Lokale SQL-Persistenz Default ist Drift."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-003
+    severity: must
+    summary: "Navigation Default ist go_router als Quelle der Wahrheit."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-004
+    severity: must
+    summary: "UI-Default ist Material 3; Domänenmodelle mit Unions/Immutability bevorzugen Freezed."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-005
+    severity: must
+    summary: "Generierte Dateien (Freezed/Drift/json_serializable) nicht von Hand editieren."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-AR-001
+    severity: must
+    summary: "Domain importiert keine Flutter-UI- und keine Infrastruktur-Details (z. B. Drift)."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-AR-002
+    severity: must
+    summary: "Widgets enthalten keine direkten SQL-/HTTP-Implementierungsdetails; Persistenz hinter DAO/Repository."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-AR-003
+    severity: should
+    summary: "Feature-orientierte Module gegenüber rein technischen Großordnern ohne Feature-Bezug bevorzugen."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-CS-001
+    severity: must
+    summary: "Keine teuren Synchronarbeiten und keine versteckten Side-Effects in build."
+    refs: ["profiles/flutter/CODING.md"]
+  - id: FL-CS-002
+    severity: must
+    summary: "BuildContext nicht über async-Gaps ohne mounted-/Äquivalenzprüfung verwenden."
+    refs: ["profiles/flutter/CODING.md"]
+  - id: FL-CS-003
+    severity: should
+    summary: "const und schlanke Widgets nutzen; Themes zentral über Material 3 führen."
+    refs: ["profiles/flutter/CODING.md"]
+  - id: FL-TS-001
+    severity: must
+    summary: "Nutzerrelevante Features und Bugfixes haben automatisierte Tests gemäß Core und diesem Profile."
+    refs: ["profiles/flutter/TESTING.md", ".ai/04_TESTING.md"]
+  - id: FL-TS-002
+    severity: must
+    summary: "Unit-Tests für Notifier/Drift isolieren (Overrides, Testdb) — keine Flakes durch echte Backends."
+    refs: ["profiles/flutter/TESTING.md"]
+  - id: FL-TS-003
+    severity: should
+    summary: "Widget-Tests gezielt für kritisches UI-Verhalten; Golden-Tests nur bei Projektpflege."
+    refs: ["profiles/flutter/TESTING.md"]

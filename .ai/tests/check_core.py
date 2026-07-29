@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AI-DK 1.2 – automatische Core-Qualitätsprüfungen.
+"""AI-DK – automatische Qualitätsprüfungen (Core + Profiles).
 
 Ausführung (Repo-Root):
   python3 .ai/tests/check_core.py
@@ -23,6 +23,9 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[2]
 AI = ROOT / ".ai"
 RULES = AI / "rules"
+PROFILES = ROOT / "profiles"
+FLUTTER = PROFILES / "flutter"
+FLUTTER_RULES = FLUTTER / "rules"
 REPORT_DIR = AI / "tests" / "reports"
 REPORT_FILE = REPORT_DIR / "latest.txt"
 
@@ -64,9 +67,34 @@ RULE_FILES = [
     "version.yml",
 ]
 
-# Backtick refs that look like AI-DK paths / core filenames
+FLUTTER_MD = [
+    "README.md",
+    "STACK.md",
+    "ARCHITECTURE.md",
+    "CODING.md",
+    "TESTING.md",
+]
+
+FLUTTER_STRUCTURED = [
+    "STACK.md",
+    "ARCHITECTURE.md",
+    "CODING.md",
+    "TESTING.md",
+]
+
+# Backtick refs that look like AI-DK paths / core / profile filenames
 REF_RE = re.compile(
-    r"`((?:\.ai/)?(?:[0-9]{2}_[A-Z0-9_]+\.md|rules/[A-Za-z0-9_./-]+|tests/[A-Za-z0-9_./-]+|plans/[A-Za-z0-9_./-]+))`"
+    r"`("
+    r"(?:\.ai/)?"
+    r"(?:"
+    r"[0-9]{2}_[A-Z0-9_]+\.md"
+    r"|rules/[A-Za-z0-9_./-]+"
+    r"|tests/[A-Za-z0-9_./-]+"
+    r"|plans/[A-Za-z0-9_./-]+"
+    r"|profiles/[A-Za-z0-9_./-]+"
+    r")"
+    r"|profiles/[A-Za-z0-9_./-]+"
+    r")`"
 )
 
 
@@ -101,8 +129,22 @@ class Checker:
                 if heading not in text:
                     self.err(f"{name}: missing heading {heading}")
 
+    def _resolve_ref(self, ref: str) -> Path:
+        if ref.startswith(".ai/"):
+            return ROOT / ref
+        if ref.startswith("profiles/"):
+            return ROOT / ref
+        if ref.startswith("rules/") or ref.startswith("tests/") or ref.startswith("plans/"):
+            return AI / ref
+        return AI / ref
+
     def check_markdown_refs(self) -> None:
-        md_files = list(AI.glob("*.md")) + list((AI / "tests").glob("*.md")) + list((AI / "plans").glob("*.md"))
+        md_files = (
+            list(AI.glob("*.md"))
+            + list((AI / "tests").glob("*.md"))
+            + list((AI / "plans").glob("*.md"))
+            + list(PROFILES.rglob("*.md"))
+        )
         md_files.append(RULES / "README.md")
         for path in md_files:
             if not path.is_file():
@@ -110,12 +152,7 @@ class Checker:
             text = path.read_text(encoding="utf-8")
             for match in REF_RE.finditer(text):
                 ref = match.group(1)
-                if ref.startswith(".ai/"):
-                    target = ROOT / ref
-                elif ref.startswith("rules/") or ref.startswith("tests/") or ref.startswith("plans/"):
-                    target = AI / ref
-                else:
-                    target = AI / ref
+                target = self._resolve_ref(ref)
                 if ref.endswith("/"):
                     dir_target = Path(str(target).rstrip("/"))
                     if not dir_target.is_dir():
@@ -176,17 +213,85 @@ class Checker:
                 if not summary or not isinstance(summary, str):
                     self.err(f"{name}: {rid}: missing summary")
 
+    def check_flutter_profile(self) -> None:
+        if not (PROFILES / "README.md").is_file():
+            self.err("PROFILES missing file: profiles/README.md")
+        for name in FLUTTER_MD:
+            path = FLUTTER / name
+            if not path.is_file():
+                self.err(f"FLUTTER missing file: {path.relative_to(ROOT)}")
+        for name in FLUTTER_STRUCTURED:
+            path = FLUTTER / name
+            if not path.is_file():
+                continue
+            text = path.read_text(encoding="utf-8")
+            for heading in REQUIRED_HEADINGS:
+                if heading not in text:
+                    self.err(f"profiles/flutter/{name}: missing heading {heading}")
+
+        yml = FLUTTER_RULES / "flutter.yml"
+        if not yml.is_file():
+            self.err(f"FLUTTER missing file: {yml.relative_to(ROOT)}")
+            return
+        if yaml is None:
+            self.err("PyYAML not installed; cannot validate profiles/flutter/rules/flutter.yml")
+            return
+        data = yaml.safe_load(yml.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            self.err("flutter.yml: root must be mapping")
+            return
+        if data.get("aidk") != "2.0":
+            self.err(f"flutter.yml: aidk must be '2.0' (got {data.get('aidk')!r})")
+        if data.get("profile") != "flutter":
+            self.err(f"flutter.yml: profile must be 'flutter' (got {data.get('profile')!r})")
+        source = data.get("source")
+        if not source:
+            self.err("flutter.yml: missing source")
+        else:
+            src = ROOT / source if str(source).startswith("profiles/") else FLUTTER / source
+            if not src.is_file():
+                self.err(f"flutter.yml: source not found: {source}")
+        for extra in data.get("sources") or []:
+            target = ROOT / extra if str(extra).startswith("profiles/") else FLUTTER / extra
+            if not target.is_file():
+                self.err(f"flutter.yml: sources entry not found: {extra}")
+        rules = data.get("rules")
+        if not isinstance(rules, list) or not rules:
+            self.err("flutter.yml: rules must be a non-empty list")
+            return
+        seen: set[str] = set()
+        for i, rule in enumerate(rules):
+            if not isinstance(rule, dict):
+                self.err(f"flutter.yml: rules[{i}] must be mapping")
+                continue
+            rid = rule.get("id")
+            sev = rule.get("severity")
+            summary = rule.get("summary")
+            if not rid:
+                self.err(f"flutter.yml: rules[{i}] missing id")
+            elif rid in seen:
+                self.err(f"flutter.yml: duplicate rule id {rid}")
+            else:
+                seen.add(rid)
+            if sev not in ("must", "should"):
+                self.err(f"flutter.yml: {rid}: severity must be must|should")
+            if not summary or not isinstance(summary, str):
+                self.err(f"flutter.yml: {rid}: missing summary")
+
     def check_readme_points_to_rules(self) -> None:
         readme = ROOT / "README.md"
         text = readme.read_text(encoding="utf-8")
         if ".ai/rules" not in text and "rules/README" not in text:
             self.warn("README.md does not mention .ai/rules")
+        if "profiles/flutter" not in text:
+            self.warn("README.md does not mention profiles/flutter")
 
     def run(self) -> int:
         self.check_core_present()
         self.check_headings()
         self.check_markdown_refs()
         self.check_yaml_rules()
+        self.check_flutter_profile()
         self.check_readme_points_to_rules()
 
         lines = [
