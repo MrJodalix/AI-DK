@@ -22,11 +22,16 @@ Plan: [2.2_BACKLOG_META.md](2.2_BACKLOG_META.md)
 
 ---
 
-## Weiter offen (eigene Freigaben)
+## Weiter offen (eigene Freigaben / Bedarf)
 
-- Weitere Profiles (Python, .NET, …)
-- Extensions (Tool-Formate)
-- Optional: CI für `check_core.py`
+- Weitere Profiles (Python, .NET, …) — **zurückgestellt**; Fokus Flutter
+- Weitere Tool-Extensions bei Bedarf
+
+## Erledigt in 2.3.0
+
+- Extensions (`extensions/cursor`, `extensions/generic`)
+- CI (`.github/workflows/check-core.yml`)
+
 
 ---
 

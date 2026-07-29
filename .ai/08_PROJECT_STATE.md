@@ -172,43 +172,40 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation). Core inkl. Bootstrap, rules, Checks, Flutter-Profile sowie Meta-Docs (Governance, ADR, Glossar, Quality, RFC).
+AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation). Core, Bootstrap, Flutter-Profile, Meta-Docs, Extensions (Cursor/Generic) und CI für `check_core.py`.
 
 ### Aktueller Fokus
 
-Framework **2.2.0**. Backlog-Meta umgesetzt.  
-Als Nächstes: weitere Profiles oder Extensions — nach Freigabe.
+Framework **2.3.0**. Profile-Fokus: **nur Flutter**. Extensions und CI geliefert.
 
 ### Wichtige Entscheidungen
 
-- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard** (Spezifikation)
-- Bootstrap (`01`) = verbindlicher Sitzungsstart für KI-Agenten
-- Meta: `docs/` + `rfcs/` (2.2); Entscheidungen in ADRs
-- Markdown kanonisch; YAML abgeleitet; Sync-Pflicht
-- Core vs. Profile: Core gewinnt bei Prinzipien; Profile bei Stack-Details
-- Flutter-Stack: Riverpod · Drift · Freezed · go_router · Material 3
-- Vor AI-DK-Releases: `python3 .ai/tests/check_core.py` PASS
-- AI-DK aktuell **2.2.0**
+- Name: **AI-DK** · Spezifikation mit Bootstrap
+- Nur Flutter-Profile aktiv gepflegt; keine weiteren Profiles ohne neuen Bedarf
+- Extensions = Tool-Adapter, nicht Normersatz (ADR 0006)
+- CI: GitHub Actions `check-core.yml`
+- Vor Releases: `python3 .ai/tests/check_core.py` PASS
+- AI-DK aktuell **2.3.0**
 
 ### Bekannte Risiken / Schulden
 
 - YAML/Checks ersetzen keine S1–S6-Verhaltensprüfung
-- Weitere Profiles / Extensions offen
+- Weitere Profiles/Tool-Adapter nur bei Bedarf
 
 ### Nächste Schritte
 
-1. Weitere Profiles (nach Freigabe)
-2. Optional: Extensions
-3. Optional: GitHub Actions für `check_core.py`
+1. Flutter-Profile in Zielprojekten nutzen + Cursor/Generic-Extension verdrahten
+2. Weitere Profiles nur bei explizitem Bedarf
+3. Optional: weitere Tool-Extensions
 
 ### Verweise
 
 - `.ai/01_BOOTSTRAP.md`
-- `docs/GOVERNANCE.md` · `docs/GLOSSARY.md` · `docs/QUALITY.md` · `docs/adr/`
-- `rfcs/`
 - `profiles/flutter/`
-- `.ai/tests/check_core.py`
-- `.ai/plans/2.2_BACKLOG_META.md`
+- `extensions/`
+- `.github/workflows/check-core.yml`
+- `docs/` · `rfcs/`
+- `.ai/plans/2.3_EXTENSIONS_CI.md`
 - `CHANGELOG.md` · `TODO.md` · `README.md`
 
 ---

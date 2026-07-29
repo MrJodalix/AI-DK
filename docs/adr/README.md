@@ -11,6 +11,7 @@ ADRs dokumentieren **warum** eine Architektur- oder Normentscheidung in AI-DK gi
 | [0003](0003-document-structure.md) | Einheitliche Dokumentstruktur | Accepted |
 | [0004](0004-markdown-canonical.md) | Markdown kanonisch, YAML abgeleitet | Accepted |
 | [0005](0005-specification-bootstrap.md) | Spezifikation + Bootstrap | Accepted |
+| [0006](0006-extensions.md) | Extensions-Schicht + CI | Accepted |
 
 ## Format
 

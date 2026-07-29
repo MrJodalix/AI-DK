@@ -11,7 +11,7 @@ Begriffsdefinitionen für die AI-DK-Spezifikation. Bei Konflikt mit einem Core-D
 | **Core** | Universelle Regeln unter `.ai/00`–`11`; technologie- und modellunabhängig. |
 | **Bootstrap** | Agenten-Einstieg (`01_BOOTSTRAP.md`); verbindliche Startsequenz je Sitzung/Aufgabe. |
 | **Profile** | Technologieabhängige Vertiefung unter `profiles/<name>/`; konkretisiert den Core, widerspricht ihm nicht. |
-| **Extension** | Geplante Anbindung an konkrete KI-Werkzeuge/Formate (noch nicht ausgearbeitet). |
+| **Extension** | Adapter/Vorlage, die Core (+ Profile) auf ein KI-Werkzeugformat mappt (`extensions/`). |
 | **Rule / Verbindliche Regel** | Muss-Anforderung (`must`); Abweichung nur mit begründeter Ausnahme. |
 | **Empfehlung / Recommendation** | Soll-Hinweis (`should`); Preferenz ohne harten Block. |
 | **Guideline** | Orientierungshilfe ohne denselben Verbindlichkeitsgrad wie eine Rule. |

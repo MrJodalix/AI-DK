@@ -9,16 +9,16 @@ Modellunabhängig · Core technologieunabhängig · versioniert · langfristig w
 
 ## Spezifikation (verbindlich für KI)
 
-Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.2.0**. AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation. Beginne jede neue Aufgabe mit dem Bootstrap-Prozess gemäß [`01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md) und befolge anschließend die für die Aufgabe relevanten Core-Dokumente (und ggf. das aktive Profile).
+Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.3.0**. AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation. Beginne jede neue Aufgabe mit dem Bootstrap-Prozess gemäß [`01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md) und befolge anschließend die für die Aufgabe relevanten Core-Dokumente (und ggf. das aktive Profile).
 
 ## Aktueller Stand
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **2.2.0** |
-| Status | Spezifikation · Bootstrap · Profiles · Governance/ADR/Glossar/RFC |
+| Framework-Version | **2.3.0** |
+| Status | Spezifikation · Flutter-Profile · Extensions · CI |
 | Repository | https://github.com/MrJodalix/AI-DK |
-| Nächste Version | weitere Profiles / Extensions — nach Freigabe |
+| Profile-Fokus | **nur Flutter** (weitere Profiles zurückgestellt) |
 
 Changelog: [CHANGELOG.md](CHANGELOG.md) · Stand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md)
 
@@ -30,26 +30,26 @@ AI-DK  (AI Engineering Standard / Spezifikation)
 ├── Core          Markdown-Norm `.ai/00`–`11`           ← kanonisch
 ├── rules/        YAML-Ableitung                         ← 1.1
 ├── tests/        Szenarien + check_core.py              ← 1.2
-├── Profiles      technologieabhängige Vertiefungen      ← 2.0 (Flutter)
+├── Profiles      derzeit: Flutter                       ← 2.0
 ├── docs/         Governance · ADR · Glossar · Quality   ← 2.2
-├── rfcs/         Proposals vor größeren Änderungen      ← 2.2
-└── Extensions    Anbindung an konkrete KI-Werkzeuge     ← geplant
+├── rfcs/         Proposals                              ← 2.2
+└── Extensions    Cursor · Generic                       ← 2.3
 ```
 
-**Semantik der Core-Reihenfolge:** Warum (`00`) → Wie starte ich (`01`) → Wie arbeite ich (`02`) → Code (`03`) → Tests (`04`) → KI-Verhalten (`05`) → …
+**Semantik der Core-Reihenfolge:** Warum (`00`) → Wie starte ich (`01`) → Wie arbeite ich (`02`) → …
 
-**Konfliktregel:** Markdown gewinnt. YAML ist abgeleitet.  
-Core vs. Profile: [profiles/README.md](profiles/README.md). Governance: [docs/GOVERNANCE.md](docs/GOVERNANCE.md).
+**Konfliktregel:** Markdown gewinnt. YAML unter `.ai/rules/` ist abgeleitet.  
+Governance: [docs/GOVERNANCE.md](docs/GOVERNANCE.md) · Extensions: [extensions/README.md](extensions/README.md)
 
 ## Dokumentenindex (Core)
 
 | Nr. | Dokument | Zweck |
 |-----|----------|--------|
-| `00` | [PROJECT_CHARTER](.ai/00_PROJECT_CHARTER.md) | Grundprinzipien und Entscheidungsgrundlagen |
-| `01` | [BOOTSTRAP](.ai/01_BOOTSTRAP.md) | Agenten-Einstieg (Sitzungs-/Aufgabenstart) |
-| `02` | [DEVELOPMENT_WORKFLOW](.ai/02_DEVELOPMENT_WORKFLOW.md) | Verbindlicher Entwicklungsablauf |
+| `00` | [PROJECT_CHARTER](.ai/00_PROJECT_CHARTER.md) | Grundprinzipien |
+| `01` | [BOOTSTRAP](.ai/01_BOOTSTRAP.md) | Agenten-Einstieg |
+| `02` | [DEVELOPMENT_WORKFLOW](.ai/02_DEVELOPMENT_WORKFLOW.md) | Ablauf |
 | `03` | [CODING_STANDARDS](.ai/03_CODING_STANDARDS.md) | Codequalität |
-| `04` | [TESTING](.ai/04_TESTING.md) | Teststrategie |
+| `04` | [TESTING](.ai/04_TESTING.md) | Tests |
 | `05` | [AI_BEHAVIOR](.ai/05_AI_BEHAVIOR.md) | KI-Verhalten |
 | `06` | [GIT_WORKFLOW](.ai/06_GIT_WORKFLOW.md) | Git |
 | `07` | [DOCUMENTATION](.ai/07_DOCUMENTATION.md) | Projektdokumentation |
@@ -58,45 +58,27 @@ Core vs. Profile: [profiles/README.md](profiles/README.md). Governance: [docs/GO
 | `10` | [SECURITY](.ai/10_SECURITY.md) | Security |
 | `11` | [VERSION](.ai/11_VERSION.md) | Versionierung |
 
-### Meta-Dokumentation (2.2)
+### Flutter-Profile
 
 | Pfad | Zweck |
 |------|--------|
-| [GOVERNANCE](docs/GOVERNANCE.md) | Wer ändert was; Breaking; Freigabe |
-| [GLOSSARY](docs/GLOSSARY.md) | Begriffe |
-| [QUALITY](docs/QUALITY.md) | Meta-Qualität des Regelwerks |
-| [adr/](docs/adr/) | Architecture Decision Records |
+| [profiles/flutter/](profiles/flutter/) | Riverpod · Drift · Freezed · go_router · Material 3 |
+
+### Extensions (2.3)
+
+| Pfad | Zweck |
+|------|--------|
+| [extensions/cursor/](extensions/cursor/) | `AGENTS.md` / Cursor-Rule-Vorlagen |
+| [extensions/generic/](extensions/generic/) | Chat-Session-Prompt |
+
+### Meta & Qualität
+
+| Pfad | Zweck |
+|------|--------|
+| [docs/](docs/) | Governance · Glossar · Quality · ADRs |
 | [rfcs/](rfcs/) | Proposals |
-
-### Maschinenlesbare Regeln (1.1)
-
-| Datei | Quelle |
-|-------|--------|
-| [rules/README.md](.ai/rules/README.md) | Schema & Sync |
-| [coding.yml](.ai/rules/coding.yml) | `03` |
-| [testing.yml](.ai/rules/testing.yml) | `04` |
-| [git.yml](.ai/rules/git.yml) | `06` |
-| [architecture.yml](.ai/rules/architecture.yml) | `00`/`01`/`02`/`05`/`08` |
-| [documentation.yml](.ai/rules/documentation.yml) | `07` |
-| [security.yml](.ai/rules/security.yml) | `10` |
-| [release.yml](.ai/rules/release.yml) | `09` |
-| [version.yml](.ai/rules/version.yml) | `11` |
-
-### Flutter-Profile (2.0)
-
-| Pfad | Zweck |
-|------|--------|
-| [profiles/README.md](profiles/README.md) | Profile-System & Konfliktregel |
-| [profiles/flutter/](profiles/flutter/) | Stack Riverpod · Drift · Freezed · go_router · Material 3 |
-
-### Framework-Qualität
-
-| Pfad | Zweck |
-|------|--------|
-| [tests/SCENARIOS](.ai/tests/SCENARIOS.md) | S1–S6 Verhaltensszenarien |
-| [tests/RESULTS](.ai/tests/RESULTS.md) | Desk-Review |
-| [tests/check_core.py](.ai/tests/check_core.py) | Core · Profile · Meta-Docs |
-| [tests/reports/](.ai/tests/reports/) | Laufberichte |
+| [check_core.py](.ai/tests/check_core.py) | Automatische Prüfung |
+| [CI](.github/workflows/check-core.yml) | GitHub Actions |
 
 ```bash
 python3 .ai/tests/check_core.py
@@ -106,16 +88,17 @@ python3 .ai/tests/check_core.py
 
 | Version | Fokus |
 |---------|--------|
-| **1.0–1.2** | Core · YAML · Checks |
-| **2.0.0** | Flutter-Profile |
-| **2.1.0** | Bootstrap + Spezifikation |
-| **2.2.0** | Governance · ADR · Glossar · Quality · RFC — **aktuell** |
-| **2.x+** | Weitere Profiles · Extensions — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
+| **1.x** | Core · YAML · Checks |
+| **2.0** | Flutter-Profile |
+| **2.1** | Bootstrap + Spezifikation |
+| **2.2** | Governance · ADR · Glossar · RFC |
+| **2.3.0** | Extensions + CI — **aktuell** |
+| später | Weitere Profiles nur nach Bedarf |
 
 ## Verwendung
 
-1. Spezifikationsformel (oben) an die KI geben bzw. README bereitstellen.
-2. Agenten starten mit [`.ai/01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md).
-3. Core aus `.ai/` übernehmen; optional rules, Flutter-Profile, `docs/`.
-4. Größere Framework-Änderungen: [rfcs/](rfcs/) und [docs/GOVERNANCE.md](docs/GOVERNANCE.md).
+1. Spezifikationsformel an die KI / README bereitstellen.
+2. Bootstrap: [`.ai/01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md).
+3. Flutter: `profiles/flutter/` aktivieren.
+4. Tool verdrahten: [extensions/cursor/](extensions/cursor/) oder [extensions/generic/](extensions/generic/).
 5. Vor Releases: `python3 .ai/tests/check_core.py` (PASS).

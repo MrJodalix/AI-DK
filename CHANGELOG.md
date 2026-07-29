@@ -4,6 +4,22 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.0 – 2026-07-29
+
+Extensions und CI. Profile-Fokus bleibt **Flutter only**.
+
+### Hinzugefügt
+
+- `extensions/` — Cursor- und Generic-Adapter (Vorlagen)
+- `.github/workflows/check-core.yml` — CI für `check_core.py`
+- `requirements.txt` — PyYAML
+- ADR [0006](docs/adr/0006-extensions.md)
+- Plan [`.ai/plans/2.3_EXTENSIONS_CI.md`](.ai/plans/2.3_EXTENSIONS_CI.md)
+
+### Nicht enthalten
+
+- Weitere Tech-Profiles (Python, .NET, …) — bewusst zurückgestellt
+
 ## 2.2.0 – 2026-07-29
 
 Backlog-Meta: Governance, ADR, Glossar, Quality, RFC.

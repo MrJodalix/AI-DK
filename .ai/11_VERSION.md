@@ -126,8 +126,9 @@ Die KI darf nicht:
 | `1.x+` | Governance, ADRs, Glossar, QUALITY (Backlog) |
 | `2.0.x` | Erstes Profile: Flutter |
 | `2.1.x` | Bootstrap + Spezifikations-Framing |
-| `2.2.x` | Governance · ADR · Glossar · Quality · RFC (**aktuell**) |
-| `2.x+` | Weitere Profiles, Extensions |
+| `2.2.x` | Governance · ADR · Glossar · Quality · RFC |
+| `2.3.x` | Extensions + CI (**aktuell**); Profile-Fokus Flutter |
+| später | Weitere Profiles nur bei Bedarf |
 
 ---
 

@@ -42,6 +42,8 @@ Die KI arbeitet nach diesen Regeln, bis sie ausdrücklich geändert werden.
 | Meta-Qualität | `docs/QUALITY.md` |
 | ADRs | `docs/adr/` |
 | RFCs | `rfcs/` |
+| Extensions (2.3) | `extensions/` (Cursor, Generic) |
+| CI (Framework) | `.github/workflows/check-core.yml` |
 
 Spezialdokumente verfeinern diese Norm, widersprechen ihr aber nicht.
 

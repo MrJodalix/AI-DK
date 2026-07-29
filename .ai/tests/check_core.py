@@ -109,6 +109,7 @@ REF_RE = re.compile(
     r"|profiles/[A-Za-z0-9_./-]+"
     r"|docs/[A-Za-z0-9_./-]+"
     r"|rfcs/[A-Za-z0-9_./-]+"
+    r"|extensions/[A-Za-z0-9_./-]+"
     r")`"
 )
 
@@ -118,6 +119,11 @@ META_DOCS = [
     "docs/QUALITY.md",
     "docs/adr/README.md",
     "rfcs/README.md",
+    "extensions/README.md",
+    "extensions/cursor/README.md",
+    "extensions/generic/README.md",
+    ".github/workflows/check-core.yml",
+    "requirements.txt",
 ]
 
 
@@ -156,7 +162,7 @@ class Checker:
     def _resolve_ref(self, ref: str) -> Path:
         if ref.startswith(".ai/"):
             return ROOT / ref
-        if ref.startswith("profiles/") or ref.startswith("docs/") or ref.startswith("rfcs/"):
+        if ref.startswith("profiles/") or ref.startswith("docs/") or ref.startswith("rfcs/") or ref.startswith("extensions/"):
             return ROOT / ref
         if ref.startswith("rules/") or ref.startswith("tests/") or ref.startswith("plans/"):
             return AI / ref
@@ -170,6 +176,7 @@ class Checker:
             + list(PROFILES.rglob("*.md"))
             + list((ROOT / "docs").rglob("*.md"))
             + list((ROOT / "rfcs").glob("*.md"))
+            + list((ROOT / "extensions").rglob("*.md"))
         )
         md_files.append(RULES / "README.md")
         md_files.append(ROOT / "README.md")
@@ -211,6 +218,7 @@ class Checker:
             "0003-document-structure.md",
             "0004-markdown-canonical.md",
             "0005-specification-bootstrap.md",
+            "0006-extensions.md",
         ):
             path = ROOT / "docs" / "adr" / name
             if not path.is_file():

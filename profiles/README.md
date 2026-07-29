@@ -1,6 +1,6 @@
 # AI-DK Profiles
 
-Version: 2.0.0
+Version: 2.3.0
 
 ## Zweck
 
@@ -9,7 +9,7 @@ Profiles vertiefen den **technologieunabhängigen Core** um stackspezifische Reg
 ```text
 Core (.ai/)     → gilt immer
 Profile         → gilt nur, wenn das Projekt das Profile aktiv übernimmt
-Extensions      → Tool-Anbindung (später)
+Extensions      → Tool-Anbindung (`extensions/`)
 ```
 
 ## Konfliktregel (verbindlich)
@@ -26,16 +26,19 @@ Extensions      → Tool-Anbindung (später)
 |---------|------|------------|
 | Flutter | [flutter/](flutter/) | **2.0.0** |
 
+> Produktfokus: **nur Flutter**. Weitere Profiles nur nach explizitem Bedarf.
+
 ## Nutzung in Zielprojekten
 
 1. Core unter `.ai/` übernehmen.
-2. Gewähltes Profile (z. B. `profiles/flutter/`) mitführen oder verlinken.
-3. Im Projektstand vermerken: aktives Profile + Version.
-4. Bei Konflikten: Core-Prinzipien + dokumentierte Projektentscheidung.
+2. Flutter-Profile mitführen oder verlinken.
+3. Optional Tool-Adapter aus `extensions/` verdrahten.
+4. Im Projektstand vermerken: aktives Profile + Version.
+5. Bei Konflikten: Core-Prinzipien + dokumentierte Projektentscheidung.
 
 ## Neues Profile
 
-Nur nach Freigabe. Mindestinhalt:
+Nur nach Freigabe und Bedarf. Mindestinhalt:
 
 - `README.md` (Geltung, Konfliktregel, Index)
 - `STACK.md` (kanonische Technologieentscheidungen)

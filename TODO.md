@@ -4,10 +4,9 @@ Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 
 ## Erledigt
 
-- [x] 1.x · 2.0 Flutter · 2.1 Bootstrap · **2.2.0** Governance/ADR/Glossar/Quality/RFC
+- [x] Core 1.x · Flutter 2.0 · Bootstrap 2.1 · Meta 2.2 · **2.3.0** Extensions + CI
 
-## Geplant
+## Zurückgestellt / bei Bedarf
 
-- [ ] Weitere Profiles (Python, .NET, …) — nach Freigabe
-- [ ] Extensions (Tool-Formate) — nach Freigabe
-- [ ] Optional: CI-Workflow für `check_core.py` (GitHub Actions)
+- [ ] Weitere Profiles (Python, .NET, …) — nur bei explizitem Bedarf (aktuell: **Flutter only**)
+- [ ] Weitere Tool-Extensions (Copilot, …)
