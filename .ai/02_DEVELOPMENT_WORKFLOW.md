@@ -14,9 +14,12 @@ Jede Aufgabe wird nach diesem Ablauf bearbeitet, um kontrollierte Entwicklung, n
 
 Gilt für alle Entwicklungsaufgaben mit KI-Unterstützung im Zielprojekt.
 
+**Sitzungsstart:** `01_BOOTSTRAP.md` — vor Analyse und Code.
+
 Spezialregeln (kanonisch; Matrix: `00_PROJECT_CHARTER.md`):
 
 - Prinzipien / Entscheidungen → `00_PROJECT_CHARTER.md`
+- Agenten-Einstieg → `01_BOOTSTRAP.md`
 - Code → `03_CODING_STANDARDS.md`
 - Tests → `04_TESTING.md`
 - KI-Verhalten → `05_AI_BEHAVIOR.md`
@@ -35,7 +38,7 @@ Dieses Dokument ist technologie- und modellunabhängig.
 
 ### Keine Änderung beginnt mit Code
 
-Der Ablauf ist:
+Zuerst Bootstrap (`01_BOOTSTRAP.md`), dann der Ablauf:
 
 1. Verstehen
 2. Analysieren

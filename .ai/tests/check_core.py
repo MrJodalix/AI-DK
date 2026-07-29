@@ -31,6 +31,7 @@ REPORT_FILE = REPORT_DIR / "latest.txt"
 
 CORE_FILES = [
     "00_PROJECT_CHARTER.md",
+    "01_BOOTSTRAP.md",
     "02_DEVELOPMENT_WORKFLOW.md",
     "03_CODING_STANDARDS.md",
     "04_TESTING.md",
@@ -41,6 +42,18 @@ CORE_FILES = [
     "09_RELEASE_PROCESS.md",
     "10_SECURITY.md",
     "11_VERSION.md",
+]
+
+# Bootstrap is agent entry — lean structure, not full norm template
+BOOTSTRAP_HEADINGS = [
+    "## Ziel",
+    "## Geltungsbereich",
+    "## Spezifikation",
+    "## Verbindliche Startsequenz",
+    "## Ausnahmen",
+    "## KI-Verhalten",
+    "## Checkliste",
+    "## Version",
 ]
 
 REQUIRED_HEADINGS = [
@@ -121,7 +134,8 @@ class Checker:
             if not path.is_file():
                 continue
             text = path.read_text(encoding="utf-8")
-            for heading in REQUIRED_HEADINGS:
+            headings = BOOTSTRAP_HEADINGS if name == "01_BOOTSTRAP.md" else REQUIRED_HEADINGS
+            for heading in headings:
                 if heading == "## Checkliste" and "## Checkliste" not in text:
                     if "## Checklisten" in text:
                         self.warn(f"{name}: uses ## Checklisten (prefer ## Checkliste)")

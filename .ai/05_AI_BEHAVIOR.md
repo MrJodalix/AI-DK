@@ -6,7 +6,7 @@ Version: 1.0.1
 
 Dieses Dokument ist die **Verhaltensnorm** für die KI in AI-DK-Projekten.
 
-Es regelt, *wie* die KI handelt. *Was* prinzipiell gilt, steht in `00_PROJECT_CHARTER.md`. *In welcher Reihenfolge* gearbeitet wird, steht in `02_DEVELOPMENT_WORKFLOW.md`.
+Es regelt, *wie* die KI handelt. *Was* prinzipiell gilt, steht in `00_PROJECT_CHARTER.md`. *Wie eine Sitzung startet*, steht in `01_BOOTSTRAP.md`. *In welcher Reihenfolge* gearbeitet wird, steht in `02_DEVELOPMENT_WORKFLOW.md`.
 
 ---
 
@@ -40,12 +40,13 @@ Kein Ändern ohne relevanten Kontext. Bei Unsicherheit: nachfragen (Charter: Umg
 
 ### Projektkontext lesen
 
-Vor jeder Aufgabe:
+Vor jeder Aufgabe gilt der Bootstrap-Prozess in `01_BOOTSTRAP.md` (verbindliche Startsequenz). Mindestens:
 
 - `.ai/00_PROJECT_CHARTER.md`
+- `.ai/05_AI_BEHAVIOR.md` (dieses Dokument)
 - `.ai/08_PROJECT_STATE.md`
-- `PROJECT.md` / `TODO.md` (falls vorhanden)
-- relevante Architektur-Dokumentation
+- `TODO.md` (falls vorhanden)
+- relevante Fach- und Architektur-Dokumentation / aktives Profile
 
 ### Prozess einhalten
 

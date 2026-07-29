@@ -124,7 +124,8 @@ Die KI darf nicht:
 | `1.1.x` | Maschinenlesbare Regeln (YAML), Markdown kanonisch |
 | `1.2.x` | Framework-Tests automatisieren |
 | `1.x+` | Governance, ADRs, Glossar, QUALITY (Backlog) |
-| `2.0.x` | Erstes Profile: Flutter (**aktuell**) |
+| `2.0.x` | Erstes Profile: Flutter |
+| `2.1.x` | Bootstrap + Spezifikations-Framing (**aktuell**) |
 | `2.x+` | Weitere Profiles, Extensions, RFCs |
 
 ---

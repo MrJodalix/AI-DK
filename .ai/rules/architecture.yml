@@ -1,6 +1,7 @@
 aidk: "1.1"
 source: "00_PROJECT_CHARTER.md"
 sources:
+  - "01_BOOTSTRAP.md"
   - "02_DEVELOPMENT_WORKFLOW.md"
   - "05_AI_BEHAVIOR.md"
   - "08_PROJECT_STATE.md"
@@ -21,10 +22,14 @@ rules:
     severity: must
     summary: "Kleine Änderungen bevorzugen; große Arbeit zerlegen."
     refs: ["00_PROJECT_CHARTER.md", "02_DEVELOPMENT_WORKFLOW.md"]
+  - id: BS-001
+    severity: must
+    summary: "Jede neue Sitzung/Aufgabe startet mit 01_BOOTSTRAP.md (Charter → Behavior → State → TODO → Fachdocs → erst dann Arbeit)."
+    refs: ["01_BOOTSTRAP.md"]
   - id: WF-001
     severity: must
-    summary: "Keine Änderung beginnt mit Code: Verstehen → Analysieren → Planen → Umsetzen → Prüfen → Dokumentieren → Abschließen."
-    refs: ["02_DEVELOPMENT_WORKFLOW.md"]
+    summary: "Keine Änderung beginnt mit Code: Bootstrap, dann Verstehen → Analysieren → Planen → Umsetzen → Prüfen → Dokumentieren → Abschließen."
+    refs: ["01_BOOTSTRAP.md", "02_DEVELOPMENT_WORKFLOW.md"]
   - id: WF-002
     severity: must
     summary: "Projektübernahme: Aufnahme ohne Änderungen; Sanierung nur nach Freigabe."

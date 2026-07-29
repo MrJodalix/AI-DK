@@ -39,6 +39,7 @@ rules:
 | Präfix | Datei | Quelle |
 |--------|-------|--------|
 | `CH` | architecture.yml (Charter-Anteil) | `00_PROJECT_CHARTER.md` |
+| `BS` | architecture.yml (Bootstrap) | `01_BOOTSTRAP.md` |
 | `WF` | architecture.yml (Workflow-Anteil) | `02_DEVELOPMENT_WORKFLOW.md` |
 | `BH` | architecture.yml (Behavior-Anteil) | `05_AI_BEHAVIOR.md` |
 | `CS` | coding.yml | `03_CODING_STANDARDS.md` |

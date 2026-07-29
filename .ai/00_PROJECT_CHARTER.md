@@ -21,6 +21,7 @@ Die KI arbeitet nach diesen Regeln, bis sie ausdrücklich geändert werden.
 | Thema | Kanonisches Dokument |
 |-------|----------------------|
 | Prinzipien & Entscheidungskriterien | **dieses Dokument** |
+| Agenten-Einstieg / Sitzungsstart | `01_BOOTSTRAP.md` |
 | Ablauf / Phasen | `02_DEVELOPMENT_WORKFLOW.md` |
 | Code-Struktur & Stil | `03_CODING_STANDARDS.md` |
 | Tests | `04_TESTING.md` |

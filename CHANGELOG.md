@@ -4,6 +4,21 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.1.0 – 2026-07-29
+
+Bootstrap und Spezifikations-Framing.
+
+### Hinzugefügt
+
+- `.ai/01_BOOTSTRAP.md` — verbindlicher Agenten-Einstieg (Sitzungs-/Aufgabenstart)
+- Plan [`.ai/plans/2.1_BOOTSTRAP.md`](.ai/plans/2.1_BOOTSTRAP.md)
+
+### Geändert
+
+- README: AI-DK als versionierte **Spezifikation**; kanonische KI-Anweisung
+- Charter-Matrix, Workflow, AI Behavior: Verweise auf Bootstrap
+- `check_core.py`: prüft `01_BOOTSTRAP.md` (eigene Heading-Liste)
+
 ## 2.0.0 – 2026-07-29
 
 Erstes Profile: **Flutter**.

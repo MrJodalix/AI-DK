@@ -172,26 +172,26 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK ist der Name des **AI Engineering Standards**. Core, `.ai/rules/` (1.1), `check_core.py` (1.2) und erstes Profile **Flutter** (2.0).
+AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation). Core inkl. Bootstrap (`01`), rules, Checks und Flutter-Profile.
 
 ### Aktueller Fokus
 
-Framework **2.0.0**. Flutter-Profile unter `profiles/flutter/` aktiv.  
+Framework **2.1.0**. Agenten-Einstieg über `01_BOOTSTRAP.md`.  
 Als Nächstes: weitere Profiles oder Backlog — nach Freigabe.
 
 ### Wichtige Entscheidungen
 
-- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard**
-- Roadmap: 1.1 YAML → 1.2 Checks → **2.0 Flutter** (erledigt)
+- Name: **AI-DK** · Produktkategorie: **AI Engineering Standard** (Spezifikation)
+- Bootstrap (`01`) = verbindlicher Sitzungsstart für KI-Agenten
+- Roadmap: 1.1 → 1.2 → 2.0 Flutter → **2.1 Bootstrap**
 - Markdown kanonisch; YAML abgeleitet; Sync-Pflicht
 - Core vs. Profile: Core gewinnt bei Prinzipien; Profile bei Stack-Details
 - Flutter-Stack: Riverpod · Drift · Freezed · go_router · Material 3
 - Vor AI-DK-Releases: `python3 .ai/tests/check_core.py` PASS
-- AI-DK aktuell **2.0.0**
+- AI-DK aktuell **2.1.0**
 
 ### Bekannte Risiken / Schulden
 
-- `01` reserviert
 - YAML ist Stichprobe; Auto-Check deckt Struktur/Links/YAML-Schema, nicht S1–S6-Verhalten
 - Weitere Profiles / Governance-Backlog offen
 
@@ -203,11 +203,12 @@ Als Nächstes: weitere Profiles oder Backlog — nach Freigabe.
 
 ### Verweise
 
+- `.ai/01_BOOTSTRAP.md`
 - `profiles/flutter/`
 - `.ai/tests/check_core.py`
 - `.ai/tests/reports/latest.txt`
 - `.ai/rules/README.md`
-- `.ai/plans/2.0_FLUTTER_PROFILE.md`
+- `.ai/plans/2.1_BOOTSTRAP.md`
 - `.ai/plans/BACKLOG_AFTER_1.0.md`
 - `CHANGELOG.md` · `TODO.md` · `README.md`
 
