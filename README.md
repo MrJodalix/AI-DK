@@ -8,18 +8,19 @@ Regelwerk aus Prinzipien, Workflows und Dokumentation. Modellunabhängig · Core
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **1.0.1** |
-| Status | Stabiler Core + S6-Nachzug |
-| Nächste geplante Version | **1.1** (Plan: [`.ai/plans/1.1_MACHINE_READABLE_RULES.md`](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
+| Framework-Version | **1.0.2** |
+| Status | Stabiler Core (Qualitätsrelease) |
+| Repository | https://github.com/MrJodalix/AI-DK |
+| Nächste geplante Version | **1.1** ([Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
 
-Changelog: [CHANGELOG.md](CHANGELOG.md) · Projektstand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md)
+Changelog: [CHANGELOG.md](CHANGELOG.md) · Projektstand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md) · Späteres Backlog: [`.ai/plans/BACKLOG_AFTER_1.0.md`](.ai/plans/BACKLOG_AFTER_1.0.md)
 
 ## Produktarchitektur
 
 ```text
 AI-DK
 │
-├── Core          universelle Regeln für jedes Projekt   ← 1.0.0
+├── Core          universelle Regeln für jedes Projekt   ← 1.0.x
 ├── Profiles      technologieabhängige Vertiefungen      ← geplant ab 2.0
 └── Extensions    Anbindung an konkrete KI-Werkzeuge     ← geplant
 ```
@@ -64,9 +65,9 @@ Dünne Adapter auf Werkzeuge wie Cursor, Claude Code, Gemini CLI, GitHub Copilot
 ### Nummerierung
 
 - Präfix `NN_` = Reihenfolge und Themengruppe.
-- **`01` ist reserviert** (z. B. Overview/Quickstart).
-- Core 1.0.0: `00`, `02`–`11`.
-- Framework-Tests: `.ai/tests/` (kein Core-Nummernkreis).
+- **`01` ist reserviert** (z. B. Overview/Quickstart) — absichtlich leer in 1.0.x.
+- Core 1.0.x: `00`, `02`–`11` (Lücke `01` ist kein Fehler).
+- Framework-Tests: `.ai/tests/` · Pläne: `.ai/plans/` (kein Core-Nummernkreis).
 
 ## Verwendung
 
@@ -83,13 +84,25 @@ Ziel · Geltungsbereich · Grundprinzipien · Verbindliche Regeln · Empfehlunge
 
 `08_PROJECT_STATE.md` ergänzt um **Aktueller Projektstand**.
 
+### Begriffe (kurz)
+
+| Begriff | Bedeutung in AI-DK |
+|---------|-------------------|
+| **Verbindliche Regeln** | Muss-Verhalten; Verstöße sind Fail |
+| **Empfehlungen** | Soll-Verhalten; Abweichung möglich, idealerweise begründet |
+| **Core** | Universelle Norm unter `.ai/00`–`11` |
+| **Profile** | Technologievertiefung (ab 2.0) |
+| **Extension** | Tool-Adapter (geplant) |
+
+Ausführliches Glossar: Backlog (noch nicht angelegt).
+
 ### Kernzuständigkeiten (keine Duplikate)
 
 | Dokument | Kanonisch für |
 |----------|----------------|
 | `00_PROJECT_CHARTER` | Prinzipien, Entscheidungskriterien, Unsicherheit |
 | `02_DEVELOPMENT_WORKFLOW` | Phasen, Zerlegung, Abschlussbericht |
-| `05_AI_BEHAVIOR` | Priorität, Konflikte, Kontextpflicht, Handlungsgrenzen |
+| `05_AI_BEHAVIOR` | Priorität, Konflikte, Kontextpflicht, Handlungsgrenzen, Code Review |
 | Spezialdocs `03`–`04`, `06`–`11` | ihr jeweiliges Fachthema |
 | `.ai/tests/SCENARIOS` | Qualitätsprüfung des Frameworks |
 
@@ -97,11 +110,9 @@ Ziel · Geltungsbereich · Grundprinzipien · Verbindliche Regeln · Empfehlunge
 
 | Version | Fokus |
 |---------|--------|
-| **0.1.0** | Sprint 1 – Core Foundation |
-| **0.2.0** | Sprint 2 – Projektorganisation |
-| **0.3.0** | Sprint 3 – Betrieb |
-| **1.0.0** | Sprint 4 – Konsolidierung |
-| **1.0.1** | S6-Nachzug (Code-Review-Regeln) |
+| **0.1.0 – 1.0.1** | Core aufbauen, S6-Nachzug |
+| **1.0.2** | Qualitätsrelease (Konsistenz, Links, Begriffe) — aktuell |
 | **1.1** | Maschinenlesbare Regeln — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md) |
-| **2.0** | Profiles |
-| **2.x+** | Extensions, CI/CD-Vertiefung, ADRs, weitere Profile |
+| **1.x+** | Governance, ADRs, Glossar, QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md) |
+| **2.0** | Profiles · RFCs bei größeren Änderungen |
+| **2.x+** | Extensions, weitere Profile |

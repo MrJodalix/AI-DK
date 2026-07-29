@@ -4,6 +4,25 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 1.0.2 – 2026-07-29
+
+Qualitätsrelease — **keine neuen Features**.
+
+### Geändert
+
+- Checklisten-Überschrift in Coding Standards vereinheitlicht (`Checkliste`)
+- README: Begriffskurztafel, Nummerierungshinweis zu `01`, Repo-URL **AI-DK**
+- Verweise und Roadmap geschärft
+
+### Hinzugefügt
+
+- `.ai/plans/BACKLOG_AFTER_1.0.md` — spätere Ideen (Governance, ADR, Glossar, QUALITY, RFC); nicht implementiert
+
+### Bewusst nicht in 1.0.2
+
+- Keine neuen `docs/GOVERNANCE.md`, ADRs, Glossar, QUALITY.md, RFCs
+- Keine YAML-Regeln (weiterhin 1.1-Plan)
+
 ## 1.0.1 – 2026-07-29
 
 ### Geändert
@@ -21,34 +40,26 @@ Erstes stabiles Core-Release (Sprint 4 abgeschlossen).
 
 ### Hinzugefügt
 
-- Vollständiger Core `00`, `02`–`11` (Charter bis Version)
-- Produktarchitektur: Core · Profiles · Extensions (Profiles/Extensions geplant)
-- Einheitliche Dokumentstruktur für alle Core-Dokumente
-- Zuständigkeitsmatrix (kanonische Themen ohne Duplikate)
-- Framework-Testszenarien S1–S6 unter `.ai/tests/SCENARIOS.md`
-- `README.md` als Einstieg und Index
-
-### Geändert
-
-- Pre-Release-Stände `0.1.0`–`0.3.0` und Sprint-4-Drafts zu **1.0.0** konsolidiert
-- Redundanzen zwischen Charter, Workflow und AI Behavior kanonisiert
-- Technologieabhängige Formulierungen aus dem Core entfernt
+- Vollständiger Core `00`, `02`–`11`
+- Produktarchitektur Core · Profiles · Extensions
+- Einheitliche Dokumentstruktur, Zuständigkeitsmatrix
+- Framework-Testszenarien S1–S6
+- `README.md`
 
 ### Bekannt / bewusst offen
 
-- `01` weiterhin reserviert (Overview/Quickstart)
-- Profiles (2.0), YAML-Regeln (1.1), Extensions noch nicht umgesetzt
-- S1–S6 Desk-Review; S6 mit 1.0.1 geschlossen
-- Release lokal als Git-Tag `v1.0.0` (kein Remote-Push)
+- `01` reserviert
+- Profiles, YAML (1.1), Extensions später
+- Repository: https://github.com/MrJodalix/AI-DK
 
 ## 0.3.0
 
-Sprint 3 – Betrieb: Release Process, Security, Version.
+Sprint 3 – Betrieb.
 
 ## 0.2.0
 
-Sprint 2 – Projektorganisation: Git Workflow, Documentation, Project State.
+Sprint 2 – Projektorganisation.
 
 ## 0.1.0
 
-Sprint 1 – Core Foundation: Charter, Workflow, Coding Standards, Testing, AI Behavior.
+Sprint 1 – Core Foundation.

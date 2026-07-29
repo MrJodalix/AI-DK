@@ -1,6 +1,6 @@
 # AI-DK Coding Standards
 
-Version: 1.0.0
+Version: 1.0.2
 
 ## Ziel
 
@@ -248,7 +248,7 @@ Die KI bewertet vorgeschlagenen Code anhand dieses Dokuments und der Entscheidun
 
 ---
 
-## Checklisten
+## Checkliste
 
 ### Vor dem Schreiben neuen Codes
 
@@ -313,11 +313,11 @@ Sicherheits- oder Korrektheitsanforderungen haben Vorrang vor Stilpräferenzen.
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.2
 
 Änderung in dieser Version:
 
-- Querverweis auf Charter-Zuständigkeitsmatrix (Sprint 4 Konsistenz)
+- Abschnittstitel `Checkliste` vereinheitlicht (Qualitätsrelease 1.0.2)
 
 Verwandte Dokumente:
 

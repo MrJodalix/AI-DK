@@ -2,18 +2,19 @@
 
 Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 
-## Nach 1.0.0 / 1.0.1
+## 1.0.x
 
-- [x] Git-Repository initialisieren und Tag `v1.0.0` setzen
-- [x] S1–S6 formal durchspielen und Ergebnisprotokoll ablegen
-- [x] S6-Lücke schließen (Review-Schwereordnung in AI Behavior) → **1.0.1**
-- [x] Planung **1.1** dokumentieren (`.ai/plans/1.1_MACHINE_READABLE_RULES.md`)
-- [x] Optional: Tag `v1.0.1` setzen (nach Commit-Freigabe)
+- [x] Git + Tags `v1.0.0` / `v1.0.1`
+- [x] S1–S6 + S6-Nachzug
+- [x] Plan 1.1
+- [x] Qualitätsrelease **1.0.2** (Konsistenz, Begriffe, Backlog-Doku)
+- [x] Commit + Tag **`v1.0.2`** + Push
 - [ ] Optional: `01`-Dokument (Overview/Quickstart)
 - [ ] Optional: Live-Smoke S1/S3
 
 ## Geplant (eigene Freigabe)
 
-- [ ] **1.1 implementieren** — gemäß Plan (Schema + Pilot-YAML, dann Rest)
-- [ ] **2.0** — erstes Technologie-Profile
-- [ ] Extensions für konkrete KI-Werkzeuge
+- [ ] **1.1 implementieren** — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md)
+- [ ] Governance / ADR / Glossar / QUALITY — [Backlog](.ai/plans/BACKLOG_AFTER_1.0.md)
+- [ ] **2.0** Profiles · RFCs bei Bedarf
+- [ ] Extensions

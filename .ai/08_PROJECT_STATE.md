@@ -1,6 +1,6 @@
 # AI-DK Project State
 
-Version: 1.0.0
+Version: 1.0.2
 
 ## Ziel
 
@@ -172,11 +172,11 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Projektkurzbeschreibung
 
-AI-DK (AI Development Kit) ist ein AI Engineering Standard: versioniertes Framework aus Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. **Core 1.0.0** ist freigegeben; Profiles und Extensions sind geplant.
+AI-DK (AI Development Kit) ist ein AI Engineering Standard: versioniertes Framework aus Regeln, Workflows und Dokumentation für KI-gestützte Softwareentwicklung. **Core 1.0.x** ist freigegeben; Profiles und Extensions sind geplant.
 
 ### Aktueller Fokus
 
-Framework **1.0.1** (S6-Nachzug). Planung **1.1** liegt unter `.ai/plans/1.1_MACHINE_READABLE_RULES.md`. Implementierung von 1.1 nur nach erneuter Freigabe.
+Framework **1.0.2** (Qualitätsrelease). Keine neuen Feature-Docs. Nächste optionale Schritte: Tag `v1.0.2`, danach Freigabe **1.1**-Implementierung oder Backlog-Themen.
 
 ### Wichtige Entscheidungen
 
@@ -184,41 +184,43 @@ Framework **1.0.1** (S6-Nachzug). Planung **1.1** liegt unter `.ai/plans/1.1_MAC
 - Markdown ist bis 1.1 kanonisch; YAML erst ab 1.1 als Ableitung
 - Profiles erst ab 2.0; keine Tech-Stacks im Core
 - Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve
-- Framework-Qualität: S1–S6 bestanden (Desk-Review + S6-Nachzug)
-- AI-DK aktuell **1.0.1**; Tag `v1.0.0` markiert das erste stabile Core-Release
+- Framework-Qualität: S1–S6 bestanden
+- AI-DK aktuell **1.0.2**; Tags `v1.0.0` / `v1.0.1` vorhanden
+- Kanonischer Repository-Name: **AI-DK** (`https://github.com/MrJodalix/AI-DK`)
+- Spätere Ergänzungen (Governance, ADR, Glossar, QUALITY, RFC): nur Backlog, nicht Core 1.0.2
 
 ### Bekannte Risiken / Schulden
 
-- `01` reserviert, noch ohne Dokument
+- `01` reserviert, noch ohne Dokument (bewusst)
+- Längere Docs (SCENARIOS, CODING_STANDARDS, STATE) akzeptiert — siehe Backlog/QUALITY später
 - 1.1 noch nicht implementiert (nur Plan)
-- Profiles / Extensions noch nicht umgesetzt
-- Tag `v1.0.0` lokal; `v1.0.1` optional nachziehbar; kein Remote-Push
+- Profiles / Extensions / Governance-Docs noch nicht umgesetzt
 
 ### Nächste Schritte
 
-1. Optional: Änderungen committen + Tag `v1.0.1`
-2. Freigabe zur **Implementierung 1.1** (Pilot: Schema + coding/testing YAML)
-3. Später **2.0** Profiles
+1. Optional: Commit + Tag **`v1.0.2`** + Push
+2. Freigabe **1.1 implementieren** (YAML-Pilot)
+3. Später Backlog-Themen nach Freigabe (Governance, ADR, …)
 
 ### Verweise
 
-- `README.md` — Produktarchitektur, Index
+- `README.md` — Produktarchitektur, Index, Begriffskurztafel
 - `CHANGELOG.md` — Versionshistorie
 - `TODO.md` — offene Nacharbeiten
 - `.ai/plans/1.1_MACHINE_READABLE_RULES.md` — Plan 1.1
+- `.ai/plans/BACKLOG_AFTER_1.0.md` — spätere Ideen
 - `.ai/tests/RESULTS.md` — S1–S6
-- Git-Tag `v1.0.0` — erstes Core-Release
+- Git-Tags `v1.0.0`, `v1.0.1`
 
 ---
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.2
 
 Änderung in dieser Version:
 
-- Framework-Release **1.0.0** (Sprint 4 abgeschlossen)
-- Lebendiger Stand auf stabilen Core aktualisiert
+- Stand auf Qualitätsrelease **1.0.2**; Backlog-Verweis
 
 Verwandte Dokumente:
 
