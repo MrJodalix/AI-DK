@@ -1,6 +1,6 @@
 # AI-DK AI Behavior Rules
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Ziel
 
@@ -82,6 +82,27 @@ Abweichungen begründen.
 
 Widersprüchliche Anforderungen: erklären, Auswirkungen nennen, nachfragen.
 
+### Code Review
+
+Bei Reviews (Diff, Branch, PR/MR) gilt:
+
+**Schwereordnung der Findings** (hoch nach niedrig):
+
+1. Security (Secrets, Auth-Bypass, unsichere Defaults) — `10_SECURITY.md`
+2. Korrektheit / Regressionen
+3. Wartbarkeit / Architektur
+4. Stil / reine Formatierung
+
+Kritische Findings vor kosmetischen nennen. Kein pauschales „LGTM“ oder „alles sicher“ ohne Beleg.
+
+**Secrets im Diff:**
+
+- Sofort als blockierend melden.
+- Merge, Approve und Freigabe **stoppen** bzw. klar davon abraten, bis das Secret entfernt und rotiert ist (`10_SECURITY.md`).
+- Secret-Werte nicht wiederholen oder in neue Dateien kopieren.
+
+Wo möglich auf verletzte Core-Dokumente verweisen.
+
 ### Nach jeder Änderung liefern
 
 Abschlussbericht gemäß Workflow. Docs/Stand: `07_DOCUMENTATION.md`, `08_PROJECT_STATE.md`. Git: `06_GIT_WORKFLOW.md`. Release/Publish: `09_RELEASE_PROCESS.md`.
@@ -115,6 +136,7 @@ Dieses Dokument *ist* die Verhaltensnorm. Bei Überlappung mit Spezialdocs gilt:
 - [ ] Nichts unbelegt behauptet
 - [ ] Abschlussbericht + Docs/Git-Pflichten erfüllt
 - [ ] Konflikte eskaliert statt still entschieden
+- [ ] Bei Reviews: Findings nach Schwereordnung; Secrets blockieren Merge/Approve
 
 ---
 
@@ -124,9 +146,13 @@ Dieses Dokument *ist* die Verhaltensnorm. Bei Überlappung mit Spezialdocs gilt:
 
 Blockierenden Bug vor neuem Feature fixen; minimal patchen; Regressionstest; Changelog; Stand aktualisieren.
 
+Review: Secret in Beispielcode als blocker melden, Approve verweigern, Rotation anfordern — Stilnits danach.
+
 ### Schlecht
 
 Feature bauen, während Produktionsblocker und Secret-Leak offen sind; parallele Service-Klasse trotz vorhandener Abstraktion.
+
+Review: nur Formatierung kommentieren und trotz API-Key im Diff „LGTM, sieht sicher aus“ schreiben.
 
 ---
 
@@ -138,12 +164,11 @@ Prioritätsabweichungen nur mit Begründung und Abstimmung. Explizite menschlich
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.1
 
 Änderung in dieser Version:
 
-- Redundanzen zu Charter/Workflow/Coding Standards entfernt (Sprint 4)
-- Fokus: Priorität, Konflikte, Kontext, Grenzen, Verweispflicht
+- Code-Review-Schwereordnung und Secret-Stopp vor Merge/Approve (S6-Nachzug)
 
 Verwandte Dokumente:
 
@@ -156,3 +181,4 @@ Verwandte Dokumente:
 - `08_PROJECT_STATE.md`
 - `09_RELEASE_PROCESS.md`
 - `10_SECURITY.md`
+- `.ai/tests/SCENARIOS.md` / `.ai/tests/RESULTS.md`

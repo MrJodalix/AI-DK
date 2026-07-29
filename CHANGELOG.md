@@ -4,6 +4,17 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 1.0.1 – 2026-07-29
+
+### Geändert
+
+- `05_AI_BEHAVIOR.md`: Code-Review-Schwereordnung und Secret-Stopp vor Merge/Approve (S6-Nachzug)
+- `.ai/tests/RESULTS.md`: S6 auf Bestanden aktualisiert
+
+### Planung
+
+- `.ai/plans/1.1_MACHINE_READABLE_RULES.md` — Planung für Version 1.1 (noch nicht implementiert)
+
 ## 1.0.0 – 2026-07-29
 
 Erstes stabiles Core-Release (Sprint 4 abgeschlossen).
@@ -27,8 +38,8 @@ Erstes stabiles Core-Release (Sprint 4 abgeschlossen).
 
 - `01` weiterhin reserviert (Overview/Quickstart)
 - Profiles (2.0), YAML-Regeln (1.1), Extensions noch nicht umgesetzt
-- S1–S6 als Prüfkatalog vorhanden; Desk-Review-Protokoll in `.ai/tests/RESULTS.md` (S6 teilweise)
-- Release lokal als Git-Tag `v1.0.0` auf Branch `main` gekennzeichnet (kein Remote-Push)
+- S1–S6 Desk-Review; S6 mit 1.0.1 geschlossen
+- Release lokal als Git-Tag `v1.0.0` (kein Remote-Push)
 
 ## 0.3.0
 

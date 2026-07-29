@@ -8,9 +8,9 @@ Regelwerk aus Prinzipien, Workflows und Dokumentation. Modellunabhängig · Core
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **1.0.0** |
-| Status | Stabiler Core (Sprint 1–4 abgeschlossen) |
-| Nächste geplante Version | **1.1** (maschinenlesbare Regeln) |
+| Framework-Version | **1.0.1** |
+| Status | Stabiler Core + S6-Nachzug |
+| Nächste geplante Version | **1.1** (Plan: [`.ai/plans/1.1_MACHINE_READABLE_RULES.md`](.ai/plans/1.1_MACHINE_READABLE_RULES.md)) |
 
 Changelog: [CHANGELOG.md](CHANGELOG.md) · Projektstand: [`.ai/08_PROJECT_STATE.md`](.ai/08_PROJECT_STATE.md)
 
@@ -100,7 +100,8 @@ Ziel · Geltungsbereich · Grundprinzipien · Verbindliche Regeln · Empfehlunge
 | **0.1.0** | Sprint 1 – Core Foundation |
 | **0.2.0** | Sprint 2 – Projektorganisation |
 | **0.3.0** | Sprint 3 – Betrieb |
-| **1.0.0** | Sprint 4 – Konsolidierung (aktuell) |
-| **1.1** | Maschinenlesbare Regeln (z. B. `.ai/rules/*.yml`); Markdown bleibt kanonisch |
+| **1.0.0** | Sprint 4 – Konsolidierung |
+| **1.0.1** | S6-Nachzug (Code-Review-Regeln) |
+| **1.1** | Maschinenlesbare Regeln — [Plan](.ai/plans/1.1_MACHINE_READABLE_RULES.md) |
 | **2.0** | Profiles |
 | **2.x+** | Extensions, CI/CD-Vertiefung, ADRs, weitere Profile |

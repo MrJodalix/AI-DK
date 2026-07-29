@@ -176,31 +176,28 @@ AI-DK (AI Development Kit) ist ein AI Engineering Standard: versioniertes Framew
 
 ### Aktueller Fokus
 
-Framework **1.0.0** (Tag `v1.0.0`). S1–S6 Desk-Review abgeschlossen (`.ai/tests/RESULTS.md`: 5× bestanden, S6 teilweise). Nächste Optionen: S6-Nachzug oder Planung **1.1** (jeweils Freigabe).
+Framework **1.0.1** (S6-Nachzug). Planung **1.1** liegt unter `.ai/plans/1.1_MACHINE_READABLE_RULES.md`. Implementierung von 1.1 nur nach erneuter Freigabe.
 
 ### Wichtige Entscheidungen
 
 - Drei Ebenen: Core · Profiles · Extensions
-- Markdown ist bis 1.1 kanonisch; YAML-Regeln erst in 1.1
+- Markdown ist bis 1.1 kanonisch; YAML erst ab 1.1 als Ableitung
 - Profiles erst ab 2.0; keine Tech-Stacks im Core
-- Einheitliche Dokumentstruktur für alle Core-Dokumente
-- Kanonisch: Charter = Prinzipien; Workflow = Prozess; AI Behavior = Verhalten; Spezialdocs = Fachthema
-- Framework-Qualität über Szenarien S1–S6; Erstprotokoll 2026-07-29
-- Versions Semantik: MAJOR.MINOR.PATCH; AI-DK aktuell **1.0.0**
-- Releases nur nach Freigabekriterien; KI veröffentlicht nicht eigenmächtig
-- Security: Secrets, Vertrauensgrenzen, keine Scheinsicherheit; Stack-Details → Profiles
+- Code Review: Security > Korrektheit > Wartbarkeit > Stil; Secrets blockieren Merge/Approve
+- Framework-Qualität: S1–S6 bestanden (Desk-Review + S6-Nachzug)
+- AI-DK aktuell **1.0.1**; Tag `v1.0.0` markiert das erste stabile Core-Release
 
 ### Bekannte Risiken / Schulden
 
-- S6 nur teilweise: fehlende explizite Review-Schwereordnung / Secret-Stopp-vor-Merge im Core-Wortlaut
 - `01` reserviert, noch ohne Dokument
-- Profiles, YAML (1.1), Extensions noch nicht umgesetzt
-- Tag `v1.0.0` lokal; kein Remote-Push
+- 1.1 noch nicht implementiert (nur Plan)
+- Profiles / Extensions noch nicht umgesetzt
+- Tag `v1.0.0` lokal; `v1.0.1` optional nachziehbar; kein Remote-Push
 
 ### Nächste Schritte
 
-1. Optional: S6-Lücke in `05_AI_BEHAVIOR.md` schließen (Freigabe)
-2. Planung **1.1** (YAML-Regeln, Markdown bleibt kanonisch)
+1. Optional: Änderungen committen + Tag `v1.0.1`
+2. Freigabe zur **Implementierung 1.1** (Pilot: Schema + coding/testing YAML)
 3. Später **2.0** Profiles
 
 ### Verweise
@@ -208,11 +205,9 @@ Framework **1.0.0** (Tag `v1.0.0`). S1–S6 Desk-Review abgeschlossen (`.ai/test
 - `README.md` — Produktarchitektur, Index
 - `CHANGELOG.md` — Versionshistorie
 - `TODO.md` — offene Nacharbeiten
-- `00_PROJECT_CHARTER.md` — Zuständigkeitsmatrix
-- `.ai/tests/SCENARIOS.md` — Framework-Tests
-- `.ai/tests/RESULTS.md` — Ergebnisprotokoll S1–S6
-- `11_VERSION.md` — Versionsvergabe
-- Git-Tag `v1.0.0` — Release-Kennzeichnung
+- `.ai/plans/1.1_MACHINE_READABLE_RULES.md` — Plan 1.1
+- `.ai/tests/RESULTS.md` — S1–S6
+- Git-Tag `v1.0.0` — erstes Core-Release
 
 ---
 

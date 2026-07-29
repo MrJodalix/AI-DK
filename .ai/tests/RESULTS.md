@@ -23,9 +23,11 @@ Bewertungsskala gemäß SCENARIOS: Bestanden · Teilweise · Nicht bestanden.
 | S3 | Bugfix | **Bestanden** | keine |
 | S4 | Refactoring | **Bestanden** | keine |
 | S5 | Architektur | **Bestanden** | keine |
-| S6 | Code Review | **Teilweise** | keine |
+| S6 | Code Review | **Bestanden** (Nachzug 1.0.1) | keine |
 
-**Release-Fazit 1.0.0:** Kein schweres Fail-Signal. Ein leichtes Abdeckungsloch bei S6 (explizite Review-Schwereordnung). Core bleibt für 1.0.0 freigabefähig; Nachzug als Verbesserung empfohlen (nicht blockierend).
+**Release-Fazit 1.0.0:** Kein schweres Fail-Signal. S6 war zunächst teilweise (fehlende Review-Schwereordnung).
+
+**Nachzug 1.0.1 (2026-07-29):** `05_AI_BEHAVIOR.md` um Code-Review-Schwereordnung und Secret-Stopp vor Merge/Approve ergänzt → S6 **Bestanden**. Alle S1–S6 bestanden.
 
 ---
 
@@ -108,43 +110,40 @@ Bewertungsskala gemäß SCENARIOS: Bestanden · Teilweise · Nicht bestanden.
 
 ## S6 – Code Review
 
-**Ergebnis:** Teilweise
+**Ergebnis:** Bestanden (nach 1.0.1)
 
 | Erfolgsbedingung | Abdeckung im Core |
 |------------------|-------------------|
-| Kritische Risiken benennen | Security, Testing, Behavior-Priorität |
-| Kein unbelegtes „alles sicher“ | Security: keine Scheinsicherheit |
-| Priorisierte Findings | **Lücke:** keine explizite Review-Skala „Security > Korrektheit > Wartbarkeit > Stil“ |
-| Verweis auf Core-Regeln | indirekt über Zuständigkeitsmatrix / Behavior |
+| Kritische Risiken benennen | Security, Testing, Behavior |
+| Kein unbelegtes „alles sicher“ | Security + Behavior Code Review |
+| Priorisierte Findings | Behavior: Security > Korrektheit > Wartbarkeit > Stil |
+| Verweis auf Core-Regeln | Behavior: wo möglich auf Core verweisen |
+| Secret → Stopp Merge/Approve | Behavior Code Review + `10_SECURITY.md` |
 
-**Was fehlt (leicht):**
-
-- Dedizierte **Code-Review-Schwereordnung** in `05_AI_BEHAVIOR.md` oder `03_CODING_STANDARDS.md`.
-- Explizite Regel: bei erkanntem Secret → Merge/Freigabe stoppen (Security sagt Warnung/Leak-Behandlung; „Stopp vor Merge“ im Review-Kontext nur im Szenario, nicht wörtlich im Core).
-
-**Empfohlene Nacharbeit (nicht 1.0.0-blockierend):** Kurzer Abschnitt „Code Review“ in `05_AI_BEHAVIOR.md` mit Schwereordnung und Secret-Stopp — eigene Freigabe.
+**Historie:** Am 2026-07-29 zunächst „Teilweise“; Nachzug in `05_AI_BEHAVIOR.md` (1.0.1) schließt die Lücke.
 
 ---
 
 ## Checkliste SCENARIOS (Release)
 
 - [x] S1–S6 mindestens einmal gegen den aktuellen Core bewertet
-- [x] Schwere Fails behoben oder als bekannte Einschränkung dokumentiert (S6 teilweise → dokumentiert)
+- [x] Schwere Fails / Teillücken behoben oder dokumentiert (S6 mit 1.0.1 geschlossen)
 - [x] Keine Szenario-Texte mit Stack-Zwängen im Core (geprüft)
-- [ ] Neue Core-Regeln: betroffene Szenarien anpassen — n/a bis zur nächsten Regeländerung
+- [x] S6-Nachzug: betroffene Regel in Behavior ergänzt
 
 ---
 
 ## Nächste Schritte aus diesem Lauf
 
-1. Optional: S6-Lücke schließen (Review-Schwereordnung + Secret-Stopp) — Freigabe nötig  
-2. Optional: Live-Smoke mit einem Mini-Greenfield-/Bugfix-Beispiel  
-3. Planung **1.1** (YAML) — separate Freigabe  
+1. ~~S6-Lücke schließen~~ erledigt in 1.0.1  
+2. Optional: Live-Smoke mit Mini-Greenfield-/Bugfix-Beispiel  
+3. Planung **1.1** (YAML) — siehe `.ai/plans/1.1_MACHINE_READABLE_RULES.md`
 
 ---
 
 ## Version
 
-Protokollversion: 1.0.0  
+Protokollversion: 1.0.1  
 
-Erstellt im Rahmen der Nacharbeit zu AI-DK 1.0.0 (Schritt 9.2).
+- 1.0.0: Erstbewertung S1–S6  
+- 1.0.1: S6 auf Bestanden nach Behavior-Nachzug  
