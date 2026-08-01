@@ -40,5 +40,9 @@ lib/widgets/speculation_results/
 
 Import-Pfad anpassen: `package:rodister/widgets/speculation_results/speculation_results_view.dart`
 
-- **Bestehendes Muster:** `lib/widgets/genetics/`
-- **Ziel bei Splits (noch nicht vorhanden):** z. B. `lib/widgets/breeding_planning/`, `lib/widgets/enclosure_planning/` — nur nach Freigabe laut Sanierungsplan
+- **Bestehendes Muster:** `lib/widgets/genetics/`, `lib/pages/breeding/`, `lib/widgets/breeding_planning/` (nur Hilfs-Widgets)
+- **Seiten (Page/State):** unter `lib/pages/<feature>/` — nicht als zweite Kopie unter `lib/widgets/`
+- **Bei Merge-Konflikten:** Produkt-Domain-Layout gewinnt. Keine parallelen
+  `BreedingPlanningPage` / `EnclosurePlanningPage` (und zugehörige God-State-Dateien) unter
+  `lib/widgets/*_planning/` wiederherstellen, wenn `lib/pages/<feature>/` bereits die kanonische Seite ist.
+- **Splits:** Hilfs-Widgets dürfen in `lib/widgets/<feature>/` liegen; ein Typ pro Datei, ohne die Page zu duplizieren.

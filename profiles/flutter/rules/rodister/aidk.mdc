@@ -41,3 +41,15 @@ Keine erfundenen APIs oder Releases.
 - Keine Migration zu Riverpod/Drift/go_router ohne explizite Freigabe.
 - `ai-dk/profiles/flutter/` (STACK/ARCHITECTURE) beschreibt Profile-**Defaults**, keinen
   Migrationsauftrag für Rodister — Ist-Stack steht hier und in `.ai/08_PROJECT_STATE.md`.
+
+## Qualität nach Merge / Rebase
+
+Nach jedem Merge oder Rebase (inkl. Integration divergenter Feature-Linien):
+
+1. `flutter analyze` — muss **ohne Issues** sein, bevor Commit/Push der Integration.
+2. Betroffene Interfaces/Stubs nachziehen (z. B. neue Repository-Methoden in Test-Fakes).
+3. `flutter test` mindestens für geänderte Bereiche; bei großem Merge möglichst voll.
+4. Struktur: **Produkt-Domain-Layout** behalten (`lib/pages/<feature>/`, `lib/models/<feature>/`,
+   `lib/services/<feature>/`). Parallele Page-/State-Godfiles unter
+   `lib/widgets/<feature>_planning/` nicht wieder einführen, wenn die Seite schon unter
+   `lib/pages/` lebt — siehe `one-class-per-file.mdc`.
