@@ -40,4 +40,8 @@ rules:
 
 | Datei | Inhalt |
 |-------|--------|
-| [flutter.yml](flutter.yml) | verdichtete must/should-Regeln |
+| [flutter.yml](flutter.yml) | verdichtete must/should-Regeln (generisches Flutter-Profile) |
+| [rodister/](rodister/) | **Consumer-Rules** für das Produkt Rodister (Cursor `.mdc`) |
+
+Produkt-spezifische Cursor-Rules gehören nach `rodister/`, nicht in `flutter.yml`.
+

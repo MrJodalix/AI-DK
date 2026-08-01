@@ -1,0 +1,37 @@
+---
+description: UI-Texte nur über l10n (AppStrings), keine hardcodierten Nutzerstrings
+alwaysApply: true
+---
+
+# UI-Texte: ausschließlich l10n
+
+Alle **nutzersichtbaren** Strings (Labels, Titel, Tooltips, Dialoge, Hilfe, Snackbars, Hints, Buttons) kommen aus der l10n-Schicht — nie als Literal in Widgets/Pages/Services.
+
+## Quelle der Wahrheit
+
+- Schnittstelle: `AppStrings` in `lib/l10n/strings.dart` (DE-Implementierung `StringsDe` in derselben Datei)
+- Englisch: `lib/l10n/strings_en.dart` (`part of` / `StringsEn`)
+- Zugriff: `AppStrings.of(context)` oder `AppStrings.read(context)`
+
+## Verboten
+
+```dart
+// ❌ BAD — hardcodiert, bricht Übersetzung
+helpMessage: 'Mehrere Seiten: wische …'
+tooltip: 'Hilfe'
+Text('Vorabübersicht')
+const kPlanningOverviewHelp = '…';
+
+// ✅ GOOD — aus l10n
+helpMessage: s.breedingPlanningOverviewHelp
+tooltip: s.helpTooltip
+Text(s.rosterPreviewTitle)
+```
+
+## Regeln
+
+- Keine `const k*Help` / UI-Text-Konstanten außerhalb von `lib/l10n/strings*.dart`.
+- Neue UI-Texte: Getter in `AppStrings` + DE (`StringsDe`) + EN (`StringsEn`) in einem Zug.
+- Bestehende Keys wiederverwenden (`actionRemove`, `genderMale`, …), nicht duplizieren.
+- Domain-Werte in Speicherung (z. B. Geschlecht `'Männlich'`) nicht mit Anzeige-Strings vermischen; UI immer über l10n-Getter; gespeicherte Literale zentral über `AppStrings.storedGenderMale` / `storedGenderFemale`.
+- Logs, Hive-/JSON-Keys, Asset-Pfade und Tests sind ausgenommen.

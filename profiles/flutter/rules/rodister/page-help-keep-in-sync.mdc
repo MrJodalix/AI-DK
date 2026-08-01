@@ -1,0 +1,37 @@
+---
+description: Neue Seitenfunktionen immer in DE- und EN-Hilfetexten dokumentieren
+alwaysApply: true
+---
+
+# Seitenhilfe: Interaktionen aktuell halten
+
+Wenn auf einer **Hauptseite** eine neue nutzersichtbare Interaktion oder Funktion hinzukommt (Button, Gesture, Filter, Drag & Drop, Dialog, Toggle, …), den zugehörigen **Seiten-Hilfetext** im selben Zug aktualisieren — auf **Deutsch und Englisch**.
+
+## Wo
+
+- Schnittstelle: `AppStrings` (`lib/l10n/strings.dart`)
+- Texte: DE in `strings.dart` (`StringsDe`), EN in `strings_en.dart` (`StringsEn`)
+- Anzeige: `HelpTitleRow` / `HelpIconButton` (`lib/widgets/help_icon_button.dart`); Stammbaum-Overlay ebenfalls über `HelpIconButton`
+
+Typische Keys: `*Help` / `*HelpTitle` / `*OverviewHelp` (z. B. `masterDataHelp`, `breedingPlanningOverviewHelp`, `pedigreeHelp`).
+
+## Pflicht
+
+```dart
+// ❌ BAD — Feature ohne Hilfe-Update
+IconButton(onPressed: _exportOverview, icon: Icon(Icons.share));
+
+// ✅ GOOD — Feature + Bullet in DE und EN
+// strings.dart (StringsDe): '• Mit dem Teilen-Symbol exportierst du die Übersicht.'
+// strings_en.dart: '• Use the share icon to export the overview.'
+```
+
+- Format beibehalten: kurze Einleitung, dann `• `-Punkte für konkrete Gesten/Buttons.
+- Bestehende Section-Hilfen (Roster, Testpaarung, …) mitpflegen, wenn die Änderung dort liegt.
+- Keine hardcodierten Hilfetexte in Widgets — nur über l10n (siehe l10n-Regel).
+
+## Ausnahmen
+
+- Rein interne Refactors ohne UI-Änderung
+- Logs, Tests, Hive-/JSON-Keys
+- Tier anlegen (aktuell ohne Seiten-`?`); dort nur, wenn später eine Seitenhilfe eingeführt wird

@@ -1,0 +1,36 @@
+---
+description: Git commits with messages and SSH push for Rodister
+alwaysApply: true
+---
+
+# Git: Commits und Push per SSH
+
+## Commits
+
+- Nur committen, wenn der User es ausdrücklich verlangt.
+- Commit-Nachrichten sind Pflicht: kurzer Titel (Conventional Commits, z. B. `feat:`, `fix:`) plus optionaler Body mit Stichpunkten zum **Warum**.
+- Keine leeren oder generischen Messages wie „update“ oder „changes“.
+
+## Push
+
+- Remote ist SSH: `git@github.com:MrJodalix/Rodister.git`
+- Push immer per SSH, nicht HTTPS.
+- Standardbefehl nach Commit (nur wenn der User pushen will):
+
+```bash
+git push -u origin HEAD
+```
+
+- Wenn `origin` noch HTTPS ist, einmalig umstellen (nur mit User-Einwilligung):
+
+```bash
+git remote set-url origin git@github.com:MrJodalix/Rodister.git
+```
+
+## Workflow bei Commit-Anfrage
+
+1. Parallel: `git status`, `git diff`, `git log -5 --oneline`
+2. Sinnvolle Commit-Message formulieren
+3. Stagen, committen (HEREDOC für Message)
+4. `git status` zur Kontrolle
+5. Push nur auf explizite Anfrage — dann via SSH

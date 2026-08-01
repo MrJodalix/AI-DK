@@ -1,0 +1,27 @@
+---
+description: AI-DK Spezifikation — Bootstrap und Core befolgen (Rodister)
+globs:
+alwaysApply: true
+---
+
+# AI-DK (Rodister)
+
+Dieses Projekt implementiert die AI-DK-Spezifikation **2.3.0**.
+Spec liegt im Submodule `ai-dk/` ([github.com/MrJodalix/AI-DK](https://github.com/MrJodalix/AI-DK)).
+
+Vor jeder Aufgabe:
+
+1. `ai-dk/.ai/01_BOOTSTRAP.md` ausführen.
+2. Charter und AI Behavior unter `ai-dk/.ai/` lesen.
+3. **`.ai/08_PROJECT_STATE.md`** lesen (Rodister — nicht `ai-dk/.ai/08_…`); `TODO.md` prüfen.
+4. Fachdocs und `ai-dk/profiles/flutter/` nur soweit relevant; **Ist-Stack beachten**.
+5. Rodister-Cursor-Rules unter `ai-dk/profiles/flutter/rules/rodister/` einhalten (l10n, Lastenheft, …).
+6. Dann erst planen und implementieren.
+
+Markdown unter `ai-dk/.ai/` ist kanonisch; YAML unter `ai-dk/.ai/rules/` ist abgeleitet.
+Keine erfundenen APIs oder Releases.
+
+## Rodister-Stack (verbindliche Ausnahme)
+
+- Provider + Hive + bestehendes Navigationsmodell beibehalten.
+- Keine Migration zu Riverpod/Drift/go_router ohne explizite Freigabe.

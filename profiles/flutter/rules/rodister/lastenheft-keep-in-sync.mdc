@@ -1,0 +1,48 @@
+---
+description: Lastenheft bei Feature-Änderungen aktualisieren und Regression prüfen
+alwaysApply: true
+---
+
+# Lastenheft: Funktionen aktuell halten
+
+Quelle der Wahrheit: `docs/LASTENHEFT.md` — Funktionskatalog pro Seite inkl. globaler Features.
+
+## Wenn das Lastenheft fehlt
+
+Existiert `docs/LASTENHEFT.md` (noch) nicht: bei der **nächsten Feature-Arbeit** zuerst Stub/Katalog anlegen (Abschnitte pro Hauptseite), dann die neue Funktion eintragen. Ohne Lastenheft keine Feature-Änderung abschließen.
+
+## Pflicht bei Feature-Arbeit
+
+Wenn eine **nutzersichtbare** Funktion hinzukommt, sich ändert oder entfernt wird:
+
+1. **Lastenheft anpassen** im selben Zug (`docs/LASTENHEFT.md`):
+   - Neu → neue ID-Zeile im passenden Abschnitt (z. B. Stammdaten, Zuchtplanung, Gehege, Wurfchronik, Settings, global)
+   - Geändert → bestehende Zeile und Abnahme-Kriterium aktualisieren
+   - Entfernt → Zeile streichen
+2. **Regression:** Alle Punkte der betroffenen Seite(n) und der globalen Abschnitte müssen weiterhin gelten — nicht nur das neue Feature.
+3. Parallel die Regeln **Seitenhilfe** (DE/EN `*Help`) und **l10n** einhalten.
+
+```text
+// ❌ BAD — Feature ohne Lastenheft
+Neues Drag-&-Drop auf der Zuchtplanung, docs/LASTENHEFT.md unverändert
+
+// ✅ GOOD — Feature + Lastenheft + Hilfe
+Zuchtplanungs-ID ergänzt; breedingPlanningOverviewHelp DE/EN; Smoke der betroffenen IDs
+```
+
+## Persistenz (hart)
+
+Nutzer-Eintragungen (Tiere, Würfe, Zucht-/Gehege-Boards und verwandte `settings`-Keys) dürfen durch Feature-Arbeit **nicht** verloren gehen. Konkrete Abnahme-IDs stehen im Lastenheft, sobald es existiert.
+
+- Store-/Schema-Änderungen: Migration oder abwärtskompatibles Lesen; keine leeren Boards nach Update.
+- Vor Abschluss: mit bestehenden Testdaten prüfen (Gehege, Zucht, Würfe, Tiere noch da).
+
+## Ausnahmen
+
+- Rein interne Refactors ohne UI-/Verhaltensänderung **und** ohne Store-Schema-Änderung
+- Logs, Tests, Hive-/JSON-Keys (Key-Umbenennungen nur mit Migration), reine Typ-Umbenennungen
+- Reine Bugfixes, die dokumentiertes Verhalten wiederherstellen (kein neuer Lastenheft-Punkt; ggf. Abnahme-Text schärfen)
+
+## Smoke vor Abschluss (Minimum)
+
+Siehe Abschnitt „Pflege“ in `docs/LASTENHEFT.md` (sobald vorhanden). Bei Backup oder Querschnitt zusätzlich globale und Settings-Punkte prüfen.

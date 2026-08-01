@@ -1,0 +1,44 @@
+---
+description: Eine Klasse pro Dart-Datei, zusammengehörige Klassen in Ordner
+globs: **/*.dart
+alwaysApply: false
+---
+
+# Eine Klasse pro Datei
+
+Jede `.dart`-Datei enthält genau **eine** top-level Klasse.
+
+- Dateiname = Klassenname in snake_case (`ColorMatcher` → `color_matcher.dart`).
+- Beim Bearbeiten bestehender Dateien mit mehreren Klassen: nicht pauschal splitten, es sei denn, der Nutzer verlangt es — aber neue Klassen nie in bereits belegte Dateien einfügen.
+- Enums, Extensions und Typedefs dürfen in derselben Datei wie ihre zugehörige Klasse stehen, wenn sie eng gekoppelt sind.
+- Private Hilfsklassen (`_Foo`) vermeiden; stattdessen eigene Datei. Beim Split werden sie öffentlich (`LikelyJointGencodesCard` statt `_LikelyJointGencodesCard`).
+
+## Zusammengehörige Klassen → gemeinsamer Ordner
+
+Gehören die Klassen zusammen (gleiches Feature, gemeinsame Aufrufer), werden sie in **einen Unterordner** gepackt — nicht lose neben alle anderen Widgets/Services.
+
+Ordnername: snake_case, beschreibt das Feature (nicht die einzelne Klasse).
+
+```
+// ❌ BAD — mehrere Klassen in einer Datei
+lib/widgets/speculation_results_view.dart   // 6 Klassen
+
+// ❌ BAD — zwar getrennt, aber Zugehörigkeit unklar
+lib/widgets/speculation_results_view.dart
+lib/widgets/color_summary_expansion_list.dart
+lib/widgets/parent_cross_speculation_section.dart
+
+// ✅ GOOD — ein Ordner, je eine Klasse pro Datei
+lib/widgets/speculation_results/
+  speculation_results_view.dart
+  color_summary_expansion_list.dart
+  color_summary_expansion_card.dart
+  likely_joint_gencodes_card.dart
+  marginal_distribution_card.dart
+  parent_cross_speculation_section.dart
+```
+
+Import-Pfad anpassen: `package:rodister/widgets/speculation_results/speculation_results_view.dart`
+
+- **Bestehendes Muster:** `lib/widgets/genetics/`
+- **Ziel bei Splits (noch nicht vorhanden):** z. B. `lib/widgets/breeding_planning/`, `lib/widgets/enclosure_planning/` — nur nach Freigabe laut Sanierungsplan
