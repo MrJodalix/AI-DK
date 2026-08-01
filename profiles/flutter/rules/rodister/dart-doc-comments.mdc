@@ -6,7 +6,8 @@ alwaysApply: true
 
 # Dart-Dokumentation
 
-Bei **jeder neuen Klasse** und **jeder neuen Methode** einen aussagekräftigen Doc-Kommentar im Blockformat `/** */` schreiben.
+Bei **jeder neuen Klasse** und **jeder neuen Methode** einen aussagekräftigen Doc-Kommentar im
+Dart-Standardformat `///` schreiben (kompatibel mit `slash_for_doc_comments` / Analyzer).
 
 Pflichtfelder:
 - Kurzbeschreibung (was und warum)
@@ -16,24 +17,20 @@ Pflichtfelder:
 Beispiel Klasse:
 
 ```dart
-/**
- * Registriert geplante Nachkommen und vergibt stabile UIDs.
- *
- * Input: Geplante Tiere aus Verpaarungslinien und Roster-Slots.
- * Output: Eindeutige IDs für Anzeige, Drag & Drop und Folgeverpaarungen.
- */
+/// Registriert geplante Nachkommen und vergibt stabile UIDs.
+///
+/// Input: Geplante Tiere aus Verpaarungslinien und Roster-Slots.
+/// Output: Eindeutige IDs für Anzeige, Drag & Drop und Folgeverpaarungen.
 class PlannedAnimalRegistry { ... }
 ```
 
 Beispiel Methode:
 
 ```dart
-/**
- * Berechnet die möglichen Genotypen aus zwei Elternteilen.
- *
- * Input: [sireGenotype], [damGenotype] – geparste Genotyp-Strings beider Eltern.
- * Output: Liste aller Kind-Genotypen mit Wahrscheinlichkeiten; leer, wenn ein Genotyp ungültig ist.
- */
+/// Berechnet die möglichen Genotypen aus zwei Elternteilen.
+///
+/// Input: [sireGenotype], [damGenotype] – geparste Genotyp-Strings beider Eltern.
+/// Output: Liste aller Kind-Genotypen mit Wahrscheinlichkeiten; leer, wenn ein Genotyp ungültig ist.
 List<OffspringGenotype> calculateOffspring({
   required String sireGenotype,
   required String damGenotype,
@@ -42,5 +39,6 @@ List<OffspringGenotype> calculateOffspring({
 
 Regeln:
 - Nur bei **neu hinzugefügtem** Code; bestehende Kommentare nicht massenhaft umschreiben, es sei denn, der Nutzer verlangt es.
+- Bestehende `/** */`-Blöcke nicht nur wegen Stil umbauen.
 - Keine leeren oder rein generischen Kommentare („Returns the result“).
 - Input/Output konkret benennen (Typen, Bedingungen, Sonderfälle).

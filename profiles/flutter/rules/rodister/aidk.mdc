@@ -9,7 +9,9 @@ alwaysApply: true
 Dieses Projekt implementiert die AI-DK-Spezifikation **2.3.0**.
 Spec liegt im Submodule `ai-dk/` ([github.com/MrJodalix/AI-DK](https://github.com/MrJodalix/AI-DK)).
 
-Vor jeder Aufgabe:
+## Bootstrap
+
+Vor jeder **neuen Sitzung** oder jedem **neuen Thema**:
 
 1. `ai-dk/.ai/01_BOOTSTRAP.md` ausführen.
 2. Charter und AI Behavior unter `ai-dk/.ai/` lesen.
@@ -18,6 +20,18 @@ Vor jeder Aufgabe:
 5. Rodister-Cursor-Rules unter `ai-dk/profiles/flutter/rules/rodister/` einhalten (l10n, Lastenheft, …).
 6. Dann erst planen und implementieren.
 
+### Verkürzung (nur Rodister-Fortsetzung)
+
+Die volle Sequenz darf in **derselben Session** verkürzt werden, wenn dieselbe Freigabe-Kette
+fortgesetzt wird (z. B. Sanierung 2d → 2e) und Charter/Behavior/Stand bereits geladen wurden.
+
+Dann mindestens:
+
+- aktuelles `.ai/08_PROJECT_STATE.md` und `TODO.md` / `SANIERUNGSPLAN.md` prüfen
+- betroffene Rodister-Rules (Lastenheft, l10n, …) beachten
+
+Themenwechsel (z. B. Sanierung → neues Produktfeature) → wieder volle Sequenz.
+
 Markdown unter `ai-dk/.ai/` ist kanonisch; YAML unter `ai-dk/.ai/rules/` ist abgeleitet.
 Keine erfundenen APIs oder Releases.
 
@@ -25,3 +39,5 @@ Keine erfundenen APIs oder Releases.
 
 - Provider + Hive + bestehendes Navigationsmodell beibehalten.
 - Keine Migration zu Riverpod/Drift/go_router ohne explizite Freigabe.
+- `ai-dk/profiles/flutter/` (STACK/ARCHITECTURE) beschreibt Profile-**Defaults**, keinen
+  Migrationsauftrag für Rodister — Ist-Stack steht hier und in `.ai/08_PROJECT_STATE.md`.

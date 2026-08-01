@@ -7,6 +7,14 @@ alwaysApply: true
 
 Quelle der Wahrheit: `docs/LASTENHEFT.md` — Funktionskatalog pro Seite inkl. globaler Features.
 
+## Katalog ist nicht automatisch Backlog
+
+`docs/LASTENHEFT.md` kann den **Ist-Stand** beschreiben (was die App bereits kann). Das ist **kein** Auftrag, alle IDs als neue Features zu bauen.
+
+- **Neue** nutzersichtbare Funktion nur mit **priorisierter Lastenheft-ID** (neu angelegt oder vom Produkt explizit freigegeben) und klarem Abnahme-Text.
+- Bloße Freigabe einer Sanierungs-/Feature-Phase („Freigabe erteilt“) **ohne** genannte ID reicht nicht: nachfragen, welche ID/Abnahme gemeint ist — oder nur Hygiene/Cleanup (unerreichbare Stubs entfernen, Docs, Dead Code) ohne erfundenes Verhalten.
+- Einträge unter „Offene Produktentscheidungen“ **nicht still** implementieren (z. B. Undo/Notifications), bis sie priorisiert und als ID aufgenommen sind.
+
 ## Wenn das Lastenheft fehlt
 
 Existiert `docs/LASTENHEFT.md` (noch) nicht: bei der **nächsten Feature-Arbeit** zuerst Stub/Katalog anlegen (Abschnitte pro Hauptseite), dann die neue Funktion eintragen. Ohne Lastenheft keine Feature-Änderung abschließen.
@@ -26,6 +34,8 @@ Wenn eine **nutzersichtbare** Funktion hinzukommt, sich ändert oder entfernt wi
 // ❌ BAD — Feature ohne Lastenheft
 Neues Drag-&-Drop auf der Zuchtplanung, docs/LASTENHEFT.md unverändert
 
+// ❌ BAD — „Features laut Lastenheft“ ohne priorisierte ID → CRM/Undo erfinden
+
 // ✅ GOOD — Feature + Lastenheft + Hilfe
 Zuchtplanungs-ID ergänzt; breedingPlanningOverviewHelp DE/EN; Smoke der betroffenen IDs
 ```
@@ -36,12 +46,14 @@ Nutzer-Eintragungen (Tiere, Würfe, Zucht-/Gehege-Boards und verwandte `settings
 
 - Store-/Schema-Änderungen: Migration oder abwärtskompatibles Lesen; keine leeren Boards nach Update.
 - Vor Abschluss: mit bestehenden Testdaten prüfen (Gehege, Zucht, Würfe, Tiere noch da).
+- Bekannte Settings-Keys: Katalog `lib/persistence/settings_keys.dart` (Strings nicht umbenennen ohne Migration).
 
 ## Ausnahmen
 
 - Rein interne Refactors ohne UI-/Verhaltensänderung **und** ohne Store-Schema-Änderung
 - Logs, Tests, Hive-/JSON-Keys (Key-Umbenennungen nur mit Migration), reine Typ-Umbenennungen
 - Reine Bugfixes, die dokumentiertes Verhalten wiederherstellen (kein neuer Lastenheft-Punkt; ggf. Abnahme-Text schärfen)
+- Entfernen unerreichbarer Platzhalter nach Produktentscheidung (Lastenheft-Zeile streichen)
 
 ## Smoke vor Abschluss (Minimum)
 
