@@ -127,7 +127,7 @@ Die KI darf nicht:
 | `2.0.x` | Erstes Profile: Flutter |
 | `2.1.x` | Bootstrap + Spezifikations-Framing |
 | `2.2.x` | Governance · ADR · Glossar · Quality · RFC |
-| `2.3.x` | Extensions + CI (**aktuell**); Profile-Fokus Flutter |
+| `2.3.x` | Extensions + CI; Klarstellungen Greenfield/Stack (**aktuell 2.3.1**); Profile-Fokus Flutter |
 | später | Weitere Profiles nur bei Bedarf |
 
 ---

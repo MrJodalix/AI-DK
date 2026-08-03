@@ -1,6 +1,6 @@
 # AI-DK Extension – Generic (Chat-Agenten)
 
-Version: 2.3.0
+Version: 2.3.1
 
 ## Zweck
 
@@ -13,7 +13,7 @@ Zu Beginn einer Sitzung die Datei [SESSION_PROMPT.template.md](SESSION_PROMPT.te
 - `.ai/01_BOOTSTRAP.md`
 - `.ai/00_PROJECT_CHARTER.md`
 - `.ai/05_AI_BEHAVIOR.md`
-- `.ai/08_PROJECT_STATE.md`
+- projekteigener Stand (`.ai/08_PROJECT_STATE.md` / `PROJECT_STATE.md`)
 - Fachdokumente / `profiles/flutter/` (wenn Flutter)
 
 ## Hinweis

@@ -99,7 +99,15 @@ Nach abgeschlossener Aufgabe aktualisieren: CHANGELOG, TODO, relevante Architekt
 
 ### Phase 6 – Abschluss
 
-Abgeschlossen erst wenn: Code fertig, Tests erfolgreich, Dokumentation aktualisiert, Git-Commit vorbereitet (`06_GIT_WORKFLOW.md`).
+Abgeschlossen erst wenn: Code fertig, Tests erfolgreich, Dokumentation aktualisiert, Git-Stand **vorbereitet** (`06_GIT_WORKFLOW.md`).
+
+**„Git-Commit vorbereitet“** bedeutet:
+
+1. `git status` / Diff geprüft und die logische Änderung abgegrenzt
+2. Commit-Nachricht (Schwerpunkt **Warum**) formuliert oder im Abschlussbericht vorgeschlagen
+3. Im Abschlussbericht: Branch, commit-bereite Dateiliste bzw. Status, und ob ein Commit **ausgeführt** wurde
+
+**Commit ausführen** nur, wenn ausdrücklich gefordert oder klar durch Aufgabe/Projektregel gedeckt (`06_GIT_WORKFLOW.md`). Engere User- oder Projektrechtslinien (z. B. „nur auf Anweisung committen“) haben Vorrang.
 
 ### Große Aufgaben
 
@@ -174,12 +182,11 @@ Explizite Anweisung des Menschen kann Phasen kürzen; Risiken bleiben zu benenne
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.1
 
 Änderung in dieser Version:
 
-- Einheitliche Dokumentstruktur (Sprint 4)
-- Phase 3 auf Charter/Coding Standards verwiesen (Redundanzabbau)
+- Phase 6: „Commit vorbereitet“ vs. „Commit ausführen“ klargestellt
 
 Verwandte Dokumente:
 

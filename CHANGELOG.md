@@ -4,6 +4,21 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.1 – 2026-08-03
+
+Klarstellungen aus Zielprojekt-Retro (Greenfield, Shared Core, Git-Abschluss, Flutter-Stack-Konflikte). Kein Breaking Change.
+
+### Geändert
+
+- `.ai/01_BOOTSTRAP.md` — Zielprojekt-Greenfield; Shared Core (Kopie/Verlinkung); projekteigener Stand / Alias `PROJECT_STATE.md`
+- `.ai/02_DEVELOPMENT_WORKFLOW.md` — Phase 6: „Commit vorbereitet“ vs. ausführen
+- `.ai/06_GIT_WORKFLOW.md` — Abschluss vorbereitet; Commit nur bei Freigabe/Aufgabendeckung
+- `.ai/08_PROJECT_STATE.md` — Shared Core / nested AI-DK
+- `profiles/README.md` — Core **kopieren oder verlinken**; Stand-Pflicht
+- `extensions/cursor/README.md` — gleiche Einbindungsregel wie Profiles
+- `profiles/flutter/STACK.md` — Riverpod Runtime vs. Generator; Pub-Konflikte; Pre-Release-Regel
+- YAML-Ableitung: `architecture.yml`, `git.yml`, `profiles/flutter/rules/flutter.yml`
+
 ## 2.3.0 – 2026-07-29
 
 Extensions und CI. Profile-Fokus bleibt **Flutter only**.

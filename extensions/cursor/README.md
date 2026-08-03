@@ -1,6 +1,6 @@
 # AI-DK Extension – Cursor
 
-Version: 2.3.0
+Version: 2.3.1
 
 ## Zweck
 
@@ -12,16 +12,17 @@ Core-/Profile-Markdown bleibt kanonisch. Diese Extension liefert nur **Werkzeug-
 
 ## Einrichtung (Zielprojekt)
 
-1. AI-DK Core nach `.ai/` kopieren (inkl. `01_BOOTSTRAP.md`).
-2. Bei Flutter-Projekten: `profiles/flutter/` mitführen.
-3. Vorlage [AGENTS.template.md](AGENTS.template.md) als `AGENTS.md` (Repo-Root) oder in Cursor-Rules übernehmen.
-4. Optional: [cursor-rule.template.mdc](cursor-rule.template.mdc) nach `.cursor/rules/aidk.mdc` legen.
+1. AI-DK Core nach `.ai/` **kopieren oder verlinken** (inkl. `01_BOOTSTRAP.md`). Beide Varianten sind zulässig.
+2. Bei geteiltem/verlinktem Core: **projekteigene** Stand-Datei anlegen (`.ai/08_PROJECT_STATE.md` des Zielprojekts; optional Alias `PROJECT_STATE.md`) — nicht den Framework-Stand von AI-DK als Produktstand nutzen (`01_BOOTSTRAP.md`, `08_PROJECT_STATE.md`).
+3. Bei Flutter-Projekten: `profiles/flutter/` mitführen **oder** verlinken.
+4. Vorlage [AGENTS.template.md](AGENTS.template.md) als `AGENTS.md` (Repo-Root) oder in Cursor-Rules übernehmen.
+5. Optional: [cursor-rule.template.mdc](cursor-rule.template.mdc) nach `.cursor/rules/aidk.mdc` legen.
 
 ## Was Cursor zuerst lesen soll
 
 Reihenfolge unverändert aus `01_BOOTSTRAP.md`:
 
-1. Charter → 2. AI Behavior → 3. Project State → 4. TODO → 5. Fachdocs/Profile → 6. Aufgabe
+1. Charter → 2. AI Behavior → 3. Project State (projekteigen) → 4. TODO → 5. Fachdocs/Profile → 6. Aufgabe
 
 ## Pflege
 

@@ -1,6 +1,6 @@
 # AI-DK Flutter – Stack
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Ziel
 
@@ -54,15 +54,38 @@ Stack-Wahl ersetzt keine Coding-/Test-/Security-Prinzipien des Cores.
 | Navigation | **go_router** | parallele Navigator-2.0-Stacks / auto_route ohne Migration |
 | Design-System | **Material 3** (`useMaterial3: true` bzw. aktuelles Flutter-Default) | paralleles zweites Design-System ohne Theme-Strategie |
 
+### Riverpod Runtime vs. Codegenerierung
+
+- **Kanonisch und Pflicht:** Riverpod-Runtime (`flutter_riverpod` bzw. projektgewähltes Äquivalent).
+- **Empfohlen:** `riverpod_annotation` + `riverpod_generator` für neue Provider, sofern der Resolver es zulässt.
+- **Erlaubte Ausnahme:** manuelle Provider ohne Generator, wenn Pub-Resolver-Konflikte mit anderen kanonischen Paketen (z. B. Drift/Freezed) bestehen — Begründung und geplanter Upgrade-Pfad im **Projektstand**.
+- Kein zweites State-System als „Ausweg“ aus einem Generator-Konflikt.
+
 ### Paketwahl
 
-- Bevorzuge **aktive, gut dokumentierte** Pakete aus dem kanonischen Stack.
+- Bevorzuge **aktive, gut dokumentierte, stabile** Releases aus dem kanonischen Stack.
 - Keine neuen Abhängigkeiten „auf Verdacht“.
 - Vor Aufnahme: Nutzen, Wartung, Lizenz, Konflikt mit bestehendem Stack prüfen (`10_SECURITY.md` für Secrets/Supply-Chain-Mindestmaß).
 
+### Pre-Release-Abhängigkeiten
+
+- Pre-Releases (`-dev`, `-alpha`, `-beta`, `-rc`) sind **nicht Default**.
+- Zulässig nur mit Begründung und Eintrag im Projektstand (Risiko, Warum, Ausstiegskriterium).
+- Vor Feature-Arbeit Stabilität erneut prüfen; sobald ein stabiles Release den Bedarf deckt, umstellen.
+
+### Pub-Resolver-Konflikte im kanonischen Stack
+
+Wenn zwei kanonische Pakete nicht gemeinsam auflösbar sind:
+
+1. Konflikt und betroffene Pakete dokumentieren (Projektstand).
+2. Optionen bewerten in Charter-Reihenfolge: Wartbarkeit → Stabilität → …  
+   typisch: Version pinnen, bewusstes Major-Upgrade einer Seite, oder Generator/Neben-Dep vorübergehend aussetzen.
+3. Gewählte Ausnahme im Stand + Changelog festhalten; paralleles Zweit-System bleibt verboten.
+4. Keine erfundenen Package-Versionen oder „force“-Overrides ohne Beleg.
+
 ### Codegenerierung
 
-Freezed / Drift / json_serializable:
+Freezed / Drift / json_serializable (und ggf. Riverpod-Generator):
 
 - Generierte Dateien (`*.g.dart`, `*.freezed.dart`) nicht von Hand editieren.
 - Generator-Lauf ist Teil der Lieferpflicht vor Commit, wenn neue Annotierungen hinzukamen.
@@ -81,6 +104,7 @@ Freezed / Drift / json_serializable:
 - Feature-first Ordnerstruktur (siehe `ARCHITECTURE.md`).
 - Theme über `ThemeData` / `ColorScheme.fromSeed` zentral halten.
 - Deep Links und Navigator-APIs über `go_router` bündeln.
+- Nach Stack-Upgrades (z. B. Riverpod 3) Generator-Nutzung erneut prüfen.
 
 ---
 
@@ -92,17 +116,20 @@ Die KI muss:
 2. Alternativen nur mit Begründung und Migrationsaufwand nennen.
 3. Keine zweiten State- oder Router-Lösungen „kurz zwischendurch“ einführen.
 4. Package-Namen und APIs nicht erfinden.
+5. Resolver-Konflikte und Pre-Releases dokumentieren statt stillschweigend hinzunehmen.
 
 ---
 
 ## Checkliste
 
-- [ ] State = Riverpod (oder dokumentierte Ausnahme)
+- [ ] State = Riverpod-Runtime (oder dokumentierte Ausnahme)
+- [ ] Riverpod-Generator genutzt oder Ausnahme im Stand
 - [ ] Persistenz = Drift (oder dokumentierte Ausnahme)
 - [ ] Models = Freezed wo Immutability/Unions nötig
 - [ ] Navigation = go_router
 - [ ] UI = Material 3
 - [ ] Keine parallelen Stacks ohne Stand-Eintrag
+- [ ] Pre-Releases nur mit Stand-Eintrag
 
 ---
 
@@ -112,9 +139,17 @@ Die KI muss:
 
 Neues Feature mit `ConsumerWidget`, Drift-DAO, Freezed-Model, Route in `go_router`, Material-3-Widgets.
 
+### Gut (dokumentierte Ausnahme)
+
+`riverpod_generator` zurückgestellt wegen Pub-Konflikt mit Drift/Freezed; manuelle Provider; Stand nennt Upgrade auf Riverpod 3 + Generator als nächsten Schritt.
+
 ### Schlecht
 
 Dasselbe Feature mit Provider „nur hier“, plus `Navigator.push`, plus manuellem `copyWith`, parallel zu bestehendem Riverpod/go_router.
+
+### Schlecht
+
+Pre-Release von Freezed ohne Stand-Eintrag und ohne Ausstiegskriterium.
 
 ---
 
@@ -124,7 +159,8 @@ Abweichungen vom kanonischen Stack sind erlaubt, wenn:
 
 - Altcode eine Migration erzwingt (zeitlich begrenzt dokumentieren), oder
 - eine ausdrückliche Projektentscheidung vorliegt, oder
-- Plattform-/Kundenanforderungen entgegenstehen.
+- Plattform-/Kundenanforderungen entgegenstehen, oder
+- ein belegter Pub-Resolver-Konflikt die volle Generator-Suite blockiert (siehe oben).
 
 Jede Ausnahme: Begründung im Projektstand.
 
@@ -132,11 +168,11 @@ Jede Ausnahme: Begründung im Projektstand.
 
 ## Version
 
-Dokumentversion: 2.0.0
+Dokumentversion: 2.0.1
 
 Änderung in dieser Version:
 
-- Erstes Flutter-Stack-Dokument (AI-DK 2.0)
+- Riverpod Runtime vs. Generator; Pub-Konflikte; Pre-Release-Regel
 
 Verwandte Dokumente:
 

@@ -6,13 +6,14 @@ alwaysApply: true
 
 # AI-DK
 
-Dieses Projekt implementiert die AI-DK-Spezifikation (Version siehe Repo-`README.md`).
+Dieses Projekt implementiert die AI-DK-Spezifikation (Version siehe Repo-`README.md` / Framework **2.3.1**).
 
 Vor jeder Aufgabe:
 
-1. `.ai/01_BOOTSTRAP.md` ausführen (verbindliche Startsequenz).
+1. `.ai/01_BOOTSTRAP.md` ausführen (verbindliche Startsequenz; bei Shared Core projekteigenen Stand lesen).
 2. Charter, AI Behavior, Project State lesen; TODO prüfen.
 3. Fachdocs / aktives Profile (z. B. `profiles/flutter/`) ermitteln.
 4. Dann erst planen und implementieren (`02_DEVELOPMENT_WORKFLOW.md`).
 
 Markdown unter `.ai/` ist kanonisch. Keine erfundenen APIs oder Releases. Flutter-Stack nur laut Profile.
+Commit vorbereiten ≠ Commit ausführen.

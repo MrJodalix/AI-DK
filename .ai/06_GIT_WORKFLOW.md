@@ -97,10 +97,12 @@ Die KI darf Git-Aktionen und -Ergebnisse nicht behaupten, die sie nicht ausgefü
 
 ### Abschluss einer Aufgabe
 
-Eine Aufgabe ist git-seitig erst vorbereitet, wenn:
+Eine Aufgabe ist git-seitig erst **vorbereitet**, wenn:
 
-- gewünschte Änderungen committed oder klar als commit-bereit beschrieben sind,
-- Branch und Commit-Referenz im Abschlussbericht genannt werden können (siehe `02_DEVELOPMENT_WORKFLOW.md`).
+- gewünschte Änderungen **committed** oder klar als **commit-bereit** beschrieben sind (Message + abgegrenzte Dateiliste),
+- Branch und — falls committed — Commit-Referenz im Abschlussbericht genannt werden können; sonst explizit „noch nicht committed“ (siehe `02_DEVELOPMENT_WORKFLOW.md` Phase 6).
+
+**Commit ausführen** nur bei ausdrücklicher Freigabe oder klarer Aufgabendeckung (siehe KI-Verhalten unten). „Vorbereitet“ allein ist kein Auftrag zum Committen.
 
 Details zum Entwicklungsablauf stehen in `02_DEVELOPMENT_WORKFLOW.md`. Testpflichten vor dem Commit stehen in `04_TESTING.md`.
 
@@ -184,11 +186,11 @@ Sicherheitsanforderungen (keine Secrets in der Historie) haben Vorrang vor Beque
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.1
 
 Änderung in dieser Version:
 
-- Querverweis auf Charter-Matrix; Verwandte Docs ergänzt (Sprint 4 Konsistenz)
+- „Commit vorbereitet“ vs. ausführen; Abschlussbericht darf „noch nicht committed“ nennen
 
 Verwandte Dokumente:
 

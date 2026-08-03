@@ -98,7 +98,17 @@ Keine kosmetischen Umschreibungen ohne Inhaltsänderung.
 
 ### Vorlage
 
-Zielprojekte kopieren die Struktur unter **Aktueller Projektstand** und ersetzen den Inhalt. Die Abschnitte Ziel bis Ausnahmen bleiben als Regeln erhalten, sofern das Projekt AI-DK Core nutzt.
+Zielprojekte füllen die Struktur unter **Aktueller Projektstand** projektspezifisch. Die Abschnitte Ziel bis Ausnahmen bleiben als Regeln erhalten, sofern das Projekt AI-DK Core nutzt.
+
+### Shared Core / nested AI-DK
+
+Wenn der Core **kopiert oder verlinkt** ist (Symlink, Submodule, nested `AI-DK/`):
+
+1. Der lebendige Stand des **Zielprojekts** muss eine **projekteigene** Datei sein — typisch `.ai/08_PROJECT_STATE.md` im Zielrepo, die **nicht** den Framework-Stand von AI-DK ersetzt oder überschreibt.
+2. Alias `PROJECT_STATE.md` im Repo-Root ist erlaubt, wenn er auf denselben projekteigenen Stand zeigt.
+3. Bootstrap liest den projekteigenen Stand (`01_BOOTSTRAP.md`).
+
+Einrichtung Core/Profile: `profiles/README.md`, `extensions/cursor/README.md`.
 
 ---
 
@@ -168,7 +178,7 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Stand vom
 
-2026-07-29
+2026-08-03
 
 ### Projektkurzbeschreibung
 
@@ -176,7 +186,7 @@ AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation)
 
 ### Aktueller Fokus
 
-Framework **2.3.0**. Profile-Fokus: **nur Flutter**. Extensions und CI geliefert.
+Framework **2.3.1** — Klarstellungen nach Zielprojekt-Retro (Greenfield, Shared Core, Commit-Vorbereitung, Flutter Stack-Konflikte/Pre-Releases). Profile-Fokus: **nur Flutter**.
 
 ### Wichtige Entscheidungen
 
@@ -185,7 +195,9 @@ Framework **2.3.0**. Profile-Fokus: **nur Flutter**. Extensions und CI geliefert
 - Extensions = Tool-Adapter, nicht Normersatz (ADR 0006)
 - CI: GitHub Actions `check-core.yml`
 - Vor Releases: `python3 .ai/tests/check_core.py` PASS
-- AI-DK aktuell **2.3.0**
+- Core in Zielprojekten: **kopieren oder verlinken**; Stand immer projekteigen
+- Riverpod-Runtime Pflicht; Generator empfohlen mit dokumentierter Ausnahme bei Resolver-Konflikt
+- AI-DK aktuell **2.3.1**
 
 ### Bekannte Risiken / Schulden
 
@@ -194,7 +206,7 @@ Framework **2.3.0**. Profile-Fokus: **nur Flutter**. Extensions und CI geliefert
 
 ### Nächste Schritte
 
-1. Flutter-Profile in Zielprojekten nutzen + Cursor/Generic-Extension verdrahten
+1. `check_core.py` PASS nach 2.3.1-Änderungen
 2. Weitere Profiles nur bei explizitem Bedarf
 3. Optional: weitere Tool-Extensions
 
@@ -212,11 +224,11 @@ Framework **2.3.0**. Profile-Fokus: **nur Flutter**. Extensions und CI geliefert
 
 ## Version
 
-Dokumentversion: 1.0.2
+Dokumentversion: 1.0.3
 
 Änderung in dieser Version:
 
-- Stand auf Qualitätsrelease **1.0.2**; Backlog-Verweis
+- Shared Core: projekteigener Stand; Alias `PROJECT_STATE.md`
 
 Verwandte Dokumente:
 

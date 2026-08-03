@@ -26,6 +26,10 @@ rules:
     severity: must
     summary: "Jede neue Sitzung/Aufgabe startet mit 01_BOOTSTRAP.md (Charter → Behavior → State → TODO → Fachdocs → erst dann Arbeit)."
     refs: ["01_BOOTSTRAP.md"]
+  - id: BS-002
+    severity: must
+    summary: "Greenfield: Verdrahtung → Docs → Scaffold ohne Fach-Features; Shared Core erfordert projekteigenen Stand."
+    refs: ["01_BOOTSTRAP.md", "08_PROJECT_STATE.md", "profiles/README.md"]
   - id: WF-001
     severity: must
     summary: "Keine Änderung beginnt mit Code: Bootstrap, dann Verstehen → Analysieren → Planen → Umsetzen → Prüfen → Dokumentieren → Abschließen."
@@ -34,6 +38,10 @@ rules:
     severity: must
     summary: "Projektübernahme: Aufnahme ohne Änderungen; Sanierung nur nach Freigabe."
     refs: ["02_DEVELOPMENT_WORKFLOW.md"]
+  - id: WF-003
+    severity: must
+    summary: "„Commit vorbereitet“ bedeutet Status/Message/Bericht; Commit ausführen nur bei Freigabe oder Aufgabendeckung."
+    refs: ["02_DEVELOPMENT_WORKFLOW.md", "06_GIT_WORKFLOW.md"]
   - id: BH-001
     severity: must
     summary: "Priorität: blockierende Fehler → Security → Architektur → Schulden → Tests → Features."
@@ -50,3 +58,7 @@ rules:
     severity: must
     summary: "Projektstand lesen und nach relevanten Änderungen aktualisieren; nichts erfinden."
     refs: ["08_PROJECT_STATE.md"]
+  - id: ST-002
+    severity: must
+    summary: "Bei Shared/verlinktem Core: projekteigener Stand (nicht Framework-Stand); Alias PROJECT_STATE.md erlaubt."
+    refs: ["08_PROJECT_STATE.md", "01_BOOTSTRAP.md"]

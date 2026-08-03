@@ -26,6 +26,18 @@ rules:
     severity: must
     summary: "Generierte Dateien (Freezed/Drift/json_serializable) nicht von Hand editieren."
     refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-006
+    severity: must
+    summary: "Riverpod-Runtime ist Pflicht; riverpod_generator empfohlen, bei Resolver-Konflikt dokumentierte Ausnahme mit Upgrade-Pfad erlaubt."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-007
+    severity: must
+    summary: "Pre-Release-Abhängigkeiten nur mit Begründung und Eintrag im Projektstand."
+    refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-008
+    severity: must
+    summary: "Pub-Resolver-Konflikte im kanonischen Stack dokumentieren und lösen ohne paralleles Zweit-System."
+    refs: ["profiles/flutter/STACK.md"]
   - id: FL-AR-001
     severity: must
     summary: "Domain importiert keine Flutter-UI- und keine Infrastruktur-Details (z. B. Drift)."

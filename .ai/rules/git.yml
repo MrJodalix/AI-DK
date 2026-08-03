@@ -25,3 +25,7 @@ rules:
     severity: should
     summary: "Feature-/Fix-Branches und klare Commit-Nachrichten (Warum vor Was)."
     refs: ["06_GIT_WORKFLOW.md"]
+  - id: GIT-007
+    severity: must
+    summary: "„Commit vorbereitet“ ≠ Commit ausführen; ausführen nur bei Freigabe/Aufgabendeckung; engere Projektregeln haben Vorrang."
+    refs: ["06_GIT_WORKFLOW.md", "02_DEVELOPMENT_WORKFLOW.md"]

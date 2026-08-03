@@ -1,6 +1,6 @@
 # AI-DK Profiles
 
-Version: 2.3.0
+Version: 2.3.1
 
 ## Zweck
 
@@ -30,11 +30,12 @@ Extensions      → Tool-Anbindung (`extensions/`)
 
 ## Nutzung in Zielprojekten
 
-1. Core unter `.ai/` übernehmen.
-2. Flutter-Profile mitführen oder verlinken.
-3. Optional Tool-Adapter aus `extensions/` verdrahten.
-4. Im Projektstand vermerken: aktives Profile + Version.
-5. Bei Konflikten: Core-Prinzipien + dokumentierte Projektentscheidung.
+1. Core unter `.ai/` **kopieren oder verlinken** (Kopie, Symlink, Submodule/nested Checkout). Beide Varianten sind zulässig.
+2. Flutter-Profile **mitführen oder verlinken**.
+3. Bei geteiltem/verlinktem Core: **projekteigener** Stand Pflicht (`.ai/08_PROJECT_STATE.md` des Zielprojekts; optional Alias `PROJECT_STATE.md`) — siehe `01_BOOTSTRAP.md`, `08_PROJECT_STATE.md`.
+4. Optional Tool-Adapter aus `extensions/` verdrahten.
+5. Im Projektstand vermerken: aktives Profile + Version + Art der Core-Einbindung (Kopie/Link).
+6. Bei Konflikten: Core-Prinzipien + dokumentierte Projektentscheidung.
 
 ## Neues Profile
 
