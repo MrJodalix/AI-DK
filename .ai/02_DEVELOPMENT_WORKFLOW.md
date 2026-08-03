@@ -113,6 +113,14 @@ Abgeschlossen erst wenn: Code fertig, Tests erfolgreich, Dokumentation aktualisi
 
 Große Aufgaben werden in überprüfbare Schritte zerlegt (z. B. Datenmodell → Persistenz → Zugriffsschicht → Zustand → UI → Tests → Dokumentation).
 
+### Meilensteine / Epics (z. B. P0–Pn)
+
+Über mehrere Lieferungen hinweg:
+
+1. Pro Meilenstein: lauffähiger Stand + Tests + Docs (`CHANGELOG`, `TODO`, Stand).
+2. SemVer-/Produktversion gemäß Projektkonvention anheben, wenn der Meilenstein nutzbaren Umfang liefert.
+3. Phase-2-Planung darf bei klar abgegrenzten Meilensteinen kurz sein; Architektur- und Stack-Entscheidungen bleiben schriftlich (Stand oder Architekturdoc).
+
 ### Bestehende Projekte übernehmen
 
 1. **Aufnahme** — keine Änderungen; Struktur, Architektur, Probleme erfassen
@@ -182,11 +190,11 @@ Explizite Anweisung des Menschen kann Phasen kürzen; Risiken bleiben zu benenne
 
 ## Version
 
-Dokumentversion: 1.0.1
+Dokumentversion: 1.0.2
 
 Änderung in dieser Version:
 
-- Phase 6: „Commit vorbereitet“ vs. „Commit ausführen“ klargestellt
+- Meilensteine/Epics: Docs/Tests/Version je Lieferung; Planungskürze bei klaren Schnitten
 
 Verwandte Dokumente:
 

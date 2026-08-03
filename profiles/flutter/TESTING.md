@@ -1,6 +1,6 @@
 # AI-DK Flutter – Testing
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Ziel
 
@@ -72,6 +72,7 @@ Widget-Tests für kritisches Interaktionsverhalten — nicht für jedes Pixel.
 
 - In-Memory oder isolierte Testdb.
 - Migrationen gesondert prüfen, wenn Schema geändert wird.
+- Bei Erhöhung von `schemaVersion`: mindestens ein Test, der eine DB auf dem **vorherigen** Schema öffnet (oder Schema-Stand simuliert) und die **Upgrade-Migration** auf die neue Version ausführt — `onCreate` allein reicht nicht.
 
 ### go_router testen
 
@@ -103,6 +104,7 @@ Die KI muss:
 
 - [ ] Passende Testart zur Änderung
 - [ ] Provider/Drift isolierbar
+- [ ] Bei Schema-Bump: Upgrade-Migration getestet
 - [ ] Keine Secrets in Testdaten (`10_SECURITY.md`)
 - [ ] Regression bei Bugfix
 - [ ] Lokal/CI-ausführbar dokumentiert
@@ -131,11 +133,11 @@ Plattformkanäle: Tests so weit wie sinnvoll mocken; Rest manuell dokumentieren.
 
 ## Version
 
-Dokumentversion: 2.0.0
+Dokumentversion: 2.0.1
 
 Änderung in dieser Version:
 
-- Erstes Flutter-Testing-Dokument (AI-DK 2.0)
+- Pflicht: Upgrade-Migrationstest bei schemaVersion-Bump
 
 Verwandte Dokumente:
 

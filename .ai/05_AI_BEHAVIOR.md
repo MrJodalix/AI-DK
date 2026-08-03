@@ -1,6 +1,6 @@
 # AI-DK AI Behavior Rules
 
-Version: 1.0.1
+Version: 1.0.2
 
 ## Ziel
 
@@ -78,6 +78,21 @@ Vor Architekturänderungen: Problem, Alternativen, Vor-/Nachteile, Empfehlung do
 6. Neue Features  
 
 Abweichungen begründen.
+
+**Dokumentierte Stack-Ausnahmen** (z. B. Generator zurückgestellt, Pre-Release gepinnt) dürfen Feature-Arbeit **nicht dauerhaft blockieren**, solange:
+
+- Begründung und Upgrade-Pfad im Projektstand stehen, und
+- kein neuer paralleler Stack eingeführt wird.
+
+Schulden trotzdem periodisch angehen; Ausstiegskriterien nicht vergessen.
+
+### Optionale Integrationen (Cloud, Backup, externe Auth)
+
+Wenn ein Feature **optional** ist und die Kernfunktion offline/ohne Cloud laufen muss:
+
+1. Port/Interface im Domain- oder Application-Schnitt anlegen.
+2. Konkrete Implementierung nur mit **belegten** Paketen/APIs.
+3. Bis zur echten Verdrahtung: `Unavailable*`-Stub (oder Äquivalent), der klar signalisiert „nicht konfiguriert“ — **kein** erfundenes SDK und keine Pseudo-Auth.
 
 ### Konflikte nicht allein entscheiden
 
@@ -165,11 +180,11 @@ Prioritätsabweichungen nur mit Begründung und Abstimmung. Explizite menschlich
 
 ## Version
 
-Dokumentversion: 1.0.1
+Dokumentversion: 1.0.2
 
 Änderung in dieser Version:
 
-- Code-Review-Schwereordnung und Secret-Stopp vor Merge/Approve (S6-Nachzug)
+- Stack-Ausnahmen vs. Feature-Blockade; optionale Integrationen als Port + Unavailable-Stub
 
 Verwandte Dokumente:
 

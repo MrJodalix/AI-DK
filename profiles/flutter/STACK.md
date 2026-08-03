@@ -1,6 +1,6 @@
 # AI-DK Flutter – Stack
 
-Version: 2.0.1
+Version: 2.0.2
 
 ## Ziel
 
@@ -72,6 +72,7 @@ Stack-Wahl ersetzt keine Coding-/Test-/Security-Prinzipien des Cores.
 - Pre-Releases (`-dev`, `-alpha`, `-beta`, `-rc`) sind **nicht Default**.
 - Zulässig nur mit Begründung und Eintrag im Projektstand (Risiko, Warum, Ausstiegskriterium).
 - Vor Feature-Arbeit Stabilität erneut prüfen; sobald ein stabiles Release den Bedarf deckt, umstellen.
+- Pre-Releases **blockieren** Feature-Arbeit nicht dauerhaft (siehe `05_AI_BEHAVIOR.md`), solange Stand und Ausstiegskriterium gepflegt sind — aber Upgrade-Druck bleibt.
 
 ### Pub-Resolver-Konflikte im kanonischen Stack
 
@@ -117,6 +118,7 @@ Die KI muss:
 3. Keine zweiten State- oder Router-Lösungen „kurz zwischendurch“ einführen.
 4. Package-Namen und APIs nicht erfinden.
 5. Resolver-Konflikte und Pre-Releases dokumentieren statt stillschweigend hinzunehmen.
+6. Fremd-HTTP nur hinter belegtem Client (siehe `ARCHITECTURE.md`); optionale Cloud als Port + Stub.
 
 ---
 
@@ -168,11 +170,11 @@ Jede Ausnahme: Begründung im Projektstand.
 
 ## Version
 
-Dokumentversion: 2.0.1
+Dokumentversion: 2.0.2
 
 Änderung in dieser Version:
 
-- Riverpod Runtime vs. Generator; Pub-Konflikte; Pre-Release-Regel
+- Pre-Release vs. Feature-Blockade; Verweis Offline/HTTP und optionale Cloud
 
 Verwandte Dokumente:
 

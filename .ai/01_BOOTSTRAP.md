@@ -1,6 +1,6 @@
 # AI-DK Bootstrap
 
-Version: 2.1.1
+Version: 2.1.2
 
 ## Ziel
 
@@ -78,12 +78,21 @@ Bei **neuen** Zielprojekten (noch kein Produktcode / keine Fach-Features):
 
 ## Ausnahmen
 
-Die volle Sequenz darf verkürzt werden nur bei:
+Die volle Sequenz darf verkürzt werden bei:
 
 - reinen Meta-/Clarifying-Fragen ohne Code- oder Dokumentänderung, oder
-- Fortsetzung derselben Aufgabe in derselben Sitzung, wenn der Kontext nachweislich bereits geladen ist.
+- Fortsetzung derselben Aufgabe in derselben Sitzung, wenn der Kontext nachweislich bereits geladen ist, oder
+- **Fortsetzungssitzung im selben Zielprojekt**, wenn der projekteigene Stand (`08_PROJECT_STATE.md` / Alias) **aktuell** ist und die Aufgabe keine Architektur-/Stack-Entscheidung neu aufwirft.
 
-Sobald geplant, implementiert, getestet oder dokumentiert wird: Sequenz vollständig.
+### Fortsetzungssitzung (verkürzter Start)
+
+Mindestens lesen/prüfen:
+
+1. projekteigener Stand
+2. `TODO.md` (falls vorhanden)
+3. fachlich betroffene Core-/Profile-Dokumente der konkreten Aufgabe
+
+Charter und AI Behavior müssen nicht jedes Mal vollständig neu gelesen werden, bleiben aber verbindlich. Bei Unsicherheit, Stack-Konflikt oder Architekturänderung: volle Startsequenz.
 
 ---
 
@@ -113,11 +122,11 @@ Die KI muss:
 
 ## Version
 
-Dokumentversion: 2.1.1
+Dokumentversion: 2.1.2
 
 Änderung in dieser Version:
 
-- Zielprojekt-Greenfield und Shared Core (Kopie/Verlinkung, projekteigener Stand)
+- Fortsetzungssitzung: verkürzter Start bei aktuellem Stand
 
 Verwandte Dokumente:
 

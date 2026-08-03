@@ -1,6 +1,6 @@
 # AI-DK Flutter – Architecture
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Ziel
 
@@ -81,6 +81,25 @@ App-weite Zustände bewusst und über Riverpod bereitstellen — keine versteckt
 - Queries in DAOs/Repositories — nicht in Widgets.
 - Transaktionen für zusammengehörige Schreibvorgänge.
 
+### Offline-First und Netzgrenze
+
+Wenn das Projekt Offline-First vorgibt (Produkt/Stand):
+
+1. **Lokale Persistenz ist Primärquelle** für Kernfunktionen (Lesen/Schreiben ohne Netz).
+2. HTTP/Netz gehört in Infrastructure (Client/Adapter) hinter Application-Services — **nicht** in Widgets und nicht in Domain-Policies.
+3. Online nur für explizit genannte Fälle (z. B. Katalog-Laden, Bilddownload, Sync/Backup). Kernpfade müssen ohne Netz nutzbar bleiben bzw. klar degradieren.
+4. Fehler aus dem Netz dürfen Offline-Daten nicht zerstören (kein stilles Überschreiben ohne Absicht).
+
+### Externer HTTP-/API-Client (Mindeststandard)
+
+Bei Anbindung einer dokumentierten Fremd-API:
+
+1. Nur **belegte** Endpoints/Felder (Doku/OpenAPI) — nichts erfinden.
+2. Eigenen Client hinter einem Port oder Application-Service (DTO-Mapping getrennt von Drift-Entities).
+3. Rate-Limits / Throttle und identifikationsfähiger User-Agent, wenn die API das verlangt.
+4. Unit-Tests mit gemocktem HTTP-Client; keine echten Netzcalls in Unit-Tests.
+5. Optionale Cloud: siehe Core `05_AI_BEHAVIOR.md` (Port + Unavailable-Stub).
+
 ---
 
 ## Empfehlungen
@@ -110,6 +129,8 @@ Die KI muss:
 - [ ] Eine Router-Quelle der Wahrheit
 - [ ] Persistenz hinter DAO/Repository
 - [ ] Riverpod-Wiring nachvollziehbar
+- [ ] Offline-Kern ohne Netz nutzbar (falls Offline-first)
+- [ ] HTTP nur hinter Client/Service; gemockte Tests
 
 ---
 
@@ -135,11 +156,11 @@ Plattformplugins mit Zwangskopplung an UI: eng begrenzen und isolieren.
 
 ## Version
 
-Dokumentversion: 2.0.0
+Dokumentversion: 2.0.1
 
 Änderung in dieser Version:
 
-- Erstes Flutter-Architektur-Dokument (AI-DK 2.0)
+- Offline-First-Netzgrenze; HTTP-Client-Mindeststandard
 
 Verwandte Dokumente:
 

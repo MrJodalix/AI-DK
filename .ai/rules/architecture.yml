@@ -62,3 +62,20 @@ rules:
     severity: must
     summary: "Bei Shared/verlinktem Core: projekteigener Stand (nicht Framework-Stand); Alias PROJECT_STATE.md erlaubt."
     refs: ["08_PROJECT_STATE.md", "01_BOOTSTRAP.md"]
+  - id: BS-003
+    severity: should
+    summary: "Fortsetzungssitzung: verkürzter Bootstrap erlaubt bei aktuellem Stand; sonst volle Sequenz."
+    refs: ["01_BOOTSTRAP.md"]
+  - id: BH-004
+    severity: must
+    summary: "Optionale Cloud/Backup: Port + Unavailable-Stub; keine erfundenen SDKs."
+    refs: ["05_AI_BEHAVIOR.md"]
+  - id: BH-005
+    severity: should
+    summary: "Dokumentierte Stack-Ausnahmen blockieren Features nicht dauerhaft; Upgrade-Pfad im Stand pflegen."
+    refs: ["05_AI_BEHAVIOR.md"]
+  - id: WF-004
+    severity: should
+    summary: "Meilensteine/Epics: je Lieferung Tests + Docs + passende Versionserhöhung."
+    refs: ["02_DEVELOPMENT_WORKFLOW.md"]
+

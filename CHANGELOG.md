@@ -4,7 +4,22 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.2 – 2026-08-03
+
+Klarstellungen aus Zielprojekt-Retro P0–P4 (Offline/HTTP, Migrations-Tests, Fortsetzungssitzung, optionale Integrationen). Kein Breaking Change.
+
+### Geändert
+
+- `.ai/01_BOOTSTRAP.md` — Fortsetzungssitzung: verkürzter Start bei aktuellem Stand
+- `.ai/02_DEVELOPMENT_WORKFLOW.md` — Meilensteine/Epics (Docs/Tests/Version je Lieferung)
+- `.ai/05_AI_BEHAVIOR.md` — Stack-Ausnahmen vs. Feature-Blockade; Port + Unavailable-Stub
+- `profiles/flutter/ARCHITECTURE.md` — Offline-First-Netzgrenze; HTTP-Client-Mindeststandard
+- `profiles/flutter/TESTING.md` — Upgrade-Migrationstest bei `schemaVersion`-Bump
+- `profiles/flutter/STACK.md` — Pre-Release vs. Blockade; Verweise Offline/HTTP
+- YAML: `architecture.yml`, `profiles/flutter/rules/flutter.yml`
+
 ## 2.3.1 – 2026-08-03
+
 
 Klarstellungen aus Zielprojekt-Retro (Greenfield, Shared Core, Git-Abschluss, Flutter-Stack-Konflikte). Kein Breaking Change.
 

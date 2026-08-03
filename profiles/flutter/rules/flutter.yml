@@ -74,3 +74,16 @@ rules:
     severity: should
     summary: "Widget-Tests gezielt für kritisches UI-Verhalten; Golden-Tests nur bei Projektpflege."
     refs: ["profiles/flutter/TESTING.md"]
+  - id: FL-AR-004
+    severity: must
+    summary: "Offline-First: Kern ohne Netz; HTTP hinter Client/Service, nicht in Widgets/Domain."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-AR-005
+    severity: must
+    summary: "Fremd-API: nur belegte Endpoints; DTO/Client; Mock-HTTP-Tests; Throttle/User-Agent wenn gefordert."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-TS-004
+    severity: must
+    summary: "Bei Drift schemaVersion-Bump Upgrade-Migration testen (nicht nur onCreate)."
+    refs: ["profiles/flutter/TESTING.md"]
+
