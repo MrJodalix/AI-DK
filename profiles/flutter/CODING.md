@@ -74,6 +74,7 @@ Freezed-Models und Provider-State bevorzugt unveränderlich.
 
 - Themes zentral; keine wilden Hardcoded-Farben über die App verstreut ohne Theme-Bezug.
 - Bestehende Design-Tokens des Projekts respektieren.
+- SafeArea, Tastatur, Bottom Sheets, FAB-`heroTag`: siehe `UI.md`.
 
 ### Dateien und Größe
 
@@ -108,6 +109,7 @@ Die KI muss:
 - [ ] Widgets/Provider ohne versteckte Side-Effects in `build`
 - [ ] Freezed/Generated konsistent
 - [ ] Theme/Material-3 beachtet
+- [ ] UI-Insets / Sheets gemäß `UI.md` (bei Formularen)
 - [ ] Core-Coding-Prinzipien eingehalten
 
 ---
@@ -144,4 +146,5 @@ Verwandte Dokumente:
 - `.ai/03_CODING_STANDARDS.md`
 - `profiles/flutter/STACK.md`
 - `profiles/flutter/ARCHITECTURE.md`
+- `profiles/flutter/UI.md`
 - `profiles/flutter/TESTING.md`

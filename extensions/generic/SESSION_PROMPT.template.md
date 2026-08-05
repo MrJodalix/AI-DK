@@ -1,6 +1,6 @@
 # AI-DK Sitzungsstart (Vorlage)
 
-Du arbeitest in einem Projekt, das die **AI-DK-Spezifikation Version 2.3.2** implementiert.
+Du arbeitest in einem Projekt, das die **AI-DK-Spezifikation Version 2.3.3** implementiert.
 
 AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation.
 

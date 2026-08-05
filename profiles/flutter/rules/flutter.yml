@@ -4,6 +4,8 @@ source: "profiles/flutter/STACK.md"
 sources:
   - "profiles/flutter/ARCHITECTURE.md"
   - "profiles/flutter/CODING.md"
+  - "profiles/flutter/UI.md"
+  - "profiles/flutter/DEV_SETUP.md"
   - "profiles/flutter/TESTING.md"
 rules:
   - id: FL-ST-001
@@ -82,8 +84,27 @@ rules:
     severity: must
     summary: "Fremd-API: nur belegte Endpoints; DTO/Client; Mock-HTTP-Tests; Throttle/User-Agent wenn gefordert."
     refs: ["profiles/flutter/ARCHITECTURE.md"]
+  - id: FL-AR-006
+    severity: should
+    summary: "Undokumentierte APIs: Client+DTO hinter Service; Annahmen dokumentieren; Fixture-Tests."
+    refs: ["profiles/flutter/ARCHITECTURE.md"]
   - id: FL-TS-004
     severity: must
     summary: "Bei Drift schemaVersion-Bump Upgrade-Migration testen (nicht nur onCreate)."
     refs: ["profiles/flutter/TESTING.md"]
-
+  - id: FL-UI-001
+    severity: must
+    summary: "Formular-Screens: SafeArea; Primäraktion mit Tastatur/Gestenleiste erreichbar (fixiert oder scrollbar laut UI.md)."
+    refs: ["profiles/flutter/UI.md"]
+  - id: FL-UI-002
+    severity: must
+    summary: "Bottom Sheets: useSafeArea + SafeArea(top:false) + viewInsets; scrollen bei vielen Feldern."
+    refs: ["profiles/flutter/UI.md"]
+  - id: FL-UI-003
+    severity: must
+    summary: "Mehrere FABs: eindeutige heroTags."
+    refs: ["profiles/flutter/UI.md"]
+  - id: FL-DS-001
+    severity: should
+    summary: "Vor UX-Feinschliff Device-Smoke (Tastatur, Gestenleiste, FAB); SDK-Pfade nicht erfinden."
+    refs: ["profiles/flutter/DEV_SETUP.md"]

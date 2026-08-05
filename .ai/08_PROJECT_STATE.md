@@ -178,7 +178,7 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Stand vom
 
-2026-08-03
+2026-08-05
 
 ### Projektkurzbeschreibung
 
@@ -186,7 +186,7 @@ AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation)
 
 ### Aktueller Fokus
 
-Framework **2.3.2** — Klarstellungen nach Zielprojekt-Retro P0–P4 (Offline/HTTP, Fortsetzungssitzung, Migrations-Tests, optionale Integrationen). Profile-Fokus: **nur Flutter**.
+Framework **2.3.3** — Flutter `UI.md` / `DEV_SETUP.md` und undokumentierte HTTP-Integrationen (Zielprojekt-Retro SafeArea/Sheets/Keyboard). Profile-Fokus: **nur Flutter**.
 
 ### Wichtige Entscheidungen
 
@@ -199,7 +199,8 @@ Framework **2.3.2** — Klarstellungen nach Zielprojekt-Retro P0–P4 (Offline/H
 - Riverpod-Runtime Pflicht; Generator empfohlen mit dokumentierter Ausnahme bei Resolver-Konflikt
 - Offline-First-Netzgrenze und HTTP-Client-Mindeststandard im Flutter-Profile
 - Optionale Cloud: Port + Unavailable-Stub
-- AI-DK aktuell **2.3.2**
+- Formular-/Sheet-Insets und Device-Smoke im Flutter-Profile (`UI.md`, `DEV_SETUP.md`)
+- AI-DK aktuell **2.3.3**
 
 ### Bekannte Risiken / Schulden
 
@@ -208,14 +209,14 @@ Framework **2.3.2** — Klarstellungen nach Zielprojekt-Retro P0–P4 (Offline/H
 
 ### Nächste Schritte
 
-1. `check_core.py` PASS nach 2.3.2-Änderungen
+1. `check_core.py` PASS nach 2.3.3-Änderungen
 2. Weitere Profiles nur bei explizitem Bedarf
 3. Optional: weitere Tool-Extensions
 
 ### Verweise
 
 - `.ai/01_BOOTSTRAP.md`
-- `profiles/flutter/`
+- `profiles/flutter/` (inkl. `UI.md`, `DEV_SETUP.md`)
 - `extensions/`
 - `.github/workflows/check-core.yml`
 - `docs/` · `rfcs/`

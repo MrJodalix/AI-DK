@@ -18,7 +18,7 @@ Technologieabhängige Regeln für **Flutter / Dart**-Projekte, ohne den Core zu 
 | Persistenz | **Drift** | [STACK.md](STACK.md), [ARCHITECTURE.md](ARCHITECTURE.md) |
 | Modelle / Immutability | **Freezed** | [STACK.md](STACK.md), [CODING.md](CODING.md) |
 | Navigation | **go_router** | [STACK.md](STACK.md), [ARCHITECTURE.md](ARCHITECTURE.md) |
-| UI | **Material 3** | [STACK.md](STACK.md), [CODING.md](CODING.md) |
+| UI | **Material 3** | [STACK.md](STACK.md), [CODING.md](CODING.md), [UI.md](UI.md) |
 
 Abweichungen vom Stack nur mit Begründung im Projektstand.
 
@@ -29,6 +29,8 @@ Abweichungen vom Stack nur mit Begründung im Projektstand.
 | [STACK.md](STACK.md) | Verbindliche Stack-Wahl und Alternativen |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Schichten, Abhängigkeiten, Feature-Schnitt |
 | [CODING.md](CODING.md) | Dart/Flutter-Codequalität |
+| [UI.md](UI.md) | SafeArea, Formulare, Sheets, FAB, Insets |
+| [DEV_SETUP.md](DEV_SETUP.md) | SDK/Gerät, Drift-Bump, Device-Smoke |
 | [TESTING.md](TESTING.md) | flutter_test, Widget-/Integrationstests |
 | [rules/](rules/) | YAML-Ableitung (optional für Agenten) |
 

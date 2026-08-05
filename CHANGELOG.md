@@ -4,6 +4,21 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.3 – 2026-08-05
+
+Klarstellungen aus Zielprojekt-Retro (Flutter UI/Insets, Dev-Setup/Device-Smoke, undokumentierte HTTP). Kein Breaking Change.
+
+### Hinzugefügt
+
+- `profiles/flutter/UI.md` — SafeArea, Formulare, Bottom Sheets, FAB-`heroTag`, viewInsets vs. viewPadding
+- `profiles/flutter/DEV_SETUP.md` — SDK/Gerät, Drift-Bump-Checkliste, Device-Smoke
+
+### Geändert
+
+- `profiles/flutter/ARCHITECTURE.md` — undokumentierte/Community-APIs; Verweis Drift-Checkliste
+- `profiles/flutter/CODING.md` / `README.md` — Verweise auf UI/DEV_SETUP
+- `profiles/flutter/rules/flutter.yml` — FL-UI-*, FL-DS-001, FL-AR-006
+
 ## 2.3.2 – 2026-08-03
 
 Klarstellungen aus Zielprojekt-Retro P0–P4 (Offline/HTTP, Migrations-Tests, Fortsetzungssitzung, optionale Integrationen). Kein Breaking Change.

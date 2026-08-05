@@ -34,6 +34,8 @@ rules:
 | `FL-ST` | STACK.md |
 | `FL-AR` | ARCHITECTURE.md |
 | `FL-CS` | CODING.md |
+| `FL-UI` | UI.md |
+| `FL-DS` | DEV_SETUP.md |
 | `FL-TS` | TESTING.md |
 
 ## Dateien

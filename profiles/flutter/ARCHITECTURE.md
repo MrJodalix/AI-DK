@@ -80,6 +80,7 @@ App-weite Zustände bewusst und über Riverpod bereitstellen — keine versteckt
 - Schema-Änderungen versioniert (Migrationen).
 - Queries in DAOs/Repositories — nicht in Widgets.
 - Transaktionen für zusammengehörige Schreibvorgänge.
+- Bei `schemaVersion`-Bump: Kurz-Checkliste in `DEV_SETUP.md`; Upgrade-Test in `TESTING.md`.
 
 ### Offline-First und Netzgrenze
 
@@ -99,6 +100,15 @@ Bei Anbindung einer dokumentierten Fremd-API:
 3. Rate-Limits / Throttle und identifikationsfähiger User-Agent, wenn die API das verlangt.
 4. Unit-Tests mit gemocktem HTTP-Client; keine echten Netzcalls in Unit-Tests.
 5. Optionale Cloud: siehe Core `05_AI_BEHAVIOR.md` (Port + Unavailable-Stub).
+
+### Undokumentierte / Community-APIs (optional)
+
+Wenn eine Integration **ohne stabile öffentliche Doku** nötig ist (z. B. Drittanbieter-Web-Export):
+
+1. Eigenen Client + DTO-Parser hinter Application-Service; Annahmen im Code und Projektstand dokumentieren.
+2. Throttle, User-Agent, klare Fehlerklassen (Netz / Parse / Not Found).
+3. Unit-Tests mit Fixtures/Mocks; kein stilles „Raten“ von Endpoints in der UI.
+4. Produktverhalten (Match → Nachladen → Besitz) in `PROJECT.md` / Stand festhalten — nicht nur in Architecture.
 
 ---
 
@@ -156,16 +166,18 @@ Plattformplugins mit Zwangskopplung an UI: eng begrenzen und isolieren.
 
 ## Version
 
-Dokumentversion: 2.0.1
+Dokumentversion: 2.0.2
 
 Änderung in dieser Version:
 
-- Offline-First-Netzgrenze; HTTP-Client-Mindeststandard
+- Undokumentierte HTTP-Integrationen; Verweis Drift-Checkliste / DEV_SETUP
 
 Verwandte Dokumente:
 
 - `profiles/flutter/STACK.md`
 - `profiles/flutter/CODING.md`
+- `profiles/flutter/UI.md`
+- `profiles/flutter/DEV_SETUP.md`
 - `profiles/flutter/TESTING.md`
 - `.ai/00_PROJECT_CHARTER.md`
 - `.ai/03_CODING_STANDARDS.md`

@@ -9,14 +9,14 @@ Modellunabhängig · Core technologieunabhängig · versioniert · langfristig w
 
 ## Spezifikation (verbindlich für KI)
 
-Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.3.2**. AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation. Beginne jede neue Aufgabe mit dem Bootstrap-Prozess gemäß [`01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md) und befolge anschließend die für die Aufgabe relevanten Core-Dokumente (und ggf. das aktive Profile).
+Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.3.3**. AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation. Beginne jede neue Aufgabe mit dem Bootstrap-Prozess gemäß [`01_BOOTSTRAP.md`](.ai/01_BOOTSTRAP.md) und befolge anschließend die für die Aufgabe relevanten Core-Dokumente (und ggf. das aktive Profile).
 
 ## Aktueller Stand
 
 | Feld | Wert |
 |------|------|
-| Framework-Version | **2.3.2** |
-| Status | Spezifikation · Flutter-Profile · Extensions · CI · Klarstellungen Offline/HTTP · Fortsetzung · Migrations-Tests |
+| Framework-Version | **2.3.3** |
+| Status | Spezifikation · Flutter-Profile · UI/DEV_SETUP · Extensions · CI · Klarstellungen Offline/HTTP |
 | Repository | https://github.com/MrJodalix/AI-DK |
 | Profile-Fokus | **nur Flutter** (weitere Profiles zurückgestellt) |
 
@@ -93,7 +93,8 @@ python3 .ai/tests/check_core.py
 | **2.1** | Bootstrap + Spezifikation |
 | **2.2** | Governance · ADR · Glossar · RFC |
 | **2.3.0** | Extensions + CI |
-| **2.3.2** | Klarstellungen Greenfield · Shared Core · Git-Abschluss · Flutter-Stack — **aktuell** |
+| **2.3.2** | Klarstellungen Greenfield · Shared Core · Git-Abschluss · Flutter-Stack |
+| **2.3.3** | Flutter UI.md · DEV_SETUP · undokumentierte HTTP — **aktuell** |
 | später | Weitere Profiles nur nach Bedarf |
 
 ## Verwendung
