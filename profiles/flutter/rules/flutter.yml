@@ -5,6 +5,7 @@ sources:
   - "profiles/flutter/ARCHITECTURE.md"
   - "profiles/flutter/CODING.md"
   - "profiles/flutter/UI.md"
+  - "profiles/flutter/I18N.md"
   - "profiles/flutter/DEV_SETUP.md"
   - "profiles/flutter/TESTING.md"
 rules:
@@ -40,6 +41,10 @@ rules:
     severity: must
     summary: "Pub-Resolver-Konflikte im kanonischen Stack dokumentieren und lösen ohne paralleles Zweit-System."
     refs: ["profiles/flutter/STACK.md"]
+  - id: FL-ST-009
+    severity: must
+    summary: "I18N-Default ist Flutter gen-l10n (ARB); kein paralleles i18n-System ohne Stand-Eintrag."
+    refs: ["profiles/flutter/STACK.md", "profiles/flutter/I18N.md", ".ai/12_I18N.md"]
   - id: FL-AR-001
     severity: must
     summary: "Domain importiert keine Flutter-UI- und keine Infrastruktur-Details (z. B. Drift)."
@@ -104,6 +109,18 @@ rules:
     severity: must
     summary: "Mehrere FABs: eindeutige heroTags."
     refs: ["profiles/flutter/UI.md"]
+  - id: FL-I18N-001
+    severity: must
+    summary: "Nutzersichtbare Texte in ARB/zentralem Katalog; UI nur über L10n-API bzw. Getter — keine neuen Literale in Widgets."
+    refs: ["profiles/flutter/I18N.md", ".ai/12_I18N.md"]
+  - id: FL-I18N-002
+    severity: must
+    summary: "Domänendaten (Kartennamen, API-/DB-Inhalte) nicht als UI-Copy in ARB spiegeln."
+    refs: ["profiles/flutter/I18N.md", ".ai/12_I18N.md"]
+  - id: FL-I18N-003
+    severity: should
+    summary: "Ohne gen-l10n: ein zentraler Übergangskatalog statt verstreuter Literale; Migration zu ARB im Stand."
+    refs: ["profiles/flutter/I18N.md", ".ai/12_I18N.md"]
   - id: FL-DS-001
     severity: should
     summary: "Vor UX-Feinschliff Device-Smoke (Tastatur, Gestenleiste, FAB); SDK-Pfade nicht erfinden."

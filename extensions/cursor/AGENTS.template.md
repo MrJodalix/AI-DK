@@ -1,6 +1,6 @@
 # AGENTS.md — AI-DK (Vorlage)
 
-Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.3.3**.
+Dieses Projekt implementiert die AI-DK-Spezifikation in Version **2.3.5**.
 AI-DK ist die verbindliche Arbeitsgrundlage für Analyse, Planung, Implementierung, Tests und Dokumentation.
 
 ## Start jeder Aufgabe

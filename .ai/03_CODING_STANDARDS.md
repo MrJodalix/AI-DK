@@ -181,6 +181,14 @@ Regeln:
 
 ---
 
+### Nutzertexte / Internationalisierung
+
+- Nutzersichtbare Strings zentral und über Zugriffs-API — siehe `12_I18N.md`.
+- Keine neuen UI-Literale in Views/Widgets; Domänendaten gehören nicht in den Copy-Katalog.
+- Stackspezifischer Mechanismus: aktives Profile (z. B. Flutter `profiles/flutter/I18N.md`).
+
+---
+
 ### Kommentare und Code-Dokumentation
 
 Regeln:
@@ -265,6 +273,7 @@ Die KI bewertet vorgeschlagenen Code anhand dieses Dokuments und der Entscheidun
 - [ ] Fehlerbehandlung vorhanden und sinnvoll
 - [ ] Kommentare aktuell und nicht irreführend
 - [ ] Keine unnötige neue Abhängigkeit
+- [ ] Nutzertexte gemäß `12_I18N.md` (falls UI betroffen)
 - [ ] Änderung bleibt klein und nachvollziehbar
 
 ---
@@ -313,11 +322,11 @@ Sicherheits- oder Korrektheitsanforderungen haben Vorrang vor Stilpräferenzen.
 
 ## Version
 
-Dokumentversion: 1.0.2
+Dokumentversion: 1.0.3
 
 Änderung in dieser Version:
 
-- Abschnittstitel `Checkliste` vereinheitlicht (Qualitätsrelease 1.0.2)
+- Verweis auf Core `12_I18N.md` (Nutzertexte / Mehrsprachigkeit)
 
 Verwandte Dokumente:
 
@@ -326,3 +335,4 @@ Verwandte Dokumente:
 - `04_TESTING.md`
 - `05_AI_BEHAVIOR.md`
 - `10_SECURITY.md`
+- `12_I18N.md`

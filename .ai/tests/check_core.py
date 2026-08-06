@@ -42,6 +42,7 @@ CORE_FILES = [
     "09_RELEASE_PROCESS.md",
     "10_SECURITY.md",
     "11_VERSION.md",
+    "12_I18N.md",
 ]
 
 # Bootstrap is agent entry — lean structure, not full norm template
@@ -78,6 +79,7 @@ RULE_FILES = [
     "security.yml",
     "release.yml",
     "version.yml",
+    "i18n.yml",
 ]
 
 FLUTTER_MD = [

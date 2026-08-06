@@ -1,6 +1,6 @@
 # AI-DK Flutter – Stack
 
-Version: 2.0.2
+Version: 2.0.3
 
 ## Ziel
 
@@ -53,6 +53,7 @@ Stack-Wahl ersetzt keine Coding-/Test-/Security-Prinzipien des Cores.
 | Immutable Models / Unions | **Freezed** (+ `json_serializable` wo nötig) | handgeschriebene `copyWith`-Wälder ohne Not |
 | Navigation | **go_router** | parallele Navigator-2.0-Stacks / auto_route ohne Migration |
 | Design-System | **Material 3** (`useMaterial3: true` bzw. aktuelles Flutter-Default) | paralleles zweites Design-System ohne Theme-Strategie |
+| I18N / UI-Texte | **Flutter `gen-l10n`** (`.arb` + generierte Localizations) — konkretisiert Core `12_I18N.md` | Hardcodierte Nutzer-Strings in Widgets; paralleles i18n-Paket ohne Stand-Eintrag |
 
 ### Riverpod Runtime vs. Codegenerierung
 
@@ -106,6 +107,7 @@ Freezed / Drift / json_serializable (und ggf. Riverpod-Generator):
 - Theme über `ThemeData` / `ColorScheme.fromSeed` zentral halten.
 - Deep Links und Navigator-APIs über `go_router` bündeln.
 - Nach Stack-Upgrades (z. B. Riverpod 3) Generator-Nutzung erneut prüfen.
+- Nutzertexte: Core `.ai/12_I18N.md`; Flutter-Mechanismus `gen-l10n` (siehe `I18N.md`); Domänendaten nicht in ARB spiegeln.
 
 ---
 
@@ -130,6 +132,7 @@ Die KI muss:
 - [ ] Models = Freezed wo Immutability/Unions nötig
 - [ ] Navigation = go_router
 - [ ] UI = Material 3
+- [ ] I18N = gen-l10n (oder dokumentierter Übergangskatalog laut `I18N.md`)
 - [ ] Keine parallelen Stacks ohne Stand-Eintrag
 - [ ] Pre-Releases nur mit Stand-Eintrag
 
@@ -170,16 +173,18 @@ Jede Ausnahme: Begründung im Projektstand.
 
 ## Version
 
-Dokumentversion: 2.0.2
+Dokumentversion: 2.0.3
 
 Änderung in dieser Version:
 
-- Pre-Release vs. Feature-Blockade; Verweis Offline/HTTP und optionale Cloud
+- I18N / `gen-l10n` als kanonische Problemklasse (siehe `I18N.md`)
 
 Verwandte Dokumente:
 
 - `profiles/flutter/README.md`
 - `profiles/flutter/ARCHITECTURE.md`
 - `profiles/flutter/CODING.md`
+- `profiles/flutter/I18N.md`
+- `.ai/12_I18N.md`
 - `.ai/03_CODING_STANDARDS.md`
 - `.ai/10_SECURITY.md`

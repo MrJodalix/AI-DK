@@ -48,7 +48,7 @@ Bevor die Aufgabe bearbeitet wird:
 2. Lies `05_AI_BEHAVIOR.md`.
 3. Lies `08_PROJECT_STATE.md` (bzw. den im Projekt festgelegten Stand — siehe Shared Core unten).
 4. Prüfe `TODO.md` (falls vorhanden).
-5. Ermittle die betroffenen Fachdokumente (`02`–`04`, `06`–`07`, `09`–`11`, ggf. `profiles/<name>/`).
+5. Ermittle die betroffenen Fachdokumente (`02`–`04`, `06`–`07`, `09`–`12`, ggf. `profiles/<name>/`).
 6. Bearbeite erst dann die Aufgabe — Ablauf gemäß `02_DEVELOPMENT_WORKFLOW.md`.
 
 Diese Reihenfolge ist für jede neue Sitzung **verbindlich**.

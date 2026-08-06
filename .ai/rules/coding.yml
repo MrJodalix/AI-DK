@@ -33,3 +33,7 @@ rules:
     severity: should
     summary: "Wiederkehrende Logik erst extrahieren, wenn Wiederverwendung oder Klarheit es rechtfertigen."
     refs: ["03_CODING_STANDARDS.md"]
+  - id: CS-009
+    severity: must
+    summary: "Nutzersichtbare Texte zentral und über Zugriffs-API; Details in 12_I18N.md."
+    refs: ["03_CODING_STANDARDS.md", "12_I18N.md"]

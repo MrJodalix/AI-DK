@@ -8,7 +8,7 @@ Kompakte YAML-Ableitung der Core-Markdown-Dokumente für Agenten und Tools.
 
 ## Konfliktregel (verbindlich)
 
-1. **Markdown ist kanonisch** — bei Widerspruch gewinnen die Dateien `.ai/00`–`11` (und verwandte Core-Markdowns).
+1. **Markdown ist kanonisch** — bei Widerspruch gewinnen die Dateien `.ai/00`–`12` (und verwandte Core-Markdowns).
 2. **YAML ist abgeleitet** — keine Pflichtregel darf nur in YAML existieren.
 3. Projekte **ohne** `.ai/rules/` bleiben mit Core 1.0.x gültig.
 
@@ -50,6 +50,7 @@ rules:
 | `REL` | release.yml | `09_RELEASE_PROCESS.md` |
 | `SEC` | security.yml | `10_SECURITY.md` |
 | `VER` | version.yml | `11_VERSION.md` |
+| `I18N` | i18n.yml | `12_I18N.md` |
 
 ## Sync-Pflicht
 
@@ -73,3 +74,4 @@ Siehe auch `07_DOCUMENTATION.md`.
 | [security.yml](security.yml) | Security |
 | [release.yml](release.yml) | Release Process |
 | [version.yml](version.yml) | Version |
+| [i18n.yml](i18n.yml) | I18N / Nutzertexte |

@@ -4,6 +4,35 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.5 – 2026-08-06
+
+I18N als Core-Querschnittsthema (nicht nur Flutter-Profile). Kein Breaking Change.
+
+### Hinzugefügt
+
+- `.ai/12_I18N.md` — technologieunabhängige Nutzertexte / Mehrsprachigkeit
+- `.ai/rules/i18n.yml` — I18N-001…005
+
+### Geändert
+
+- `profiles/flutter/I18N.md` — als Konkretisierung von Core `12` ausgerichtet
+- Charter-Matrix, Bootstrap-Fachdocs, Coding Standards, ADR 0002 (Nummer `12`)
+- `check_core.py` — Core-Datei + YAML `i18n.yml`
+
+## 2.3.4 – 2026-08-06
+
+I18N / zentrale Nutzertexte im Flutter-Profile. Kein Breaking Change.
+
+### Hinzugefügt
+
+- `profiles/flutter/I18N.md` — gen-l10n (ARB), Zugriff über API/Getter, Übergangskatalog, Domänendaten vs. Copy
+
+### Geändert
+
+- `profiles/flutter/STACK.md` — Problemklasse I18N / UI-Texte
+- `profiles/flutter/CODING.md` / `UI.md` / `README.md` — Verweise auf I18N
+- `profiles/flutter/rules/flutter.yml` — FL-ST-009, FL-I18N-*
+
 ## 2.3.3 – 2026-08-05
 
 Klarstellungen aus Zielprojekt-Retro (Flutter UI/Insets, Dev-Setup/Device-Smoke, undokumentierte HTTP). Kein Breaking Change.

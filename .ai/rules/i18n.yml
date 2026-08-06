@@ -1,0 +1,23 @@
+aidk: "1.1"
+source: "12_I18N.md"
+rules:
+  - id: I18N-001
+    severity: must
+    summary: "Nutzersichtbare Texte in zentralen Ressourcen; UI nur über Zugriffs-API — keine neuen Literale in der UI."
+    refs: ["12_I18N.md"]
+  - id: I18N-002
+    severity: must
+    summary: "Ein i18n-/Katalog-System pro Projekt; kein paralleles System ohne Stand-Eintrag."
+    refs: ["12_I18N.md"]
+  - id: I18N-003
+    severity: must
+    summary: "Domänendaten und Nutzer-Freitext nicht als UI-Copy in den Katalog spiegeln."
+    refs: ["12_I18N.md"]
+  - id: I18N-004
+    severity: should
+    summary: "Ohne kanonischen Mechanismus: zentraler Übergangskatalog; Migration und Restschuld im Stand."
+    refs: ["12_I18N.md"]
+  - id: I18N-005
+    severity: must
+    summary: "Profiles konkretisieren den Mechanismus, widersprechen Core-I18N-Prinzipien nicht."
+    refs: ["12_I18N.md", "profiles/README.md"]

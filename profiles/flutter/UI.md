@@ -1,6 +1,6 @@
 # AI-DK Flutter – UI
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Ziel
 
@@ -57,6 +57,7 @@ Gilt nicht für Domain-/Application-Logik.
 
 - Themes zentral (`core/theme/` o. Ä.); keine wilden Hardcoded-Farben ohne Theme-Bezug.
 - Fehler/Hinweise als `SnackBar` oder Inline-Text — nicht als unbehandelte Exceptions in der UI.
+- Texte für Titel, Labels, Buttons, SnackBars, Tooltips: zentrale Ressourcen laut `I18N.md` (keine Literale im Widget).
 
 ---
 
@@ -66,21 +67,23 @@ Gilt nicht für Domain-/Application-Logik.
 - [ ] Primäraktion mit Tastatur + Gestenleiste erreichbar
 - [ ] Bottom Sheet: `useSafeArea` + `viewInsets` + ggf. Scroll
 - [ ] FABs: eindeutige `heroTag`s
+- [ ] Nutzertexte über L10n/Katalog (`I18N.md`)
 - [ ] Device-/Emulator-Smoke bei Layout-Änderungen (siehe `DEV_SETUP.md`)
 
 ---
 
 ## Version
 
-Dokumentversion: 1.0.0
+Dokumentversion: 1.0.1
 
 Änderung in dieser Version:
 
-- Erstes Flutter-UI-Dokument (aus Zielprojekt-Retro SafeArea / Keyboard / Sheets)
+- Verweis auf `I18N.md` für nutzersichtbare Texte
 
 Verwandte Dokumente:
 
 - `profiles/flutter/CODING.md`
 - `profiles/flutter/ARCHITECTURE.md`
+- `profiles/flutter/I18N.md`
 - `profiles/flutter/DEV_SETUP.md`
 - `profiles/flutter/TESTING.md`

@@ -178,7 +178,7 @@ Fehlender Stand in einem fortlaufenden Produktprojekt ist keine Dauerausnahme.
 
 ### Stand vom
 
-2026-08-05
+2026-08-06
 
 ### Projektkurzbeschreibung
 
@@ -186,7 +186,7 @@ AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation)
 
 ### Aktueller Fokus
 
-Framework **2.3.3** — Flutter `UI.md` / `DEV_SETUP.md` und undokumentierte HTTP-Integrationen (Zielprojekt-Retro SafeArea/Sheets/Keyboard). Profile-Fokus: **nur Flutter**.
+Framework **2.3.5** — Core `12_I18N.md` (stackübergreifend); Flutter `I18N.md` nur noch Konkretisierung. Profile-Fokus: **nur Flutter**.
 
 ### Wichtige Entscheidungen
 
@@ -200,7 +200,9 @@ Framework **2.3.3** — Flutter `UI.md` / `DEV_SETUP.md` und undokumentierte HTT
 - Offline-First-Netzgrenze und HTTP-Client-Mindeststandard im Flutter-Profile
 - Optionale Cloud: Port + Unavailable-Stub
 - Formular-/Sheet-Insets und Device-Smoke im Flutter-Profile (`UI.md`, `DEV_SETUP.md`)
-- AI-DK aktuell **2.3.3**
+- Nutzertexte: Core `12_I18N.md`; Flutter: `gen-l10n` (`profiles/flutter/I18N.md`)
+- Core-Nummerierung bis **`12`** (ADR 0002 ergänzt)
+- AI-DK aktuell **2.3.5**
 
 ### Bekannte Risiken / Schulden
 
@@ -209,14 +211,15 @@ Framework **2.3.3** — Flutter `UI.md` / `DEV_SETUP.md` und undokumentierte HTT
 
 ### Nächste Schritte
 
-1. `check_core.py` PASS nach 2.3.3-Änderungen
+1. `check_core.py` PASS nach 2.3.5-Änderungen
 2. Weitere Profiles nur bei explizitem Bedarf
 3. Optional: weitere Tool-Extensions
 
 ### Verweise
 
 - `.ai/01_BOOTSTRAP.md`
-- `profiles/flutter/` (inkl. `UI.md`, `DEV_SETUP.md`)
+- `.ai/12_I18N.md`
+- `profiles/flutter/` (inkl. `UI.md`, `I18N.md`, `DEV_SETUP.md`)
 - `extensions/`
 - `.github/workflows/check-core.yml`
 - `docs/` · `rfcs/`

@@ -1,6 +1,6 @@
 # AI-DK Flutter – Coding
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Ziel
 
@@ -76,6 +76,12 @@ Freezed-Models und Provider-State bevorzugt unveränderlich.
 - Bestehende Design-Tokens des Projekts respektieren.
 - SafeArea, Tastatur, Bottom Sheets, FAB-`heroTag`: siehe `UI.md`.
 
+### I18N / Nutzertexte
+
+- Core: `.ai/12_I18N.md` (technologieunabhängig).
+- Flutter: keine hardcodierten nutzersichtbaren Strings in Widgets; Katalog/ARB + Zugriffs-API: siehe `I18N.md`.
+- Domänendaten (Kartennamen, API-/DB-Inhalte) gehören nicht in den String-Katalog.
+
 ### Dateien und Größe
 
 - Dateien und Widgets teilen, bevor sie unübersichtlich werden (Core-Prinzip „kleine Einheiten“).
@@ -110,6 +116,7 @@ Die KI muss:
 - [ ] Freezed/Generated konsistent
 - [ ] Theme/Material-3 beachtet
 - [ ] UI-Insets / Sheets gemäß `UI.md` (bei Formularen)
+- [ ] Nutzertexte gemäß `I18N.md` (kein neues Literal in Widgets)
 - [ ] Core-Coding-Prinzipien eingehalten
 
 ---
@@ -135,11 +142,11 @@ Performance-kritische Stellen: Abweichung begründen und begrenzen.
 
 ## Version
 
-Dokumentversion: 2.0.0
+Dokumentversion: 2.0.1
 
 Änderung in dieser Version:
 
-- Erstes Flutter-Coding-Dokument (AI-DK 2.0)
+- Verweis I18N / zentrale Nutzertexte (`I18N.md`)
 
 Verwandte Dokumente:
 
@@ -147,4 +154,6 @@ Verwandte Dokumente:
 - `profiles/flutter/STACK.md`
 - `profiles/flutter/ARCHITECTURE.md`
 - `profiles/flutter/UI.md`
+- `profiles/flutter/I18N.md`
+- `.ai/12_I18N.md`
 - `profiles/flutter/TESTING.md`

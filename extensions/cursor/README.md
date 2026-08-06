@@ -1,6 +1,6 @@
 # AI-DK Extension – Cursor
 
-Version: 2.3.3
+Version: 2.3.5
 
 ## Zweck
 

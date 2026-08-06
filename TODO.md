@@ -8,6 +8,8 @@ Offene Nacharbeiten am AI-DK-Framework (nicht Zielprojekte).
 - [x] **2.3.1** Klarstellungen: Greenfield, Shared Core, Commit vorbereitet vs. ausführen, Flutter Stack-Konflikte/Pre-Releases
 - [x] **2.3.2** Klarstellungen: Offline/HTTP, Fortsetzungssitzung, Migrations-Tests, optionale Integrationen (P0–P4-Retro)
 - [x] **2.3.3** Flutter UI.md · DEV_SETUP · undokumentierte HTTP (Zielprojekt-Retro SafeArea/Sheets)
+- [x] **2.3.4** Flutter I18N.md — zentrale Strings / gen-l10n
+- [x] **2.3.5** Core `12_I18N.md` — I18N stackübergreifend; Flutter nur Konkretisierung
 
 ## Zurückgestellt / bei Bedarf
 
