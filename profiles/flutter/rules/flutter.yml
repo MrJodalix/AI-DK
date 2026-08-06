@@ -109,6 +109,10 @@ rules:
     severity: must
     summary: "Mehrere FABs: eindeutige heroTags."
     refs: ["profiles/flutter/UI.md"]
+  - id: FL-UI-004
+    severity: must
+    summary: "Shell/IndexedStack: nach Schreibvorgängen abhängige Provider invalidieren (Nachbar-Tabs, Aggregates)."
+    refs: ["profiles/flutter/UI.md"]
   - id: FL-I18N-001
     severity: must
     summary: "Nutzersichtbare Texte in ARB/zentralem Katalog; UI nur über L10n-API bzw. Getter — keine neuen Literale in Widgets."

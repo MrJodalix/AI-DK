@@ -1,6 +1,6 @@
 # AI-DK Bootstrap
 
-Version: 2.1.2
+Version: 2.1.3
 
 ## Ziel
 
@@ -74,6 +74,16 @@ Bei **neuen** Zielprojekten (noch kein Produktcode / keine Fach-Features):
 - Ist der Core geteilt oder verlinkt, darf der lebendige Stand **nicht** der Framework-Stand von AI-DK sein.
 - Pflicht: **projekteigene** Stand-Datei (typisch `.ai/08_PROJECT_STATE.md` als Datei des Zielprojekts). Alias `PROJECT_STATE.md` im Repo-Root ist erlaubt, wenn er auf denselben projekteigenen Stand zeigt (`08_PROJECT_STATE.md`).
 
+### Shared-Core-Upgrade (nach Framework-Bump)
+
+Nach Update von AI-DK (Kopie, Submodule, nested Checkout):
+
+1. Diff Framework-Core (`.ai/00`–`12`, `rules/`) gegen die Zielprojekt-Einbindung unter `.ai/`.
+2. Neue Core-Dateien **verlinken oder kopieren** (z. B. `12_I18N.md`) — tote Pfade in `AGENTS.md` / Docs vermeiden.
+3. YAML unter `.ai/rules/` mitziehen, wenn abgeleitet.
+4. Profile und Extensions (Version in `AGENTS.md` / Cursor-Rule) an die Framework-Version anpassen.
+5. Projektspezifische Stand-Datei (`08_PROJECT_STATE.md`) nicht mit dem Framework-Stand überschreiben.
+
 ---
 
 ## Ausnahmen
@@ -122,11 +132,11 @@ Die KI muss:
 
 ## Version
 
-Dokumentversion: 2.1.2
+Dokumentversion: 2.1.3
 
 Änderung in dieser Version:
 
-- Fortsetzungssitzung: verkürzter Start bei aktuellem Stand
+- Shared-Core-Upgrade-Checkliste nach Framework-Bump (neue Core-Dateien verlinken/kopieren)
 
 Verwandte Dokumente:
 

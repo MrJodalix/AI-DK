@@ -1,6 +1,6 @@
 # AI-DK Extension – Cursor
 
-Version: 2.3.5
+Version: 2.3.6
 
 ## Zweck
 
@@ -26,4 +26,7 @@ Reihenfolge unverändert aus `01_BOOTSTRAP.md`:
 
 ## Pflege
 
-Nach AI-DK-Upgrades: Spezifikations-Versionsnummer in `AGENTS.md` / Rule anpassen.
+Nach AI-DK-Upgrades:
+
+1. Spezifikations-Versionsnummer in `AGENTS.md` / Rule anpassen.
+2. Shared-Core-Upgrade-Checkliste in `01_BOOTSTRAP.md` ausführen (neue Core-Dateien verlinken/kopieren, YAML mitziehen).

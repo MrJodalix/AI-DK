@@ -1,6 +1,6 @@
 # AI-DK Flutter – UI
 
-Version: 1.0.1
+Version: 1.0.2
 
 ## Ziel
 
@@ -53,6 +53,14 @@ Gilt nicht für Domain-/Application-Logik.
 
 - Nach `go()` auf Unterrouten kann die Shell-Navigation verschwinden — für Detail-/Editor-Flows `push` / `pushReplacement` bevorzugen.
 
+### Shell / IndexedStack & Provider-Invalidierung
+
+Wenn die App-Shell Tabs in einem `IndexedStack` (oder vergleichbar) hält, bleibt Widget-State erhalten — UI aktualisiert sich nicht „von allein“, wenn ein anderer Tab geschrieben hat.
+
+1. Nach **Schreibvorgängen** (CRUD, Import, Settings) abhängige Riverpod-Provider invalidieren bzw. Notifier/Streams aktualisieren.
+2. Aggregates und Nachbar-Tabs mitdenken (Zähler, Summen, Listen) — nicht nur die aktuelle Route.
+3. Checkliste: Welche Provider liest die Entität? Welche Tabs/Details hängen daran (auch unsichtbar im Stack)? Dort `ref.invalidate` / gezielten Refresh anbinden.
+
 ### Material 3
 
 - Themes zentral (`core/theme/` o. Ä.); keine wilden Hardcoded-Farben ohne Theme-Bezug.
@@ -67,6 +75,7 @@ Gilt nicht für Domain-/Application-Logik.
 - [ ] Primäraktion mit Tastatur + Gestenleiste erreichbar
 - [ ] Bottom Sheet: `useSafeArea` + `viewInsets` + ggf. Scroll
 - [ ] FABs: eindeutige `heroTag`s
+- [ ] Nach Writes: abhängige Provider invalidieren (IndexedStack-/Shell-Tabs)
 - [ ] Nutzertexte über L10n/Katalog (`I18N.md`)
 - [ ] Device-/Emulator-Smoke bei Layout-Änderungen (siehe `DEV_SETUP.md`)
 
@@ -74,11 +83,11 @@ Gilt nicht für Domain-/Application-Logik.
 
 ## Version
 
-Dokumentversion: 1.0.1
+Dokumentversion: 1.0.2
 
 Änderung in dieser Version:
 
-- Verweis auf `I18N.md` für nutzersichtbare Texte
+- Shell / IndexedStack: Provider-Invalidierung nach Schreibvorgängen
 
 Verwandte Dokumente:
 

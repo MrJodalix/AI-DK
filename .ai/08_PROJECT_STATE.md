@@ -186,7 +186,7 @@ AI-DK ist der Name des **AI Engineering Standards** (versionierte Spezifikation)
 
 ### Aktueller Fokus
 
-Framework **2.3.5** — Core `12_I18N.md` (stackübergreifend); Flutter `I18N.md` nur noch Konkretisierung. Profile-Fokus: **nur Flutter**.
+Framework **2.3.6** — Shell/IndexedStack-Invalidierung (`UI.md`); Shared-Core-Upgrade-Checkliste (`01_BOOTSTRAP.md`). Profile-Fokus: **nur Flutter**.
 
 ### Wichtige Entscheidungen
 
@@ -202,7 +202,7 @@ Framework **2.3.5** — Core `12_I18N.md` (stackübergreifend); Flutter `I18N.md
 - Formular-/Sheet-Insets und Device-Smoke im Flutter-Profile (`UI.md`, `DEV_SETUP.md`)
 - Nutzertexte: Core `12_I18N.md`; Flutter: `gen-l10n` (`profiles/flutter/I18N.md`)
 - Core-Nummerierung bis **`12`** (ADR 0002 ergänzt)
-- AI-DK aktuell **2.3.5**
+- AI-DK aktuell **2.3.6**
 
 ### Bekannte Risiken / Schulden
 
@@ -211,7 +211,7 @@ Framework **2.3.5** — Core `12_I18N.md` (stackübergreifend); Flutter `I18N.md
 
 ### Nächste Schritte
 
-1. `check_core.py` PASS nach 2.3.5-Änderungen
+1. `check_core.py` PASS nach 2.3.6-Änderungen
 2. Weitere Profiles nur bei explizitem Bedarf
 3. Optional: weitere Tool-Extensions
 

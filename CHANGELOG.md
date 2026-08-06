@@ -4,6 +4,21 @@ Alle wesentlichen Änderungen am AI-DK-Framework.
 
 Format: neueste Version zuerst. Versionsregeln: `.ai/11_VERSION.md`.
 
+## 2.3.6 – 2026-08-06
+
+Klarstellungen aus Zielprojekt-Retro (Shell-Invalidierung, Shared-Core-Upgrade). Kein Breaking Change.
+
+### Hinzugefügt
+
+- `profiles/flutter/UI.md` — Shell / IndexedStack: Provider-Invalidierung nach Writes
+- `.ai/01_BOOTSTRAP.md` — Shared-Core-Upgrade-Checkliste nach Framework-Bump
+
+### Geändert
+
+- `extensions/cursor/README.md` — Pflege: Upgrade-Checkliste mitziehen
+- `profiles/flutter/rules/flutter.yml` — FL-UI-004
+- README / Profiles-Versionshinweis **2.3.6**
+
 ## 2.3.5 – 2026-08-06
 
 I18N als Core-Querschnittsthema (nicht nur Flutter-Profile). Kein Breaking Change.
